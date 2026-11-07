@@ -6,3 +6,6 @@
 - photo_mri-brain-scan-ai_6841384.jpg: x-ray, mri, ct scan, computed tomography, magnetic resonance imaging, medicine,  (pixabay, Pixabay Content License) https://pixabay.com/photos/x-ray-mri-ct-scan-6841384/
 - photo_vintage-classroom-pl_967305.jpg: globe, world, earth, planet, sphere, classroom, knowledge, geography, geography, (pixabay, Pixabay Content License) https://pixabay.com/photos/globe-world-earth-planet-sphere-967305/
 - photo_pluto-distant-icy-pl_1702787.jpg: planets, cool backgrounds, wallpaper hd, desktop backgrounds, discover, fantasy  (pixabay, Pixabay Content License) https://pixabay.com/photos/planets-discover-fantasy-world-1702787/
+- photo_pluto-dwarf-planet-s_6595130.jpg: pluto, planet, space, astronomy, universe, pluto, pluto, pluto, pluto, pluto (pixabay, Pixabay Content License) https://pixabay.com/photos/pluto-planet-space-astronomy-6595130/
+- photo_astronomy-observator_7079057.jpg: observatory, astronomical, technology, galaxy, universe, star, space, darling, n (pixabay, Pixabay Content License) https://pixabay.com/photos/observatory-astronomical-technology-7079057/
+- photo_deep-space-telescope_6002811.jpg: radio telescopes, antennas, galaxy, space, stars, satellite dish, satellites, un (pixabay, Pixabay Content License) https://pixabay.com/photos/radio-telescopes-antennas-galaxy-6002811/
