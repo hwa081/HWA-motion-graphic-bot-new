@@ -1,13 +1,13 @@
 {
- "date": "2026-11-07T20:10:50Z",
- "job": "jmw6u7cjti82",
+ "date": "2026-11-07T20:15:17Z",
+ "job": "jmw6ud6c6ijm",
  "results": [
   {
-   "id": "ai1",
-   "name": "Groq",
+   "id": "ai2",
+   "name": "OpenRouter",
    "group": "ai",
-   "ok": true,
-   "msg": "answered: OK"
+   "ok": false,
+   "msg": "HTTP 429 from OpenRouter (google/gemma-4-31b-it:free): Provider returned error"
   },
   {
    "id": "pixabay",
