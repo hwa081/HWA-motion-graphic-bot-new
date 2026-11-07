@@ -1,1 +1,1 @@
-{"job": "jmw6grbqupo5", "mode": "checks", "stages": ["Start", "Work", "Save"], "stage": 0, "pct": 1.0, "detail": "Starting the cloud computer", "frames": null, "eta": null, "elapsed": 0, "updated": 1794059635, "done": false}
+{"job": "jmw6grbqupo5", "mode": "checks", "stages": ["Start", "Work", "Save"], "stage": 0, "pct": 1.0, "detail": "Starting the cloud computer", "frames": null, "eta": null, "elapsed": 7, "updated": 1794059642, "done": false}
