@@ -1,0 +1,48 @@
+{
+ "date": "2026-11-07T13:56:54Z",
+ "job": "jmw6grbqupo5",
+ "results": [
+  {
+   "id": "gemini",
+   "name": "Gemini",
+   "group": "ai",
+   "ok": false,
+   "msg": "all models failed:\n  gemini-flash-latest: HTTP 403 from gemini-flash-latest: The Gemini API free tier is not available for this project. To use the Gemini API, please set up billing to upgrade to the paid tier at https://aistudio.google.com"
+  },
+  {
+   "id": "gemini2",
+   "name": "Gemini 2",
+   "group": "ai",
+   "ok": true,
+   "msg": "answered with gemini-flash-latest"
+  },
+  {
+   "id": "ai1",
+   "name": "OpenAI",
+   "group": "ai",
+   "ok": false,
+   "msg": "HTTP 429 from OpenAI (gpt-4o-mini): You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+  },
+  {
+   "id": "pixabay",
+   "name": "Pixabay",
+   "group": "photos",
+   "ok": true,
+   "msg": "works (500 photos)"
+  },
+  {
+   "id": "pexels",
+   "name": "Pexels",
+   "group": "photos",
+   "ok": null,
+   "msg": "no key saved"
+  },
+  {
+   "id": "iconify",
+   "name": "Iconify",
+   "group": "icons",
+   "ok": true,
+   "msg": "works (no key needed)"
+  }
+ ]
+}
