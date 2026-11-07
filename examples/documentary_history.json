@@ -1,0 +1,471 @@
+{
+ "title": "History documentary - dated title + product reveal (example)",
+ "duration": 10,
+ "fps": 30,
+ "size": "16:9",
+ "background": [
+  {
+   "t": 0,
+   "style": "mono_dark"
+  },
+  {
+   "t": 4.6,
+   "style": "ocean",
+   "fade": 0.4
+  }
+ ],
+ "camera": [
+  {
+   "t": 0,
+   "zoom": 1.0,
+   "x": 960,
+   "y": 540
+  },
+  {
+   "t": 4.5,
+   "zoom": 1.08,
+   "x": 960,
+   "y": 540
+  },
+  {
+   "t": 5.0,
+   "zoom": 1.0,
+   "x": 960,
+   "y": 540
+  },
+  {
+   "t": 10,
+   "zoom": 1.05,
+   "x": 960,
+   "y": 540
+  }
+ ],
+ "layers": [
+  {
+   "type": "grid",
+   "kind": "lines",
+   "spacing": 200,
+   "color": [
+    1,
+    1,
+    1
+   ],
+   "fill_opacity": 0.06,
+   "start": 0,
+   "end": 4.5
+  },
+  {
+   "type": "blob",
+   "r": 800,
+   "color": [
+    0.35,
+    0.35,
+    0.37
+   ],
+   "color2": [
+    0.1,
+    0.1,
+    0.11
+   ],
+   "fill_opacity": 0.5,
+   "x": 960,
+   "y": 540,
+   "start": 0,
+   "end": 4.6
+  },
+  {
+   "type": "text",
+   "text": "MAY",
+   "font": "bold_italic",
+   "size": 230,
+   "x": 960,
+   "y": 430,
+   "color": [
+    0.85,
+    0.12,
+    0.12
+   ],
+   "start": 0.2,
+   "end": 4.5,
+   "in": {
+    "anim": "zoom",
+    "dur": 0.5
+   },
+   "out": {
+    "anim": "blur",
+    "dur": 0.4
+   }
+  },
+  {
+   "type": "rrect",
+   "x": 960,
+   "y": 590,
+   "w": 430,
+   "h": 120,
+   "r": 4,
+   "fill": [
+    0.78,
+    0.85,
+    0.2
+   ],
+   "rot": -1,
+   "start": 0.6,
+   "end": 4.5,
+   "shadow": 0.2,
+   "in": {
+    "anim": "pop",
+    "dur": 0.5
+   },
+   "out": {
+    "anim": "fade",
+    "dur": 0.3
+   }
+  },
+  {
+   "type": "text",
+   "text": "1946",
+   "font": "bold",
+   "size": 100,
+   "x": 960,
+   "y": 590,
+   "color": [
+    0.1,
+    0.1,
+    0.05
+   ],
+   "start": 0.7,
+   "end": 4.5,
+   "in": {
+    "anim": "pop",
+    "dur": 0.4
+   },
+   "out": {
+    "anim": "fade",
+    "dur": 0.3
+   }
+  },
+  {
+   "type": "rrect",
+   "x": 420,
+   "y": 420,
+   "w": 240.0,
+   "h": 288.0,
+   "r": 4,
+   "fill": [
+    0.93,
+    0.91,
+    0.86
+   ],
+   "rot": -7,
+   "start": 1.4,
+   "end": 4.5,
+   "shadow": 0.5,
+   "in": {
+    "anim": "pop",
+    "dur": 0.5
+   },
+   "out": {
+    "anim": "fade",
+    "dur": 0.3
+   }
+  },
+  {
+   "type": "rrect",
+   "x": 420,
+   "y": 405.6,
+   "w": 211.2,
+   "h": 211.2,
+   "r": 2,
+   "fill": [
+    0.5,
+    0.5,
+    0.5
+   ],
+   "rot": -7,
+   "start": 1.45,
+   "end": 4.5,
+   "shadow": 0,
+   "in": {
+    "anim": "fade",
+    "dur": 0.4
+   },
+   "out": {
+    "anim": "fade",
+    "dur": 0.3
+   },
+   "keys": {}
+  },
+  {
+   "type": "rrect",
+   "x": 1500,
+   "y": 700,
+   "w": 240.0,
+   "h": 288.0,
+   "r": 4,
+   "fill": [
+    0.93,
+    0.91,
+    0.86
+   ],
+   "rot": 6,
+   "start": 2.0,
+   "end": 4.5,
+   "shadow": 0.5,
+   "in": {
+    "anim": "pop",
+    "dur": 0.5
+   },
+   "out": {
+    "anim": "fade",
+    "dur": 0.3
+   }
+  },
+  {
+   "type": "rrect",
+   "x": 1500,
+   "y": 685.6,
+   "w": 211.2,
+   "h": 211.2,
+   "r": 2,
+   "fill": [
+    0.45,
+    0.45,
+    0.45
+   ],
+   "rot": 6,
+   "start": 2.05,
+   "end": 4.5,
+   "shadow": 0,
+   "in": {
+    "anim": "fade",
+    "dur": 0.4
+   },
+   "out": {
+    "anim": "fade",
+    "dur": 0.3
+   },
+   "keys": {}
+  },
+  {
+   "type": "text",
+   "text": "AKIO MORITA",
+   "font": "bold",
+   "size": 34,
+   "x": 420,
+   "y": 630,
+   "color": [
+    0.1,
+    0.1,
+    0.1
+   ],
+   "start": 1.6,
+   "end": 4.5,
+   "rot": -7,
+   "in": {
+    "anim": "fade",
+    "dur": 0.3
+   },
+   "out": {
+    "anim": "fade",
+    "dur": 0.3
+   }
+  },
+  {
+   "type": "text",
+   "text": "MASARU IBUKA",
+   "font": "bold",
+   "size": 34,
+   "x": 1500,
+   "y": 910,
+   "color": [
+    0.1,
+    0.1,
+    0.1
+   ],
+   "start": 2.2,
+   "end": 4.5,
+   "rot": 6,
+   "in": {
+    "anim": "fade",
+    "dur": 0.3
+   },
+   "out": {
+    "anim": "fade",
+    "dur": 0.3
+   }
+  },
+  {
+   "type": "transition",
+   "style": "stripes",
+   "direction": "right",
+   "color": [
+    0.02,
+    0.2,
+    0.4
+   ],
+   "start": 4.2,
+   "end": 5.0
+  },
+  {
+   "type": "blob",
+   "r": 900,
+   "color": [
+    0.1,
+    0.4,
+    0.8
+   ],
+   "color2": [
+    0.02,
+    0.08,
+    0.2
+   ],
+   "fill_opacity": 0.9,
+   "x": 960,
+   "y": 540,
+   "start": 4.6,
+   "end": 10
+  },
+  {
+   "type": "particles",
+   "count": 50,
+   "color": [
+    0.7,
+    0.85,
+    1
+   ],
+   "size": 2,
+   "speed": 0.4,
+   "seed": 9,
+   "start": 4.6,
+   "end": 10
+  },
+  {
+   "type": "emoji",
+   "char": "\ud83d\udcfb",
+   "size": 210,
+   "x": 480,
+   "y": 520,
+   "start": 5.0,
+   "end": 9.2,
+   "float": {
+    "y": 14,
+    "phase": 2.4
+   },
+   "in": {
+    "anim": "bounce",
+    "dur": 0.6
+   },
+   "out": {
+    "anim": "fade",
+    "dur": 0.3
+   }
+  },
+  {
+   "type": "emoji",
+   "char": "\ud83d\udcfa",
+   "size": 210,
+   "x": 880,
+   "y": 520,
+   "start": 5.5,
+   "end": 9.2,
+   "float": {
+    "y": 14,
+    "phase": 4.4
+   },
+   "in": {
+    "anim": "bounce",
+    "dur": 0.6
+   },
+   "out": {
+    "anim": "fade",
+    "dur": 0.3
+   }
+  },
+  {
+   "type": "emoji",
+   "char": "\ud83c\udfae",
+   "size": 210,
+   "x": 1280,
+   "y": 520,
+   "start": 6.0,
+   "end": 9.2,
+   "float": {
+    "y": 14,
+    "phase": 6.4
+   },
+   "in": {
+    "anim": "bounce",
+    "dur": 0.6
+   },
+   "out": {
+    "anim": "fade",
+    "dur": 0.3
+   }
+  },
+  {
+   "type": "emoji",
+   "char": "\ud83e\udd16",
+   "size": 210,
+   "x": 1640,
+   "y": 520,
+   "start": 6.5,
+   "end": 9.2,
+   "float": {
+    "y": 14,
+    "phase": 8.2
+   },
+   "in": {
+    "anim": "bounce",
+    "dur": 0.6
+   },
+   "out": {
+    "anim": "fade",
+    "dur": 0.3
+   }
+  },
+  {
+   "type": "text",
+   "text": "four products. one name.",
+   "font": "bold",
+   "size": 70,
+   "x": 960,
+   "y": 860,
+   "color": [
+    1,
+    1,
+    1
+   ],
+   "start": 7.2,
+   "end": 9.2,
+   "reveal": {
+    "mode": "words",
+    "step": 0.28
+   },
+   "out": {
+    "anim": "blur",
+    "dur": 0.4
+   }
+  },
+  {
+   "type": "text",
+   "text": "ENEMIES ARE EVERYWHERE",
+   "font": "bold_italic",
+   "size": 120,
+   "x": 960,
+   "y": 540,
+   "color": [
+    1,
+    0.9,
+    0.9
+   ],
+   "start": 9.2,
+   "end": 10,
+   "in": {
+    "anim": "pop",
+    "dur": 0.4
+   },
+   "shadow": 1,
+   "fixed": true
+  }
+ ]
+}

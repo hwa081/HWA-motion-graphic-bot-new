@@ -1,0 +1,807 @@
+{
+ "title": "Case file board - documentary title (example)",
+ "duration": 10,
+ "fps": 30,
+ "size": "16:9",
+ "background": [
+  {
+   "t": 0,
+   "style": "mono_dark"
+  }
+ ],
+ "camera": [
+  {
+   "t": 0,
+   "zoom": 1.0,
+   "x": 960,
+   "y": 540
+  },
+  {
+   "t": 4.0,
+   "zoom": 1.06,
+   "x": 980,
+   "y": 560
+  },
+  {
+   "t": 4.2,
+   "zoom": 1.0,
+   "x": 960,
+   "y": 540
+  },
+  {
+   "t": 7.2,
+   "zoom": 1.08,
+   "x": 960,
+   "y": 540
+  },
+  {
+   "t": 7.6,
+   "zoom": 1.0,
+   "x": 960,
+   "y": 540
+  }
+ ],
+ "layers": [
+  {
+   "type": "grid",
+   "kind": "lines",
+   "spacing": 120,
+   "color": [
+    1,
+    1,
+    1
+   ],
+   "fill_opacity": 0.05,
+   "start": 0,
+   "end": 10,
+   "vignette": 0.9
+  },
+  {
+   "type": "blob",
+   "r": 700,
+   "color": [
+    0.12,
+    0.3,
+    0.28
+   ],
+   "color2": [
+    0.02,
+    0.06,
+    0.07
+   ],
+   "fill_opacity": 0.5,
+   "x": 960,
+   "y": 540,
+   "start": 0,
+   "end": 10
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     260,
+     200
+    ],
+    [
+     900,
+     200
+    ],
+    [
+     900,
+     520
+    ]
+   ],
+   "width": 6,
+   "color": [
+    0.92,
+    0.92,
+    0.86
+   ],
+   "start": 0.2,
+   "end": 4.0,
+   "opacity": 0.9,
+   "in": {
+    "anim": "wipe_right",
+    "dur": 0.6
+   }
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1500,
+     160
+    ],
+    [
+     1500,
+     420
+    ],
+    [
+     1180,
+     420
+    ]
+   ],
+   "width": 6,
+   "color": [
+    0.92,
+    0.92,
+    0.86
+   ],
+   "start": 0.5,
+   "end": 4.0,
+   "opacity": 0.9,
+   "in": {
+    "anim": "wipe_down",
+    "dur": 0.6
+   }
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     300,
+     860
+    ],
+    [
+     700,
+     860
+    ],
+    [
+     700,
+     700
+    ]
+   ],
+   "width": 6,
+   "color": [
+    0.92,
+    0.92,
+    0.86
+   ],
+   "start": 0.9,
+   "end": 4.0,
+   "opacity": 0.9,
+   "in": {
+    "anim": "wipe_up",
+    "dur": 0.6
+   }
+  },
+  {
+   "type": "rrect",
+   "x": 560,
+   "y": 400,
+   "w": 300.0,
+   "h": 360.0,
+   "r": 4,
+   "fill": [
+    0.93,
+    0.91,
+    0.86
+   ],
+   "rot": -6,
+   "start": 0.8,
+   "end": 4.2,
+   "shadow": 0.5,
+   "in": {
+    "anim": "pop",
+    "dur": 0.5
+   },
+   "out": {
+    "anim": "fade",
+    "dur": 0.3
+   }
+  },
+  {
+   "type": "rrect",
+   "x": 560,
+   "y": 382.0,
+   "w": 264.0,
+   "h": 264.0,
+   "r": 2,
+   "fill": [
+    0.25,
+    0.28,
+    0.3
+   ],
+   "rot": -6,
+   "start": 0.8500000000000001,
+   "end": 4.2,
+   "shadow": 0,
+   "in": {
+    "anim": "fade",
+    "dur": 0.4
+   },
+   "out": {
+    "anim": "fade",
+    "dur": 0.3
+   },
+   "keys": {}
+  },
+  {
+   "type": "rrect",
+   "x": 1230,
+   "y": 610,
+   "w": 300.0,
+   "h": 360.0,
+   "r": 4,
+   "fill": [
+    0.93,
+    0.91,
+    0.86
+   ],
+   "rot": 5,
+   "start": 1.4,
+   "end": 4.2,
+   "shadow": 0.5,
+   "in": {
+    "anim": "pop",
+    "dur": 0.5
+   },
+   "out": {
+    "anim": "fade",
+    "dur": 0.3
+   }
+  },
+  {
+   "type": "rrect",
+   "x": 1230,
+   "y": 592.0,
+   "w": 264.0,
+   "h": 264.0,
+   "r": 2,
+   "fill": [
+    0.3,
+    0.26,
+    0.24
+   ],
+   "rot": 5,
+   "start": 1.45,
+   "end": 4.2,
+   "shadow": 0,
+   "in": {
+    "anim": "fade",
+    "dur": 0.4
+   },
+   "out": {
+    "anim": "fade",
+    "dur": 0.3
+   },
+   "keys": {}
+  },
+  {
+   "type": "rrect",
+   "x": 930,
+   "y": 720,
+   "w": 430,
+   "h": 170,
+   "r": 6,
+   "fill": [
+    0.95,
+    0.9,
+    0.7
+   ],
+   "rot": -3,
+   "start": 2.0,
+   "end": 4.2,
+   "shadow": 0.5,
+   "in": {
+    "anim": "pop",
+    "dur": 0.5
+   },
+   "out": {
+    "anim": "fade",
+    "dur": 0.3
+   }
+  },
+  {
+   "type": "text",
+   "text": "SUSPECT 01",
+   "font": "bold",
+   "size": 56,
+   "x": 930,
+   "y": 700,
+   "color": [
+    0.1,
+    0.1,
+    0.1
+   ],
+   "start": 2.1,
+   "end": 4.2,
+   "rot": -3,
+   "out": {
+    "anim": "fade",
+    "dur": 0.3
+   },
+   "reveal": {
+    "mode": "chars",
+    "step": 0.09
+   }
+  },
+  {
+   "type": "text",
+   "text": "last seen 5:10 AM",
+   "font": "italic",
+   "size": 38,
+   "x": 930,
+   "y": 770,
+   "color": [
+    0.25,
+    0.2,
+    0.1
+   ],
+   "start": 2.4,
+   "end": 4.2,
+   "rot": -3,
+   "out": {
+    "anim": "fade",
+    "dur": 0.3
+   },
+   "reveal": {
+    "mode": "chars",
+    "step": 0.07
+   }
+  },
+  {
+   "type": "rrect",
+   "x": 420,
+   "y": 300,
+   "w": 210.0,
+   "h": 251.99999999999997,
+   "r": 4,
+   "fill": [
+    0.93,
+    0.91,
+    0.86
+   ],
+   "rot": -5,
+   "start": 4.2,
+   "end": 7.3,
+   "shadow": 0.5,
+   "in": {
+    "anim": "pop",
+    "dur": 0.5
+   },
+   "out": {
+    "anim": "fade",
+    "dur": 0.3
+   }
+  },
+  {
+   "type": "rrect",
+   "x": 420,
+   "y": 287.4,
+   "w": 184.8,
+   "h": 184.79999999999998,
+   "r": 2,
+   "fill": [
+    0.3,
+    0.3,
+    0.32
+   ],
+   "rot": -5,
+   "start": 4.25,
+   "end": 7.3,
+   "shadow": 0,
+   "in": {
+    "anim": "fade",
+    "dur": 0.4
+   },
+   "out": {
+    "anim": "fade",
+    "dur": 0.3
+   },
+   "keys": {}
+  },
+  {
+   "type": "rrect",
+   "x": 960,
+   "y": 200,
+   "w": 210.0,
+   "h": 251.99999999999997,
+   "r": 4,
+   "fill": [
+    0.93,
+    0.91,
+    0.86
+   ],
+   "rot": 4,
+   "start": 4.38,
+   "end": 7.3,
+   "shadow": 0.5,
+   "in": {
+    "anim": "pop",
+    "dur": 0.5
+   },
+   "out": {
+    "anim": "fade",
+    "dur": 0.3
+   }
+  },
+  {
+   "type": "rrect",
+   "x": 960,
+   "y": 187.4,
+   "w": 184.8,
+   "h": 184.79999999999998,
+   "r": 2,
+   "fill": [
+    0.28,
+    0.3,
+    0.26
+   ],
+   "rot": 4,
+   "start": 4.43,
+   "end": 7.3,
+   "shadow": 0,
+   "in": {
+    "anim": "fade",
+    "dur": 0.4
+   },
+   "out": {
+    "anim": "fade",
+    "dur": 0.3
+   },
+   "keys": {}
+  },
+  {
+   "type": "rrect",
+   "x": 1500,
+   "y": 320,
+   "w": 210.0,
+   "h": 251.99999999999997,
+   "r": 4,
+   "fill": [
+    0.93,
+    0.91,
+    0.86
+   ],
+   "rot": -3,
+   "start": 4.5600000000000005,
+   "end": 7.3,
+   "shadow": 0.5,
+   "in": {
+    "anim": "pop",
+    "dur": 0.5
+   },
+   "out": {
+    "anim": "fade",
+    "dur": 0.3
+   }
+  },
+  {
+   "type": "rrect",
+   "x": 1500,
+   "y": 307.4,
+   "w": 184.8,
+   "h": 184.79999999999998,
+   "r": 2,
+   "fill": [
+    0.32,
+    0.28,
+    0.26
+   ],
+   "rot": -3,
+   "start": 4.61,
+   "end": 7.3,
+   "shadow": 0,
+   "in": {
+    "anim": "fade",
+    "dur": 0.4
+   },
+   "out": {
+    "anim": "fade",
+    "dur": 0.3
+   },
+   "keys": {}
+  },
+  {
+   "type": "rrect",
+   "x": 700,
+   "y": 760,
+   "w": 210.0,
+   "h": 251.99999999999997,
+   "r": 4,
+   "fill": [
+    0.93,
+    0.91,
+    0.86
+   ],
+   "rot": 6,
+   "start": 4.74,
+   "end": 7.3,
+   "shadow": 0.5,
+   "in": {
+    "anim": "pop",
+    "dur": 0.5
+   },
+   "out": {
+    "anim": "fade",
+    "dur": 0.3
+   }
+  },
+  {
+   "type": "rrect",
+   "x": 700,
+   "y": 747.4,
+   "w": 184.8,
+   "h": 184.79999999999998,
+   "r": 2,
+   "fill": [
+    0.26,
+    0.28,
+    0.32
+   ],
+   "rot": 6,
+   "start": 4.79,
+   "end": 7.3,
+   "shadow": 0,
+   "in": {
+    "anim": "fade",
+    "dur": 0.4
+   },
+   "out": {
+    "anim": "fade",
+    "dur": 0.3
+   },
+   "keys": {}
+  },
+  {
+   "type": "rrect",
+   "x": 1250,
+   "y": 800,
+   "w": 210.0,
+   "h": 251.99999999999997,
+   "r": 4,
+   "fill": [
+    0.93,
+    0.91,
+    0.86
+   ],
+   "rot": -4,
+   "start": 4.92,
+   "end": 7.3,
+   "shadow": 0.5,
+   "in": {
+    "anim": "pop",
+    "dur": 0.5
+   },
+   "out": {
+    "anim": "fade",
+    "dur": 0.3
+   }
+  },
+  {
+   "type": "rrect",
+   "x": 1250,
+   "y": 787.4,
+   "w": 184.8,
+   "h": 184.79999999999998,
+   "r": 2,
+   "fill": [
+    0.3,
+    0.26,
+    0.3
+   ],
+   "rot": -4,
+   "start": 4.97,
+   "end": 7.3,
+   "shadow": 0,
+   "in": {
+    "anim": "fade",
+    "dur": 0.4
+   },
+   "out": {
+    "anim": "fade",
+    "dur": 0.3
+   },
+   "keys": {}
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     420,
+     300
+    ],
+    [
+     960,
+     200
+    ]
+   ],
+   "width": 4,
+   "color": [
+    0.85,
+    0.12,
+    0.14
+   ],
+   "start": 5.0,
+   "end": 7.3,
+   "opacity": 1,
+   "in": {
+    "anim": "wipe_right",
+    "dur": 0.5
+   }
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     960,
+     200
+    ],
+    [
+     1500,
+     320
+    ]
+   ],
+   "width": 4,
+   "color": [
+    0.85,
+    0.12,
+    0.14
+   ],
+   "start": 5.25,
+   "end": 7.3,
+   "opacity": 1,
+   "in": {
+    "anim": "wipe_right",
+    "dur": 0.5
+   }
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     420,
+     300
+    ],
+    [
+     700,
+     760
+    ]
+   ],
+   "width": 4,
+   "color": [
+    0.85,
+    0.12,
+    0.14
+   ],
+   "start": 5.5,
+   "end": 7.3,
+   "opacity": 1,
+   "in": {
+    "anim": "wipe_right",
+    "dur": 0.5
+   }
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     700,
+     760
+    ],
+    [
+     1250,
+     800
+    ]
+   ],
+   "width": 4,
+   "color": [
+    0.85,
+    0.12,
+    0.14
+   ],
+   "start": 5.75,
+   "end": 7.3,
+   "opacity": 1,
+   "in": {
+    "anim": "wipe_right",
+    "dur": 0.5
+   }
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1500,
+     320
+    ],
+    [
+     1250,
+     800
+    ]
+   ],
+   "width": 4,
+   "color": [
+    0.85,
+    0.12,
+    0.14
+   ],
+   "start": 6.0,
+   "end": 7.3,
+   "opacity": 1,
+   "in": {
+    "anim": "wipe_right",
+    "dur": 0.5
+   }
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     960,
+     200
+    ],
+    [
+     700,
+     760
+    ]
+   ],
+   "width": 4,
+   "color": [
+    0.85,
+    0.12,
+    0.14
+   ],
+   "start": 6.25,
+   "end": 7.3,
+   "opacity": 1,
+   "in": {
+    "anim": "wipe_right",
+    "dur": 0.5
+   }
+  },
+  {
+   "type": "transition",
+   "style": "flash",
+   "color": [
+    0.9,
+    0.1,
+    0.12
+   ],
+   "start": 7.2,
+   "end": 7.9
+  },
+  {
+   "type": "text",
+   "text": "CONNECTION",
+   "font": "bold_italic",
+   "size": 190,
+   "x": 960,
+   "y": 520,
+   "color": [
+    0.95,
+    0.12,
+    0.15
+   ],
+   "start": 7.6,
+   "end": 10,
+   "in": {
+    "anim": "blur",
+    "dur": 0.7
+   },
+   "shadow": 1,
+   "fixed": true
+  },
+  {
+   "type": "text",
+   "text": "who is behind it?",
+   "font": "italic",
+   "size": 50,
+   "x": 960,
+   "y": 680,
+   "color": [
+    0.85,
+    0.85,
+    0.85
+   ],
+   "start": 8.3,
+   "end": 10,
+   "fixed": true,
+   "reveal": {
+    "mode": "chars",
+    "step": 0.07
+   }
+  }
+ ]
+}
