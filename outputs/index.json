@@ -1,5 +1,30 @@
 [
  {
+  "id": "jmw6hyldnuxb",
+  "job": "jmw6hyldnuxb",
+  "kind": "report",
+  "title": "checks",
+  "prompt": "",
+  "mode": "checks",
+  "size": "16:9",
+  "dur": "10",
+  "ai": "gemini",
+  "date": "2026-11-07T14:30:22Z",
+  "ok": false,
+  "trashed": false,
+  "formats": "none",
+  "note": "The run stopped before the video was ready",
+  "report": "outputs/jmw6hyldnuxb/report.md",
+  "timing": {
+   "total_s": 173.4,
+   "ai_requests": 0,
+   "ai_request_s": 0,
+   "ai_wait_s": 0,
+   "render_s": 0,
+   "files_s": 0
+  }
+ },
+ {
   "id": "jmw6h5wnasf5",
   "job": "jmw6h5wnasf5",
   "kind": "report",
