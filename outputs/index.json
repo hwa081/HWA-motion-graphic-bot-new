@@ -1,5 +1,29 @@
 [
  {
+  "id": "jmw6u7cjti82",
+  "job": "jmw6u7cjti82",
+  "kind": "report",
+  "title": "checks",
+  "prompt": "",
+  "mode": "checks",
+  "size": "16:9",
+  "dur": "10",
+  "ai": "gemini",
+  "date": "2026-11-07T20:10:50Z",
+  "ok": true,
+  "trashed": false,
+  "formats": "none",
+  "report": "outputs/jmw6u7cjti82/report.md",
+  "timing": {
+   "total_s": 38.6,
+   "ai_requests": 0,
+   "ai_request_s": 0,
+   "ai_wait_s": 0,
+   "render_s": 0,
+   "files_s": 0
+  }
+ },
+ {
   "id": "jmw6u66lve75",
   "job": "jmw6u66lve75",
   "kind": "report",
