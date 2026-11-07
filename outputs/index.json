@@ -1,5 +1,29 @@
 [
  {
+  "id": "jmw6s349q85x",
+  "job": "jmw6s349q85x",
+  "kind": "report",
+  "title": "https://www.youtube.com/watch?v=OH1Fxk0YsFQ",
+  "prompt": "https://www.youtube.com/watch?v=OH1Fxk0YsFQ",
+  "mode": "study",
+  "size": "16:9",
+  "dur": "10",
+  "ai": "gemini",
+  "date": "2026-11-07T19:19:52Z",
+  "ok": true,
+  "trashed": false,
+  "formats": "none",
+  "report": "outputs/jmw6s349q85x/report.md",
+  "timing": {
+   "total_s": 519.9,
+   "ai_requests": 1,
+   "ai_request_s": 519.1,
+   "ai_wait_s": 26.0,
+   "render_s": 0,
+   "files_s": 0
+  }
+ },
+ {
   "id": "jmw6s3599b75",
   "job": "jmw6s3599b75",
   "kind": "report",

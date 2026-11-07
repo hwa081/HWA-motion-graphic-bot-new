@@ -241,6 +241,39 @@
    "count": 3,
    "created": "2026-11-07T11:00:57Z",
    "last": "2026-11-07T16:23:09Z"
+  },
+  {
+   "id": "t259",
+   "name": "Footer Legal Banner Reveal",
+   "when": "Displaying copyright details, terms, or platform metadata at the end of a promotional video",
+   "how": "Slide a dark bottom card up into frame. Animate a horizontal accent line using wipe_right across the top edge of the card. Bring in legal and copyright text using blur and fade with a slight delay.",
+   "source": "study: https://www.youtube.com/watch?v=OH1Fxk0Y",
+   "weight": 1,
+   "count": 1,
+   "created": "2026-11-07T19:19:52Z",
+   "last": "2026-11-07T19:19:52Z"
+  },
+  {
+   "id": "t583",
+   "name": "Feature Tag Grid Stagger",
+   "when": "Showcasing multiple navigation links, creator tools, or feature categories",
+   "how": "Display a subtle background grid. Pop in category chips sequentially across the screen. Animate label text inside each chip using rise and fade.",
+   "source": "study: https://www.youtube.com/watch?v=OH1Fxk0Y",
+   "weight": 1,
+   "count": 1,
+   "created": "2026-11-07T19:19:52Z",
+   "last": "2026-11-07T19:19:52Z"
+  },
+  {
+   "id": "t675",
+   "name": "Service Announcement Spotlight",
+   "when": "Introducing a new feature offer or premium service tier",
+   "how": "Place a glowing background blob. Zoom in a rounded card frame with a slight tilt entrance. Layer bold headline text with slide_up and a call-to-action chip with bounce.",
+   "source": "study: https://www.youtube.com/watch?v=OH1Fxk0Y",
+   "weight": 1,
+   "count": 1,
+   "created": "2026-11-07T19:19:52Z",
+   "last": "2026-11-07T19:19:52Z"
   }
  ],
  "wishes": []
