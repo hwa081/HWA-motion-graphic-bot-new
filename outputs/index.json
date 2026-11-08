@@ -1,5 +1,32 @@
 [
  {
+  "id": "jmw7yjh924wa",
+  "job": "jmw7yjh924wa",
+  "kind": "report",
+  "title": "INTRODUCE YOUR SELF",
+  "prompt": "INTRODUCE YOUR SELF",
+  "mode": "ai",
+  "size": "16:9",
+  "dur": "4",
+  "ai": "gemini",
+  "date": "2026-11-08T15:04:10Z",
+  "ok": false,
+  "trashed": false,
+  "project": "default",
+  "quality": "final",
+  "formats": "wfp,nomp4",
+  "note": "ERROR: every AI failed:",
+  "report": "outputs/jmw7yjh924wa/report.md",
+  "timing": {
+   "total_s": 275.6,
+   "ai_requests": 2,
+   "ai_request_s": 275.2,
+   "ai_wait_s": 30.0,
+   "render_s": 0,
+   "files_s": 0
+  }
+ },
+ {
   "id": "jmw7y9vyso4c",
   "job": "jmw7y9vyso4c",
   "kind": "report",
