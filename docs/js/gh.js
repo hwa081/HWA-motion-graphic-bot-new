@@ -124,6 +124,11 @@
     const r = await req('POST', repoPath('/actions/workflows/' + WORKFLOW + '/dispatches'), { ref: G.branch(), inputs });
     if (r.status !== 204) throw new Error('Could not start the bot: ' + errText(r) + (r.status === 422 ? ' (the workflow does not have this input - upload the newest bot files)' : ''));
   };
+  G.cancelRun = async function (id) {          // stop a queued / running workflow run (force-cancel if the soft cancel is ignored)
+    let r = await req('POST', repoPath('/actions/runs/' + id + '/cancel'));
+    if (r.status === 409) r = await req('POST', repoPath('/actions/runs/' + id + '/force-cancel'));
+    if (!(r.status === 202 || r.status === 204 || r.ok)) throw new Error('Could not stop it: ' + errText(r) + (r.status === 403 || r.status === 404 ? ' (the token needs "Actions: Read and write")' : ''));
+  };
   G.runs = async function (n) {
     const r = await req('GET', repoPath('/actions/workflows/' + WORKFLOW + '/runs?per_page=' + (n || 20)));
     if (!r.ok) throw new Error(errText(r));
