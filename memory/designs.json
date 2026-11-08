@@ -1,1 +1,79 @@
-[]
+[
+ {
+  "id": "d-20261108-1903-bed6",
+  "date": "2026-11-08T19:03:15Z",
+  "prompt": "INTRODUCE YOUR SELF",
+  "summary": {
+   "backgrounds": [
+    "dark_aurora",
+    "sunset"
+   ],
+   "entrance_anims": {
+    "slide_right": 3,
+    "blur": 2,
+    "pop": 2,
+    "wipe_left": 2,
+    "zoom": 1,
+    "slide_up": 1,
+    "fade": 1
+   },
+   "layer_types": {
+    "text": 4,
+    "chip": 3,
+    "blob": 2,
+    "rrect": 2,
+    "grid": 1,
+    "progress": 1,
+    "transition": 1,
+    "circle": 1,
+    "image": 1
+   },
+   "kinds": [
+    "ring"
+   ],
+   "transitions": [
+    "stripes"
+   ],
+   "camera": true,
+   "headlines": [
+    "0{n}",
+    "MEET ALEX RIVERS",
+    "SYSTEM INIT // CREATIVE PROFILE",
+    "CREATING DIGITAL EXPERIENCES THAT RESONATE"
+   ],
+   "layers": 16,
+   "duration": 4,
+   "size": "16:9"
+  },
+  "review_score": null,
+  "qa_errors": 0,
+  "qa_warnings": 3,
+  "rating": null,
+  "notes": [],
+  "size": "16:9",
+  "assets": 0,
+  "remix": {
+   "sources": [
+    "doc-15-big-stat",
+    "ui-100-loading-success",
+    "ui-101-onboarding-steps"
+   ],
+   "backgrounds": [
+    "dark_aurora",
+    "sunset"
+   ],
+   "transitions": [
+    "stripes",
+    "iris"
+   ]
+  },
+  "plan": {
+   "concept": "A cinematic two-beat digital self-introduction transforming from a calibrated system initialization into a warm, distinctive personal brand reveal.",
+   "signature": "A luminous radial progress ring that expands through a camera pull-out, transitioning into an illuminated monogram badge with warm sunset backlighting."
+  },
+  "originality": {
+   "nearest": "doc-30-steps-list",
+   "similarity": 0.63
+  }
+ }
+]

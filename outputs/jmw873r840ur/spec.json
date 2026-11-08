@@ -1,0 +1,403 @@
+{
+ "title": "Introduce Yourself - Personal Identity",
+ "duration": 4,
+ "size": "16:9",
+ "fps": 30,
+ "background": [
+  {
+   "t": 0,
+   "style": "dark_aurora"
+  },
+  {
+   "t": 2.0,
+   "style": "sunset",
+   "fade": 0.4
+  }
+ ],
+ "camera": [
+  {
+   "t": 0,
+   "zoom": 1.18,
+   "x": 960,
+   "y": 480
+  },
+  {
+   "t": 1.9,
+   "zoom": 1.0,
+   "x": 960,
+   "y": 540
+  },
+  {
+   "t": 2.1,
+   "zoom": 1.0,
+   "x": 960,
+   "y": 540
+  },
+  {
+   "t": 4.0,
+   "zoom": 1.05,
+   "x": 960,
+   "y": 530
+  }
+ ],
+ "layers": [
+  {
+   "type": "grid",
+   "kind": "lines",
+   "spacing": 70,
+   "color": [
+    0.4,
+    0.9,
+    0.75
+   ],
+   "fill_opacity": 0.12,
+   "scroll": {
+    "x": 14,
+    "y": 8
+   },
+   "vignette": 0.85,
+   "start": 0,
+   "end": 2.0
+  },
+  {
+   "type": "blob",
+   "x": 960,
+   "y": 420,
+   "r": 500,
+   "color": [
+    0.1,
+    0.8,
+    0.65
+   ],
+   "color2": [
+    1.0,
+    0.37,
+    0.38
+   ],
+   "fill_opacity": 0.38,
+   "softness": 0.9,
+   "start": 0,
+   "end": 2.0
+  },
+  {
+   "type": "progress",
+   "kind": "ring",
+   "x": 960,
+   "y": 420,
+   "w": 460,
+   "h": 460,
+   "color": [
+    0.3,
+    0.95,
+    0.75
+   ],
+   "track": [
+    0.15,
+    0.25,
+    0.3
+   ],
+   "grow": {
+    "start": 0.1,
+    "dur": 1.4
+   },
+   "start": 0.1,
+   "end": 2.0,
+   "in": {
+    "anim": "blur",
+    "dur": 0.5
+   },
+   "out": {
+    "anim": "fade",
+    "dur": 0.2
+   }
+  },
+  {
+   "type": "text",
+   "text": "0{n}",
+   "font": "bold_italic",
+   "size": 170,
+   "x": 960,
+   "y": 420,
+   "gradient": {
+    "from": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "to": [
+     0.4,
+     0.95,
+     0.8
+    ]
+   },
+   "start": 0.2,
+   "end": 2.0,
+   "count": {
+    "from": 0,
+    "to": 1,
+    "dur": 1.0,
+    "format": "{:d}"
+   },
+   "in": {
+    "anim": "pop",
+    "dur": 0.5
+   },
+   "out": {
+    "anim": "fade",
+    "dur": 0.2
+   }
+  },
+  {
+   "type": "rrect",
+   "w": 680,
+   "h": 72,
+   "x": 960,
+   "y": 860,
+   "r": 36,
+   "fill": [
+    0.05,
+    0.08,
+    0.14
+   ],
+   "fill_opacity": 0.75,
+   "border": [
+    0.3,
+    0.95,
+    0.75
+   ],
+   "border_opacity": 0.4,
+   "border_w": 2,
+   "shadow": 0.4,
+   "start": 0.3,
+   "end": 2.0,
+   "in": {
+    "anim": "wipe_left",
+    "dur": 0.45
+   },
+   "out": {
+    "anim": "fade",
+    "dur": 0.2
+   }
+  },
+  {
+   "type": "text",
+   "text": "SYSTEM INIT // CREATIVE PROFILE",
+   "font": "medium_italic",
+   "size": 32,
+   "x": 960,
+   "y": 860,
+   "color": [
+    0.97,
+    0.98,
+    0.98
+   ],
+   "start": 0.45,
+   "end": 2.0,
+   "in": {
+    "anim": "wipe_left",
+    "dur": 0.4
+   },
+   "out": {
+    "anim": "fade",
+    "dur": 0.2
+   }
+  },
+  {
+   "type": "transition",
+   "style": "stripes",
+   "color": [
+    0.98,
+    0.37,
+    0.38
+   ],
+   "start": 1.7,
+   "end": 2.3
+  },
+  {
+   "type": "blob",
+   "x": 580,
+   "y": 420,
+   "r": 480,
+   "color": [
+    1.0,
+    0.37,
+    0.38
+   ],
+   "color2": [
+    1.0,
+    0.82,
+    0.4
+   ],
+   "fill_opacity": 0.42,
+   "softness": 0.9,
+   "start": 2.0,
+   "end": 4.0
+  },
+  {
+   "type": "circle",
+   "r": 160,
+   "x": 580,
+   "y": 420,
+   "fill": [
+    1,
+    1,
+    1
+   ],
+   "fill_opacity": 0.12,
+   "border": [
+    1.0,
+    0.82,
+    0.4
+   ],
+   "border_opacity": 0.8,
+   "border_w": 4,
+   "shadow": 0.5,
+   "start": 2.05,
+   "end": 4.0,
+   "in": {
+    "anim": "pop",
+    "dur": 0.5
+   }
+  },
+  {
+   "type": "image",
+   "path": "assets/sample_logo.png",
+   "w": 220,
+   "h": 220,
+   "x": 580,
+   "y": 420,
+   "r": 110,
+   "start": 2.1,
+   "end": 4.0,
+   "in": {
+    "anim": "zoom",
+    "dur": 0.45
+   },
+   "float": {
+    "y": 8,
+    "speed": 1.2
+   }
+  },
+  {
+   "type": "chip",
+   "emoji": "🎨",
+   "label": "DESIGNER",
+   "x": 1280,
+   "y": 320,
+   "scale": 1.05,
+   "start": 2.2,
+   "end": 4.0,
+   "in": {
+    "anim": "slide_right",
+    "dur": 0.4
+   }
+  },
+  {
+   "type": "chip",
+   "emoji": "💡",
+   "label": "STRATEGIST",
+   "x": 1320,
+   "y": 440,
+   "scale": 1.05,
+   "start": 2.35,
+   "end": 4.0,
+   "in": {
+    "anim": "slide_right",
+    "dur": 0.4
+   }
+  },
+  {
+   "type": "chip",
+   "emoji": "⚡",
+   "label": "BUILDER",
+   "x": 1260,
+   "y": 560,
+   "scale": 1.05,
+   "start": 2.5,
+   "end": 4.0,
+   "in": {
+    "anim": "slide_right",
+    "dur": 0.4
+   }
+  },
+  {
+   "type": "rrect",
+   "w": 1600,
+   "h": 160,
+   "x": 960,
+   "y": 850,
+   "r": 32,
+   "fill": [
+    0.04,
+    0.06,
+    0.1
+   ],
+   "fill_opacity": 0.55,
+   "border": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "border_opacity": 0.2,
+   "border_w": 1.5,
+   "start": 2.2,
+   "end": 4.0,
+   "in": {
+    "anim": "blur",
+    "dur": 0.4
+   }
+  },
+  {
+   "type": "text",
+   "text": "MEET ALEX RIVERS",
+   "font": "bold_italic",
+   "size": 76,
+   "x": 960,
+   "y": 826,
+   "fixed": true,
+   "gradient": {
+    "from": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "mid": [
+     1.0,
+     0.82,
+     0.4
+    ],
+    "to": [
+     1.0,
+     0.37,
+     0.38
+    ]
+   },
+   "start": 2.3,
+   "end": 4.0,
+   "in": {
+    "anim": "slide_up",
+    "dur": 0.45
+   }
+  },
+  {
+   "type": "text",
+   "text": "CREATING DIGITAL EXPERIENCES THAT RESONATE",
+   "font": "medium_italic",
+   "size": 32,
+   "x": 960,
+   "y": 888,
+   "fixed": true,
+   "color": [
+    0.97,
+    0.98,
+    0.98
+   ],
+   "start": 2.5,
+   "end": 4.0,
+   "in": {
+    "anim": "fade",
+    "dur": 0.4
+   }
+  }
+ ]
+}

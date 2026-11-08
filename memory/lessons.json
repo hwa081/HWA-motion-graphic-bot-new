@@ -1,1 +1,12 @@
-[]
+[
+ {
+  "id": "l379",
+  "kind": "dont",
+  "text": "Text was hard to read on its background. Use light text on dark backgrounds and near-black text on light backgrounds.",
+  "weight": 2,
+  "count": 3,
+  "source": "qa",
+  "created": "2026-11-08T19:03:15Z",
+  "last": "2026-11-08T19:03:15Z"
+ }
+]
