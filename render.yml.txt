@@ -140,6 +140,23 @@ jobs:
       - name: Install Python packages
         run: pip install -r requirements.txt
 
+      - name: Start the free local AI (only if the variable LOCAL_AI is "on")
+        if: ${{ vars.LOCAL_AI == 'on' }}
+        continue-on-error: true
+        env:
+          LOCAL_AI_MODEL_VAR: ${{ vars.LOCAL_AI_MODEL }}
+        run: |
+          MODEL="${LOCAL_AI_MODEL_VAR:-qwen3.5:4b}"
+          curl -fsSL https://ollama.com/install.sh | sh
+          if ! curl -fs http://127.0.0.1:11434/api/version >/dev/null; then
+            OLLAMA_CONTEXT_LENGTH=16384 OLLAMA_KEEP_ALIVE=24h nohup ollama serve > ollama.log 2>&1 &
+          fi
+          for i in $(seq 1 40); do curl -fs http://127.0.0.1:11434/api/version >/dev/null && break; sleep 2; done
+          ollama pull "$MODEL"
+          echo "LOCAL_AI=on" >> "$GITHUB_ENV"
+          echo "LOCAL_AI_MODEL=$MODEL" >> "$GITHUB_ENV"
+          echo "local AI ready: $MODEL"
+
       - name: Run
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
