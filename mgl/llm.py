@@ -60,6 +60,8 @@ def providers_from_env(env=None):
         if not isinstance(it, dict) or not it.get('id') or not it.get('base_url') or not it.get('model'): continue
         key = (env.get(secret_name(str(it['id']))) or '').strip()
         if key: out.append(Provider(str(it['id']), str(it.get('name') or it['id']), 'openai', key, str(it['base_url']), str(it['model'])))
+    if (env.get('LOCAL_AI') or '').strip().lower() in ('1', 'true', 'on', 'yes'):          # free, unlimited, slow: the workflow started Ollama on the runner; it only follows when every other AI failed
+        out.append(Provider('local', 'Local Qwen (free)', 'ollama', 'local', (env.get('LOCAL_AI_URL') or 'http://127.0.0.1:11434').strip(), (env.get('LOCAL_AI_MODEL') or 'qwen3.5:4b').strip()))
     return out
 
 
@@ -155,6 +157,36 @@ def openai_ask(p, system, contents, json_mode=True, temperature=0.8, log=print, 
     raise last
 
 
+# ------------------------------------------------------------------ a small model on the runner itself (Ollama, CPU): free and unlimited, but slow
+LOCAL_INPUT_TOKENS = 11000                  # prompts for it are always shortened to about this size (a 4B model on 4 CPU cores)
+
+
+def ollama_generate(p, system, contents, json_mode=True, temperature=0.7):
+    msgs = []
+    for m in to_messages(system, contents):
+        c = m['content']
+        if isinstance(c, list): c = '\n'.join(x.get('text', '') for x in c if x.get('type') == 'text')      # this model is used for text only
+        msgs.append({'role': m['role'], 'content': c})
+    body = {'model': p.model, 'messages': msgs, 'stream': False, 'think': False, 'options': {'num_ctx': 16384, 'temperature': temperature, 'num_predict': 9000}}
+    if json_mode: body['format'] = 'json'
+    url = p.base_url + '/api/chat'
+    st, j, hd = _http(url, 'local', body, timeout=int(os.environ.get('LOCAL_AI_TIMEOUT', '1500') or 1500))
+    if st == 400 and 'think' in body and 'think' in _msg(j).lower():
+        body.pop('think'); st, j, hd = _http(url, 'local', body, timeout=int(os.environ.get('LOCAL_AI_TIMEOUT', '1500') or 1500))
+    if st == 200:
+        txt = ((j.get('message') or {}).get('content') or '') if isinstance(j, dict) else ''
+        txt = re.sub(r'(?is)<think>.*?</think>', '', txt).strip()
+        if not txt: raise GeminiError('%s: empty answer' % p.name)
+        return txt
+    ex = GeminiError('HTTP %s from %s (%s): %s' % (st, p.name, p.model, _msg(j)))
+    ex.status = st; ex.retry_after = None
+    raise ex
+
+
+def _has_images(contents):
+    return any('inlineData' in x for c in contents for x in c.get('parts', []))
+
+
 # ------------------------------------------------------------------ shorter prompts for services with a small tokens-per-minute limit
 def _chars(system, contents):
     return len(system or '') + sum(len(p.get('text', '')) for c in contents for p in c.get('parts', []))
@@ -221,7 +253,13 @@ def make_multi_ask(providers, budget, log=print, budget_error=None):
         _t_req = time.time()
         for p in candidates():
             try:
-                if p.kind == 'gemini':
+                if p.kind == 'ollama':
+                    if _has_images(contents): continue                 # it cannot look at pictures (Gemini does that)
+                    s1, c1, _ok = shrink(system, contents, LOCAL_INPUT_TOKENS, None, safety=0.9)
+                    log('   -> %s / %s (free, runs on this computer - slow, please wait)' % (p.name, p.model))
+                    txt = ollama_generate(p, s1, c1, json_mode=json_mode)
+                    label = p.id + '/' + p.model
+                elif p.kind == 'gemini':
                     if p.id not in gem_models:
                         gem_models[p.id] = [m.strip() for m in p.model.split(',') if m.strip()] or gemini.choose_models(p.key)
                     txt, model = gemini.ask(p.key, gem_models[p.id], system, contents, json_mode=json_mode, log=log)
@@ -242,7 +280,7 @@ def make_multi_ask(providers, budget, log=print, budget_error=None):
                         txt = openai_ask(p, s2, c2, json_mode=json_mode, log=log)
                     label = p.id + '/' + p.model
                 if label not in used: used.append(label)
-                if chain[0] is not p and (not spread or p.kind != chain[0].kind): chain.remove(p); chain.insert(0, p)      # another kind of AI had to step in: it leads from now on
+                if chain[0] is not p and p.kind != 'ollama' and (not spread or p.kind != chain[0].kind): chain.remove(p); chain.insert(0, p)      # another kind of AI had to step in: it leads from now on
                 _timing.add('ai_request', time.time() - _t_req, label)
                 return txt
             except GeminiError as ex:
