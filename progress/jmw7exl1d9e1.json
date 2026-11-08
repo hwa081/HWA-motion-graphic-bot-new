@@ -1,1 +1,1 @@
-{"job": "jmw7exl1d9e1", "mode": "ai", "stages": ["Start", "Plan", "Design", "Check", "Render", "Files", "Save"], "stage": 4, "pct": 86.8, "detail": "Rendering the video", "frames": null, "eta": null, "elapsed": 566, "updated": 1794117589, "done": false}
+{"job": "jmw7exl1d9e1", "mode": "ai", "stages": ["Start", "Plan", "Design", "Check", "Render", "Files", "Save"], "stage": 4, "pct": 89.4, "detail": "Rendering the video", "frames": null, "eta": null, "elapsed": 572, "updated": 1794117595, "done": false}
