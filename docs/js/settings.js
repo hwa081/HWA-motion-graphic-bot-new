@@ -12,7 +12,9 @@
     ['PLAN', 'Director plan before building', 'true', 'true / false. Costs 1 extra request, makes better videos.'],
     ['CODE_TURNS', 'Code Studio turns', '16', 'More turns = better code, more quota.'],
     ['LEARN_LIMIT', 'Reference videos learned per run', '5', ''],
-    ['OUTPUT_KEEP', 'Videos kept in the repository', '30', 'Older ones are deleted so the repository stays small.']
+    ['OUTPUT_KEEP', 'Videos kept in the repository', '30', 'Older ones are deleted so the repository stays small.'],
+    ['LOCAL_AI', 'Free local AI backup (type: on)', 'off', 'on = a small free AI (Qwen3.5 4B) is started on GitHub and used only when every other AI failed. Never runs out, but slow (several minutes per design) and every run downloads about 3 GB first. Empty = off.'],
+    ['LOCAL_AI_MODEL', 'Local AI model (optional)', 'qwen3.5:4b', 'Any Ollama model name. Empty = qwen3.5:4b.']
   ];
   const st = { secrets: [], vars: {}, providers: [], loaded: false, checks: null };
   const slug = n => String(n || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 20) || 'ai';
