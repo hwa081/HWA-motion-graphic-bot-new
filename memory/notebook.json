@@ -7,9 +7,9 @@
    "how": "Each 2-4 s beat: headline (blur or slide_up, reveal words step 0.25) + one big UI panel arriving with tilt/zoom/rise + 2-3 chips popping 0.15 s apart. Camera push-in 1.0->1.1 on every beat; hero floats y 10.",
    "source": "ref:Machina+EzyCommunity",
    "weight": 5,
-   "count": 35,
+   "count": 36,
    "created": "2026-11-07T11:00:57Z",
-   "last": "2026-11-08T15:47:43Z"
+   "last": "2026-11-08T18:49:50Z"
   },
   {
    "id": "t832",
@@ -18,9 +18,9 @@
    "how": "Beat 1 (0-2.5 s): plain dark bg + blob. One line 'What if just {n} customers': number in accent colour, bigger, count-up; words reveal step 0.2; then blur into a UI panel.",
    "source": "ref:Machina+EzyCommunity",
    "weight": 5,
-   "count": 35,
+   "count": 36,
    "created": "2026-11-07T11:00:57Z",
-   "last": "2026-11-08T15:47:43Z"
+   "last": "2026-11-08T18:49:50Z"
   },
   {
    "id": "t720",
@@ -29,9 +29,9 @@
    "how": "card/device layer yaw -14..-18, scale 1.4, glass border + glow shadow; animate yaw to 0 and scale 1.4->1.5 over 2 s while camera pushes in; blur other panels behind (blur 6, opacity .4).",
    "source": "ref:Machina+EzyCommunity",
    "weight": 5,
-   "count": 35,
+   "count": 36,
    "created": "2026-11-07T11:00:57Z",
-   "last": "2026-11-08T15:47:43Z"
+   "last": "2026-11-08T18:49:50Z"
   },
   {
    "id": "t804",
@@ -40,9 +40,9 @@
    "how": "rrect pill w 900 h 90 glass, search icon left, text reveal chars step 0.05, arrow_up icon pops when typing ends, then the bar slides up and the result panel zooms in.",
    "source": "ref:Machina+EzyCommunity",
    "weight": 5,
-   "count": 35,
+   "count": 36,
    "created": "2026-11-07T11:00:57Z",
-   "last": "2026-11-08T15:47:43Z"
+   "last": "2026-11-08T18:49:50Z"
   },
   {
    "id": "t623",
@@ -51,9 +51,9 @@
    "how": "6 circle avatars in a row, a logo chip above, line layers from logo to each avatar (wipe), avatars pop 0.12 s apart, a price label ($49/mo) pops over the first one.",
    "source": "ref:Machina+EzyCommunity",
    "weight": 5,
-   "count": 35,
+   "count": 36,
    "created": "2026-11-07T11:00:57Z",
-   "last": "2026-11-08T15:47:43Z"
+   "last": "2026-11-08T18:49:50Z"
   },
   {
    "id": "t896",
@@ -62,9 +62,9 @@
    "how": "card kind custom big_text '${n}' with keys number 0->target ease out over 1.8 s, accent header, glow shadow; a green chip '+x%' pops when the count ends; chime.",
    "source": "ref:Machina+EzyCommunity",
    "weight": 5,
-   "count": 35,
+   "count": 36,
    "created": "2026-11-07T11:00:57Z",
-   "last": "2026-11-08T15:47:43Z"
+   "last": "2026-11-08T18:49:50Z"
   },
   {
    "id": "t628",
@@ -73,9 +73,9 @@
    "how": "two progress bars or bar chart: left 'You Keep' 77% grows (grow dur 1.2), right 'Platform cost' 0% stays empty; pill labels above each; accent colour on the winner.",
    "source": "ref:Machina+EzyCommunity",
    "weight": 5,
-   "count": 35,
+   "count": 36,
    "created": "2026-11-07T11:00:57Z",
-   "last": "2026-11-08T15:47:43Z"
+   "last": "2026-11-08T18:49:50Z"
   },
   {
    "id": "t387",
@@ -84,9 +84,9 @@
    "how": "3 cards side by side, middle one scale 1.12 with accent border + 'Best value' chip; rise in 0.15 s apart; then a 'Buy now' rrect pulses (scale 1->1.05 keys) while the camera pushes in.",
    "source": "ref:Machina+EzyCommunity",
    "weight": 5,
-   "count": 35,
+   "count": 36,
    "created": "2026-11-07T11:00:57Z",
-   "last": "2026-11-08T15:47:43Z"
+   "last": "2026-11-08T18:49:50Z"
   },
   {
    "id": "t933",
@@ -95,9 +95,9 @@
    "how": "3 phone devices fanned (rot -12, 0, 12; centre bigger), app icon chip pops on the centre one; slow float; brand-colour blob behind.",
    "source": "ref:Machina+EzyCommunity",
    "weight": 5,
-   "count": 35,
+   "count": 36,
    "created": "2026-11-07T11:00:57Z",
-   "last": "2026-11-08T15:47:43Z"
+   "last": "2026-11-08T18:49:50Z"
   },
   {
    "id": "t201",
@@ -106,9 +106,9 @@
    "how": "Headline left (size 90), 4-5 chips/rrects right, slide_left in 0.2 s apart; each gets an accent border in turn while its line is spoken; others dim to opacity .5.",
    "source": "ref:Machina+EzyCommunity",
    "weight": 5,
-   "count": 35,
+   "count": 36,
    "created": "2026-11-07T11:00:57Z",
-   "last": "2026-11-08T15:47:43Z"
+   "last": "2026-11-08T18:49:50Z"
   },
   {
    "id": "t928",
@@ -117,9 +117,9 @@
    "how": "big accent circle/icon pops with bounce, glow shadow 60, particles burst, ring scales 1->2 and fades; brand letters rise below; riser sound ends exactly on the pop.",
    "source": "ref:Machina+EzyCommunity",
    "weight": 5,
-   "count": 35,
+   "count": 36,
    "created": "2026-11-07T11:00:57Z",
-   "last": "2026-11-08T15:47:43Z"
+   "last": "2026-11-08T18:49:50Z"
   },
   {
    "id": "t582",
@@ -128,9 +128,9 @@
    "how": "Old scene ends blur 0->10 + zoom out 0.4 s while the new one starts blur 10->0 zooming in; add a flash transition 0.3 s only on the biggest change (into the logo).",
    "source": "ref:Machina+EzyCommunity",
    "weight": 5,
-   "count": 35,
+   "count": 36,
    "created": "2026-11-07T11:00:57Z",
-   "last": "2026-11-08T15:47:43Z"
+   "last": "2026-11-08T18:49:50Z"
   },
   {
    "id": "t295",
@@ -139,9 +139,9 @@
    "how": "Logo + one line + accent button chip ('Book a demo today') centred, pop in then float y 6; nothing leaves; soft glow behind; shimmer hit + chime on the button.",
    "source": "ref:Machina+EzyCommunity",
    "weight": 5,
-   "count": 35,
+   "count": 36,
    "created": "2026-11-07T11:00:57Z",
-   "last": "2026-11-08T15:47:43Z"
+   "last": "2026-11-08T18:49:50Z"
   },
   {
    "id": "t384",
@@ -150,9 +150,9 @@
    "how": "Read the script sentence by sentence: pick ONE visual from its key noun (money->count card, people->avatars, app->phone, site->browser, speed->sparkle, list->chips, versus->two bars); time it to that sentence; text 3-6 words.",
    "source": "ref:Machina+EzyCommunity",
    "weight": 5,
-   "count": 35,
+   "count": 36,
    "created": "2026-11-07T11:00:57Z",
-   "last": "2026-11-08T15:47:43Z"
+   "last": "2026-11-08T18:49:50Z"
   },
   {
    "id": "t31",
@@ -161,9 +161,9 @@
    "how": "polaroid rrects at 5 spots rot +-5, pop 0.18 s apart; then line layers (red, w 4) wipe between pairs 0.25 s apart; flash transition red; final red title with blur-in + glow.",
    "source": "ref:Documentary",
    "weight": 4,
-   "count": 35,
+   "count": 36,
    "created": "2026-11-07T11:00:57Z",
-   "last": "2026-11-08T15:47:43Z"
+   "last": "2026-11-08T18:49:50Z"
   },
   {
    "id": "t334",
@@ -172,9 +172,9 @@
    "how": "off-white line layers w 6 forming open rooms, drawn by wipe (right/down/up); props (cards, chips) sit inside them; camera push 1.06 per scene.",
    "source": "ref:Documentary",
    "weight": 4,
-   "count": 35,
+   "count": 36,
    "created": "2026-11-07T11:00:57Z",
-   "last": "2026-11-08T15:47:43Z"
+   "last": "2026-11-08T18:49:50Z"
   },
   {
    "id": "t736",
@@ -183,9 +183,9 @@
    "how": "tan paper rrect slides in from the side (rot 1.5); name bold 74 wipe-in; role italic with chars reveal 0.04; date pills (dark rrect + light bold text) pop last.",
    "source": "ref:Documentary",
    "weight": 4,
-   "count": 35,
+   "count": 36,
    "created": "2026-11-07T11:00:57Z",
-   "last": "2026-11-08T15:47:43Z"
+   "last": "2026-11-08T18:49:50Z"
   },
   {
    "id": "t289",
@@ -194,9 +194,9 @@
    "how": "huge red month (bold_italic 230, zoom in), yellow-green label rrect rot -1 with year 100 popping under it, two polaroid portraits with name text rot +-7 land after.",
    "source": "ref:Documentary",
    "weight": 4,
-   "count": 35,
+   "count": 36,
    "created": "2026-11-07T11:00:57Z",
-   "last": "2026-11-08T15:47:43Z"
+   "last": "2026-11-08T18:49:50Z"
   },
   {
    "id": "t464",
@@ -205,9 +205,9 @@
    "how": "ocean/blue bg with particles; one emoji/image per idea (210 px) bounces in 0.5 s apart, float y 14 phase offset; a one-line caption by words; fade them all before the next headline.",
    "source": "ref:Documentary",
    "weight": 4,
-   "count": 35,
+   "count": 36,
    "created": "2026-11-07T11:00:57Z",
-   "last": "2026-11-08T15:47:43Z"
+   "last": "2026-11-08T18:49:50Z"
   },
   {
    "id": "t422",
@@ -216,9 +216,9 @@
    "how": "person image with white outline centred; gear/pie/dollar icons pop with bounce one per idea around the head; slight float; dark paper-texture bg.",
    "source": "ref:Documentary",
    "weight": 4,
-   "count": 35,
+   "count": 36,
    "created": "2026-11-07T11:00:57Z",
-   "last": "2026-11-08T15:47:43Z"
+   "last": "2026-11-08T18:49:50Z"
   },
   {
    "id": "t281",
@@ -227,9 +227,9 @@
    "how": "map image bg blurred top/bottom (vignette), small boat/icon images drifting along an orange dashed line (line layer wipe), red circle ring marking the place; slow camera push.",
    "source": "ref:Documentary",
    "weight": 4,
-   "count": 35,
+   "count": 36,
    "created": "2026-11-07T11:00:57Z",
-   "last": "2026-11-08T15:47:43Z"
+   "last": "2026-11-08T18:49:50Z"
   },
   {
    "id": "t208",
@@ -238,9 +238,9 @@
    "how": "wipe transition (dark colour 0.5 s) at the cut; the new paper card rises (slide up 0.8 s) while old items fade; keep the same polaroid position so the eye stays.",
    "source": "ref:Documentary",
    "weight": 4,
-   "count": 35,
+   "count": 36,
    "created": "2026-11-07T11:00:57Z",
-   "last": "2026-11-08T15:47:43Z"
+   "last": "2026-11-08T18:49:50Z"
   },
   {
    "id": "t259",
