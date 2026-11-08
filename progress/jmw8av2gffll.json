@@ -1,1 +1,1 @@
-{"job": "jmw8av2gffll", "mode": "learn", "stages": ["Start", "Work", "Save"], "stage": 0, "pct": 1.0, "detail": "Starting the cloud computer", "frames": null, "part": null, "note": null, "eta": null, "elapsed": 0, "updated": 1794170659, "done": false}
+{"job": "jmw8av2gffll", "mode": "learn", "stages": ["Start", "Work", "Save"], "stage": 0, "pct": 1.0, "detail": "Starting the cloud computer", "frames": null, "part": null, "note": "The AI is busy - waiting a little, then trying again", "eta": null, "elapsed": 6, "updated": 1794170665, "done": false}
