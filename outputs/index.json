@@ -1,5 +1,32 @@
 [
  {
+  "id": "jmw8auo7k30f",
+  "job": "jmw8auo7k30f",
+  "kind": "report",
+  "title": "interduce your self as a bot",
+  "prompt": "interduce your self as a bot",
+  "mode": "code",
+  "size": "16:9",
+  "dur": "4",
+  "ai": "gemini",
+  "date": "2026-11-08T20:44:07Z",
+  "ok": false,
+  "trashed": false,
+  "project": "default",
+  "formats": "none",
+  "note": "ERROR: every AI failed:",
+  "report": "outputs/jmw8auo7k30f/report.md",
+  "design_id": "d-20261108-1903-bed6",
+  "timing": {
+   "total_s": 9.2,
+   "ai_requests": 1,
+   "ai_request_s": 9.0,
+   "ai_wait_s": 8.0,
+   "render_s": 0,
+   "files_s": 0
+  }
+ },
+ {
   "id": "jmw8athrzsbj",
   "job": "jmw8athrzsbj",
   "kind": "report",
