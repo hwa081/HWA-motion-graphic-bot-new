@@ -3,6 +3,50 @@
   'use strict';
   const S = window.Studio, G = S.gh, $ = S.$, st = S.state, store = S.store;
   let pend = store.get('pending', []);       // {job, label, prompt, size, dur, mode, inputs, dispatched, t0, run}
+
+  /* ---------------- auto-continue: a video that stops is continued by itself until it is finished ---------------- */
+  const AUTO_MAX = 30;                                           // safety stop: 30 automatic tries per video
+  let autoOn = !!store.get('autoRetry', false);
+  const autoDelay = n => Math.min(600, 60 + 45 * n) * 1000;      // waits 1:00, 1:45, 2:30 ... at most 10 minutes between tries
+  const resumable = p => !!(p.inputs && ['ai', 'spec'].includes(p.inputs.mode));
+  function renderAuto() {
+    const b = document.getElementById('btnAuto'); if (!b) return;
+    b.classList.toggle('on', autoOn); b.setAttribute('aria-pressed', String(autoOn));
+    const l = b.querySelector('.atl'); if (l) l.textContent = autoOn ? 'Auto-continue ON' : 'Auto-continue';
+  }
+  S.autoOn = () => autoOn;
+  S.setAuto = function (on) {
+    autoOn = !!on; store.set('autoRetry', autoOn); renderAuto();
+    for (const p of pend) if (!autoOn) p.retryAt = 0;
+    savePend(); autoTick(); if (S.hooks.refresh) S.hooks.refresh(true);
+    S.toast(autoOn ? 'Auto-continue ON - stopped videos continue by themselves' : 'Auto-continue off');
+  };
+  function restart(p, auto) {            // same brief again: the bot finds its saved work (work/<key>.json) and goes on from there
+    const nj = jid(); p.job = nj; if (p.inputs) { p.inputs.job = nj; p.inputs.resume = 'auto'; }
+    p.lastFail = p.detail || p.label || '';
+    p.attempts = auto ? (p.attempts || 0) + 1 : 0;
+    Object.assign(p, { failed: false, dispatched: 0, run: null, runUrl: '', approveTried: 0, approveOk: false, ok: false, doneAt: 0, retryAt: 0, userStopped: false, autoGaveUp: false,
+      label: 'Queued', detail: auto ? 'auto-continue: try ' + p.attempts + ' (it goes on from the saved work)' : 'continuing from the saved work', prog: null, t0: Date.now() });
+  }
+  function autoTick() {
+    let changed = false;
+    for (const p of pend) {
+      if (!p.failed || p.userStopped || !resumable(p) || p.label === 'Needs approval') continue;
+      if (!autoOn) { if (p.retryAt) { p.retryAt = 0; changed = true; } continue; }
+      if ((p.attempts || 0) >= AUTO_MAX) { if (!p.autoGaveUp) { p.autoGaveUp = true; p.detail = 'auto-continue stopped after ' + AUTO_MAX + ' tries - fix the cause (see Log), then press Continue'; changed = true; } continue; }
+      if (!p.retryAt) { p.retryAt = Date.now() + autoDelay(p.attempts || 0); changed = true; }
+      else if (Date.now() >= p.retryAt) { restart(p, true); changed = true; }
+    }
+    if (changed) { savePend(); if (S.hooks.refresh) S.hooks.refresh(true); }
+  }
+  S._autoTick = autoTick;
+  function clock(ms) { const t = Math.max(0, Math.round(ms / 1000)), h = Math.floor(t / 3600), m = Math.floor(t % 3600 / 60), x = t % 60; return (h ? h + ':' + String(m).padStart(2, '0') : String(m)) + ':' + String(x).padStart(2, '0'); }
+  setInterval(function () {              // once a second: countdowns, run timers, and the retry itself
+    document.querySelectorAll('[data-retry]').forEach(e => { e.textContent = 'Auto-continue in ' + clock(+e.dataset.retry - Date.now()); });
+    document.querySelectorAll('[data-t0]').forEach(e => { e.textContent = clock(Date.now() - +e.dataset.t0); });
+    autoTick();
+  }, 1000);
+  document.addEventListener('DOMContentLoaded', renderAuto); renderAuto();
   let rawIndex = [], timer = null, busy = false, again = false;
   const jid = () => 'j' + Date.now().toString(36) + Math.random().toString(36).slice(2, 5);
   const savePend = () => store.set('pending', pend);
@@ -22,6 +66,7 @@
 
   /* ---------------- refresh ---------------- */
   S.hooks.refresh = async function (force) {
+    renderAuto();
     if (busy) { if (force) again = true; return; } busy = true;
     try {
       if (!G.ready()) { st.media = []; st.jobs = []; S.renderGrid(); return; }
@@ -31,7 +76,7 @@
       try { const pt = await G.readText('outputs/projects.json'); if (pt && S.setProjects) S.setProjects(JSON.parse(pt)); } catch (e) {}
       if (S.renderProjMenu) S.renderProjMenu();
       await syncRuns();
-      st.jobs = pend.map(p => ({ id: p.job, label: p.label || (p.failed ? 'Failed' : 'Working'), detail: p.detail || '', size: p.size, failed: !!p.failed, runUrl: p.runUrl, jobId: p.job, prog: p.failed ? null : p.prog, project: p.project, prompt: p.prompt, mode: p.mode, canResume: !!(p.inputs && ['ai', 'spec'].includes(p.inputs.mode)) }));
+      st.jobs = pend.map(p => ({ id: p.job, label: p.label || (p.failed ? 'Failed' : 'Working'), detail: p.detail || '', size: p.size, failed: !!p.failed, runUrl: p.runUrl, jobId: p.job, prog: p.failed ? null : p.prog, project: p.project, prompt: p.prompt, mode: p.mode, canResume: !!(p.inputs && ['ai', 'spec'].includes(p.inputs.mode)), retryAt: p.retryAt || 0, attempts: p.attempts || 0, lastFail: p.lastFail || '', t0: p.t0, autoGaveUp: !!p.autoGaveUp, dispatched: !!p.dispatched }));
       const nb = $('#actBadge'); if (nb) { const n = pend.filter(p => !p.failed).length; nb.textContent = n; nb.hidden = !n; }
       if (st.view === 'media') S.renderGrid();
       if (st.view === 'activity') S.hooks.renderActivity();
@@ -66,6 +111,7 @@
           else { p.failed = true; p.label = 'Needs approval'; p.detail = 'GitHub wants you to click "Approve and run" on this run (click here to open it)'; }
         } else if (run.status === 'completed') {
           if (run.conclusion === 'success') { p.ok = true; if (!p.doneAt) p.doneAt = Date.now(); p.label = 'Finishing'; p.detail = 'saving the result'; }
+          else if (run.conclusion === 'cancelled') { p.failed = true; p.label = 'Stopped'; p.detail = 'stopped. Continue goes on from the saved work'; }
           else { p.failed = true; p.label = 'Failed'; p.detail = 'the run stopped (' + String(run.conclusion).replace('_', ' ') + '). Continue goes on from the saved work'; }
         } else {
           p.label = run.status === 'queued' ? 'Queued' : 'Running';
@@ -102,10 +148,19 @@
   S.hooks.onJobAction = async function (jobId, act) {
     const p = pend.find(x => x.job === jobId); if (!p) return;
     if (act === 'log') { if (p.runUrl) window.open(p.runUrl, '_blank', 'noopener'); return; }
+    if (act === 'cancel') {                // stop a running or waiting video (the saved work stays, Continue goes on later)
+      try {
+        if (p.dispatched && !p.run) { const rs = await G.runs(25); const r0 = rs.find(r => (r.display_title || r.name || '').includes(p.job)); if (r0) p.run = r0.id; }
+        if (p.run && p.dispatched) await G.cancelRun(p.run);
+        p.userStopped = true; p.retryAt = 0; p.failed = true; p.label = 'Stopped'; p.detail = p.dispatched ? 'stopped by you. Continue goes on from the saved work' : 'removed from the queue'; p.prog = null;
+        if (!p.dispatched) pend = pend.filter(x => x !== p);
+        savePend(); S.toast('Stopped'); S.hooks.refresh(true);
+      } catch (e) { S.toast(e.message, true); }
+      return;
+    }
     if (act === 'remove') { pend = pend.filter(x => x !== p); savePend(); S.hooks.refresh(true); return; }
-    if (act === 'continue') {              // same brief again: the bot finds its saved work (work/<key>.json) and goes on from there
-      const nj = jid(); p.job = nj; if (p.inputs) { p.inputs.job = nj; p.inputs.resume = 'auto'; }
-      Object.assign(p, { failed: false, dispatched: 0, run: null, runUrl: '', approveTried: 0, approveOk: false, ok: false, doneAt: 0, label: 'Queued', detail: 'continuing from the saved work', prog: null, t0: Date.now() });
+    if (act === 'continue') {
+      restart(p, false);
       savePend(); S.toast('Continuing - the bot picks up its saved work'); S.hooks.refresh(true);
     }
   };

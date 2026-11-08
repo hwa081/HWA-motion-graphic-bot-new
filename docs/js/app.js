@@ -86,23 +86,46 @@
   S.setSelecting = function (on) { st.selecting = !!on; if (!on) st.sel.clear(); S.renderGrid(); };
 
   const fmtEta = s => s == null ? '' : (s >= 90 ? Math.round(s / 60) + ' min' : Math.max(1, Math.round(s)) + ' s') + ' left';
+  const STAGE_HELP = { Start: 'Starting the cloud computer', Plan: 'Planning the video', Design: 'The AI designs every scene', Check: 'Checking quality', Render: 'Rendering the frames', Files: 'Making the files and sound', Save: 'Saving the result' };
+  const clockOf = ms => { const t = Math.max(0, Math.round(ms / 1000)), h = Math.floor(t / 3600), m = Math.floor(t % 3600 / 60), x = t % 60; return (h ? h + ':' + String(m).padStart(2, '0') : String(m)) + ':' + String(x).padStart(2, '0'); };
+  const stepsHtml = (stages, cur) => `<div class="steps" aria-hidden="true">${stages.map((s, i) => `<i class="${i < cur ? 'd' : i === cur ? 'c' : ''}" title="${esc(s)}"></i>`).join('')}</div>`;
+  const partsHtml = part => {
+    if (!part || !part[1] || part[1] < 2 || part[1] > 48) return '';
+    const [k, n, what] = part, done = what === 'saved' ? k : k - 1;
+    return `<div class="parts" title="Long video: part ${k} of ${n}">${Array.from({ length: n }, (_, i) => `<i class="${i < done ? 'd' : i === done ? 'c' : ''}"></i>`).join('')}</div>
+      <div class="partl">Part ${Math.min(n, what === 'saved' ? k : k)} of ${n} · ${what === 'render' ? 'rendering' : 'designing'}</div>`;
+  };
   function jobHtml(m) {
     const label = esc(m.label || (m.failed ? 'Failed' : 'Working'));
     const pr = m.prog;
+    const autoOn = !!(S.autoOn && S.autoOn());
+    const tries = m.attempts ? `<div class="jtry">${autoOn ? 'Auto-continue · ' : ''}try ${m.attempts + 1}${m.lastFail ? ' · last stop: ' + esc(String(m.lastFail).slice(0, 80)) : ''}</div>` : '';
+    const stopBtn = `<div class="jobbtns"><button class="jb" data-act="cancel" data-job="${esc(m.jobId)}">Stop</button></div>`;
+    const clk = m.t0 ? `<span class="jc" data-t0="${m.t0}">${clockOf(Date.now() - m.t0)}</span>` : '';
     if (!m.failed && pr && typeof pr.pct === 'number') {
-      const stages = pr.stages || [], cur = Math.min(stages.length - 1, pr.stage || 0);
+      const stages = pr.stages || [], cur = Math.max(0, Math.min(stages.length - 1, pr.stage || 0)), name = stages[cur] || label;
       const frames = pr.frames && pr.frames[1] && !String(pr.detail || '').includes(pr.frames[1]) ? ` · ${pr.frames[0]}/${pr.frames[1]} frames` : '';
-      return `<div class="pct">${Math.round(pr.pct)}%</div><div class="bar"><i style="width:${Math.max(2, Math.min(100, pr.pct))}%"></i></div>
-        <div class="stg">${esc(stages[cur] || label)} <span>(${cur + 1}/${stages.length})</span></div>
+      const eta = pr.eta != null ? fmtEta(pr.eta) : (pr.elapsed ? Math.round(pr.elapsed / 60 * 10) / 10 + ' min so far' : '');
+      return `<div class="jh"><span class="jt"><b class="live"></b>Making your video</span>${clk}</div>
+        <div class="pct">${Math.round(pr.pct)}<small>%</small></div>
+        <div class="bar"><i style="width:${Math.max(2, Math.min(100, pr.pct))}%"></i></div>
+        ${stepsHtml(stages, cur)}
+        <div class="stg">${esc(name)} <span>step ${cur + 1} of ${stages.length}</span></div>
+        <div class="sth">${esc(STAGE_HELP[name] || '')}</div>
         <div class="st">${esc(pr.detail || m.detail || '')}${esc(frames)}</div>
-        <div class="eta">${esc(fmtEta(pr.eta))}${pr.eta == null && pr.elapsed ? esc(Math.round(pr.elapsed / 60 * 10) / 10 + ' min so far') : ''}</div>`;
+        ${partsHtml(pr.part)}
+        ${pr.note ? `<div class="note">${esc(pr.note)}</div>` : ''}
+        ${eta ? `<div class="eta">${esc(eta)}</div>` : ''}${tries}${stopBtn}`;
     }
     if (m.failed) {
-      const resumable = m.canResume;
-      return `<div class="failmark">!</div><div>${label}</div><div class="st">${esc(m.detail || '')}</div>
-        <div class="jobbtns"><button class="jb primary" data-act="continue" data-job="${esc(m.jobId)}">${resumable ? 'Continue' : 'Try again'}</button>${m.runUrl ? `<button class="jb" data-act="log" data-job="${esc(m.jobId)}">Log</button>` : ''}<button class="jb" data-act="remove" data-job="${esc(m.jobId)}">Remove</button></div>`;
+      const resumable = m.canResume, auto = autoOn && resumable && m.retryAt && !m.autoGaveUp;
+      return `<div class="failmark">!</div><div class="ftitle">${label}</div><div class="st">${esc(m.detail || '')}</div>
+        ${auto ? `<div class="eta warn" data-retry="${m.retryAt}">Auto-continue in ${clockOf(m.retryAt - Date.now())}</div>` : ''}${m.attempts ? `<div class="jtry">${m.attempts} automatic ${m.attempts === 1 ? 'try' : 'tries'} so far</div>` : ''}
+        <div class="jobbtns"><button class="jb primary" data-act="continue" data-job="${esc(m.jobId)}">${resumable ? (auto ? 'Continue now' : 'Continue') : 'Try again'}</button>${m.runUrl ? `<button class="jb" data-act="log" data-job="${esc(m.jobId)}">Log</button>` : ''}<button class="jb" data-act="remove" data-job="${esc(m.jobId)}">Remove</button></div>`;
     }
-    return `<div class="spin"></div><div>${label}</div><div class="st">${esc(m.detail || '')}</div>`;
+    const stagesQ = ['Start', 'Plan', 'Design', 'Check', 'Render', 'Files', 'Save'];
+    return `<div class="jh"><span class="jt"><b class="live"></b>${m.dispatched ? 'Starting' : 'Waiting to start'}</span>${clk}</div>
+      <div class="spin"></div>${stepsHtml(stagesQ, m.dispatched ? 0 : -1)}<div class="stg">${label}</div><div class="st">${esc(m.detail || (m.dispatched ? 'Starting the cloud computer (about a minute)' : 'Sending the job to GitHub'))}</div>${tries}${stopBtn}`;
   }
   S.jobHtml = jobHtml;
   S.renderGrid = function () {
@@ -258,7 +281,7 @@
   S.renderAttach = function () {
     const r = $('#attachRow'); r.hidden = st.attach.length === 0;
     r.innerHTML = st.attach.map((a, i) => a.kind === 'image'
-      ? `<div class="att"><img src="${esc(a.url)}" alt=""><button data-i="${i}" aria-label="Remove">✕</button></div>`
+      ? `<div class="jtry"><img src="${esc(a.url)}" alt=""><button data-i="${i}" aria-label="Remove">✕</button></div>`
       : a.kind === 'audio' ? `<div class="att ref">🎙 ${esc(a.file.name.slice(0, 16))}${a.secs ? ' · ' + fmtT(a.secs) : ''}<button data-i="${i}" aria-label="Remove" style="position:static;margin-left:6px">✕</button></div>`
       : `<div class="att ref">🎞 ${esc(a.file.name.slice(0, 18))}<button data-i="${i}" aria-label="Remove" style="position:static;margin-left:6px">✕</button></div>`).join('');
     $$('button', r).forEach(b => b.onclick = () => { URL.revokeObjectURL(st.attach[+b.dataset.i].url); st.attach.splice(+b.dataset.i, 1); S.renderAttach(); summary(); syncSend(); });
@@ -292,6 +315,7 @@
     $('#btnCollapse').onclick = () => $('#app').classList.toggle('collapsed');
     $('#btnRefresh').onclick = () => { if (S.hooks.refresh) S.hooks.refresh(true); };
     $('#btnSelect').onclick = () => S.setSelecting(!st.selecting);
+    { const ba = $('#btnAuto'); if (ba) ba.onclick = () => S.setAuto && S.setAuto(!(S.autoOn && S.autoOn())); }
     $('#selDone').onclick = () => S.setSelecting(false);
     $('#selAll').onclick = () => { S.items().filter(m => m.kind !== 'job').forEach(m => st.sel.add(m.id)); S.renderGrid(); };
     $('#selNone').onclick = () => { st.sel.clear(); S.renderGrid(); };

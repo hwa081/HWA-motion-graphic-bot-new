@@ -1,3 +1,13 @@
+## Auto-continue switch + a proper "making your video" card
+- **Top bar switch "Auto-continue"**: when ON, a video that stops for any reason (AI quota, network, GitHub cancelled it ...) is continued by itself after a wait of 1:00, 1:45, 2:30 ... (at most 10 min), again and again until it is finished (safety stop after 30 automatic tries). It always goes on from the saved work. A video you stopped yourself with Stop is never restarted. A failed tile shows "Auto-continue in m:ss" and a "Continue now" button. Works while the Studio page is open (the page does the restarting). The switch is remembered in the browser.
+- New progress card: run timer, big percent with a moving bar, 7 step marks, what the current step means, long-video part marks ("Part 4 of 10"), a grey line with what the AI layer is doing now (asking Groq / waiting / skipping an AI), time left, and "try N · last stop: ..." after automatic retries. The card is bigger and aligned to the top.
+- `mgl/progress.py` now also sends `part` and `note` to the page.
+
+## Stop button + no more wasted time on dead AIs
+- Studio page: every running / waiting video has a **Stop** button. It cancels the GitHub run (force-cancel if needed); the saved parts stay and Continue goes on later. Needs the token's "Actions: Read and write".
+- A provider that has no access or no credits (HTTP 401/402/403, "no credits remaining", Gemini 403 "free tier not available for this project") is skipped for the rest of the run at once - no retries, and Gemini does not try its other models of that key.
+- HTTP 413 "request too large" (Groq free tier: 7-8k tokens per minute): the bot shortens the prompt (drops the working examples, then the memory block) and retries once; the learned limit is remembered so later requests are shortened right away. If it still does not fit, that AI rests for an hour and the next one takes over.
+
 ## Free-quota proof AI layer (no more 46-minute waits)
 - A daily Gemini quota 429 ("PerDay" / free_tier) is recognised: the model is skipped at once for 3 hours, no waiting; a key whose models are all spent fails instantly ("quota") so the next key / AI takes over. Per-minute 429 still waits as before.
 - Models answering 404 "no longer available" (e.g. gemini-2.5-flash for new users) are dropped for the rest of the run.

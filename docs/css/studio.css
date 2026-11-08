@@ -282,3 +282,56 @@ h1{font-size:22px}h2{font-size:15px}
 #btnSelect.on{background:var(--surface3)}
 .tile .tag.sbtag{background:#f5c542;color:#1b1b1b;font-weight:700}
 .seg.three{grid-template-columns:repeat(3,1fr)}
+
+/* ---- auto-continue switch (top bar) ---- */
+.autotog{display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 12px 0 8px;border-radius:17px;background:var(--surface2,var(--surface));color:var(--muted);font-size:12.5px;white-space:nowrap}
+.autotog:hover{color:var(--text,#fff)}
+.autotog .sw{position:relative;width:30px;height:18px;border-radius:9px;background:#3a3a40;transition:background .2s;flex:none}
+.autotog .sw i{position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:#bbb;transition:transform .2s,background .2s}
+.autotog.on{color:#fff}
+.autotog.on .sw{background:var(--ok,#3ecf8e)}
+.autotog.on .sw i{transform:translateX(12px);background:#fff}
+@media (max-width:700px){.autotog .atl{display:none}.autotog{padding:0 8px}}
+
+/* ---- the "making your video" card (bigger, with steps, parts, AI activity) ---- */
+.tile.busy:not(.fail){width:260px;height:auto;min-height:196px;aspect-ratio:auto;cursor:default}
+.tile.busy.fail{height:auto;min-height:196px;aspect-ratio:auto}
+@media (max-width:860px){.tile.busy:not(.fail){width:100%}.tile.busy.fail{width:calc(50% - 7px)}}
+.tile.busy>.jobbox{text-align:left;padding:12px 14px 12px}
+.jobbox .jh{display:flex;align-items:center;justify-content:space-between;font-size:11.5px;color:var(--muted);margin-bottom:8px}
+.jobbox .jt{display:inline-flex;align-items:center;gap:6px;color:var(--text,#eee);font-weight:600;letter-spacing:.01em}
+.jobbox .live{width:7px;height:7px;border-radius:50%;background:var(--ok,#3ecf8e);box-shadow:0 0 0 0 rgba(62,207,142,.6);animation:livepulse 1.6s infinite}
+@keyframes livepulse{70%{box-shadow:0 0 0 7px rgba(62,207,142,0)}100%{box-shadow:0 0 0 0 rgba(62,207,142,0)}}
+.jobbox .jc{font-variant-numeric:tabular-nums}
+.jobbox .pct{font-size:34px;font-weight:650;line-height:1;letter-spacing:-.02em}
+.jobbox .pct small{font-size:16px;font-weight:500;margin-left:2px;color:var(--muted)}
+.jobbox .bar{height:6px;border-radius:3px;background:var(--surface3);margin:10px 0 10px;overflow:hidden;position:relative}
+.jobbox .bar i{display:block;height:100%;background:linear-gradient(90deg,#8ab4ff,#fff);border-radius:3px;transition:width .8s ease;position:relative;overflow:hidden}
+.jobbox .bar i::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.65),transparent);transform:translateX(-100%);animation:shimmer 1.8s infinite}
+@keyframes shimmer{to{transform:translateX(100%)}}
+.jobbox .steps{display:flex;gap:4px;margin:2px 0 8px}
+.jobbox .steps i{flex:1;height:3px;border-radius:2px;background:var(--surface3)}
+.jobbox .steps i.d{background:var(--ok,#3ecf8e)}
+.jobbox .steps i.c{background:#fff;animation:stepblink 1.4s ease-in-out infinite}
+@keyframes stepblink{50%{opacity:.35}}
+.jobbox .stg{font-size:13px;font-weight:600}.jobbox .stg span{font-weight:400;color:var(--muted);font-size:11.5px;margin-left:4px}
+.jobbox .sth{font-size:11.5px;color:var(--muted);margin-top:1px}
+.jobbox .st{font-size:12px;margin-top:6px;line-height:1.35;word-break:break-word}
+.jobbox .parts{display:flex;gap:2px;margin-top:8px}
+.jobbox .parts i{flex:1;height:5px;border-radius:2px;background:var(--surface3);min-width:3px}
+.jobbox .parts i.d{background:var(--ok,#3ecf8e)}.jobbox .parts i.c{background:#fff;animation:stepblink 1.4s ease-in-out infinite}
+.jobbox .partl{font-size:11px;color:var(--muted);margin-top:4px}
+.jobbox .note{font-size:11px;color:var(--muted);margin-top:8px;padding:5px 8px;border-radius:7px;background:var(--surface3);line-height:1.3}
+.jobbox .eta{font-size:11.5px;color:var(--ok,#3ecf8e);margin-top:8px}
+.jobbox .eta.warn{color:#f5b84b;font-variant-numeric:tabular-nums}
+.jobbox .jtry{font-size:10.5px;color:var(--muted);margin-top:6px;line-height:1.3}
+.jobbox .ftitle{font-size:13px;font-weight:600;margin-bottom:2px}
+.tile.busy:not(.fail) .spin{margin:6px 0 10px}
+.tile.busy .jobbtns{justify-content:flex-start;margin-top:10px}
+.tile.busy.fail>.jobbox{text-align:center}.tile.busy.fail .jobbtns{justify-content:center}
+@media (prefers-reduced-motion:reduce){.jobbox .live,.jobbox .bar i::after,.jobbox .steps i.c,.jobbox .parts i.c{animation:none}}
+.tile.busy:not(.fail)>.jobbox{align-self:start}
+.tile.busy.fail>.jobbox{align-self:center}
+.jobbox .jtry{width:auto;max-width:none;background:none;padding:0;display:block}
+.jobbox .st{max-height:none;overflow:visible}
+.tile.busy:not(.fail){align-content:start;align-items:start;place-items:start stretch}

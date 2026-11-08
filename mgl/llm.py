@@ -143,11 +143,47 @@ def openai_ask(p, system, contents, json_mode=True, temperature=0.8, log=print, 
             return openai_generate(p, system, contents, json_mode, temperature)
         except GeminiError as ex:
             last = ex; st = getattr(ex, 'status', None)
+            low = str(ex).lower()
+            if st in (401, 402, 403) or (st == 429 and any(w in low for w in ('no credits', 'insufficient_quota', 'exceeded your current quota', 'billing', 'add credits'))):
+                if st in (401, 403):
+                    ex = GeminiError('%s: API key rejected (%s)' % (p.name, _msg({'error': str(ex)}))); ex.status = st
+                ex.dead = True; raise ex                       # no money / no access: waiting does not help
+            if st == 413: raise ex                             # too large for this service: the caller shortens the prompt
             if st in (429, 500, 502, 503, 504) and attempt < 2:
                 wait = min(max_wait, getattr(ex, 'retry_after', None) or 8 * (attempt + 1)); log('     %s - waiting %.0fs then retrying' % (st, wait)); time.sleep(wait); continue
-            if st in (401, 403): raise GeminiError('%s: API key rejected (%s)' % (p.name, _msg({'error': str(ex)})))
             break
     raise last
+
+
+# ------------------------------------------------------------------ shorter prompts for services with a small tokens-per-minute limit
+def _chars(system, contents):
+    return len(system or '') + sum(len(p.get('text', '')) for c in contents for p in c.get('parts', []))
+
+
+def _map_text(contents, fn):
+    return [{**c, 'parts': [({**p, 'text': fn(p['text'])} if 'text' in p else p) for p in c.get('parts', [])]} for c in contents]
+
+
+_MEM = re.compile(r'(=== MEMORY[^\n]*===\n)(.*?)(\nReturn ONLY the JSON object\.)', re.S)
+
+
+def shrink(system, contents, limit_tokens, requested_tokens=None, safety=0.8):
+    """cut the optional parts of a prompt until it should fit limit_tokens (the service said "Limit N, Requested M").
+    Order: the working examples in the system prompt, then the memory block (to 1500 characters, then gone). Returns (system, contents, fits)."""
+    total = _chars(system, contents)
+    cpt = (total / float(requested_tokens)) if requested_tokens else 3.3          # characters per token, measured from the service's own count
+    goal = int(limit_tokens * safety * cpt)
+    if total <= goal: return system, contents, True
+    system = re.sub(r'EXAMPLE "[^"]*":\n[^\n]*\n*', '', system or '')
+    for keep in (1500, 0):
+        if _chars(system, contents) <= goal: break
+        contents = _map_text(contents, lambda t, k=keep: _MEM.sub(lambda m: (m.group(1) + m.group(2)[:k] + m.group(3)) if k else m.group(3), t))
+    return system, contents, _chars(system, contents) <= goal
+
+
+def _too_large(ex):
+    m = re.search(r'Limit (\d+), Requested (\d+)', str(ex))
+    return (int(m.group(1)), int(m.group(2))) if m else (6000, None)
 
 
 # ------------------------------------------------------------------ the multi-provider ask()
@@ -157,6 +193,8 @@ def make_multi_ask(providers, budget, log=print, budget_error=None):
     gem_models = {}
     used = []
     cool = {}                                  # provider id -> epoch until which it is skipped (its quota is used up)
+    dead = {}                                  # provider id -> why it is skipped for the whole run (no access, no credits)
+    small = {}                                 # provider id -> its tokens-per-minute limit, learned from a 413 (later prompts are shortened at once)
     BudgetError = budget_error or GeminiError
     spread = os.environ.get('AI_SPREAD', 'true').strip().lower() not in ('false', '0', 'no', 'off')
     rr = [abs(hash(os.environ.get('JOB', '') or str(os.getpid()))) % 997]      # every run / lane starts on another key
@@ -164,7 +202,9 @@ def make_multi_ask(providers, budget, log=print, budget_error=None):
     def candidates():
         """same kind as the first AI are used in turn (their quotas add up, one dead key is skipped); other kinds only follow as a fallback"""
         now = time.time()
-        live = [p for p in chain if cool.get(p.id, 0) <= now] or list(chain)
+        alive = [p for p in chain if p.id not in dead]
+        if not alive: raise GeminiError('every AI is unusable in this run:\n  ' + '\n  '.join('%s: %s' % (k, v) for k, v in list(dead.items())[-6:]))
+        live = [p for p in alive if cool.get(p.id, 0) <= now] or list(alive)
         if not spread or len(live) < 2: return live
         k0 = live[0].kind
         same = [p for p in live if p.kind == k0]; other = [p for p in live if p.kind != k0]
@@ -187,13 +227,28 @@ def make_multi_ask(providers, budget, log=print, budget_error=None):
                     txt, model = gemini.ask(p.key, gem_models[p.id], system, contents, json_mode=json_mode, log=log)
                     label = 'gemini/' + model
                 else:
-                    txt = openai_ask(p, system, contents, json_mode=json_mode, log=log); label = p.id + '/' + p.model
+                    s1, c1 = system, contents
+                    if p.id in small:
+                        s1, c1, _ok = shrink(s1, c1, small[p.id])
+                    try:
+                        txt = openai_ask(p, s1, c1, json_mode=json_mode, log=log)
+                    except GeminiError as ex413:
+                        if getattr(ex413, 'status', None) != 413: raise
+                        lim, req = _too_large(ex413)
+                        s2, c2, fits = shrink(system, contents, lim, req)
+                        small[p.id] = lim
+                        if not fits and _chars(s2, c2) >= _chars(s1, c1): raise
+                        log('   too large for %s (limit %d tokens) - trying again with a shorter prompt' % (p.name, lim))
+                        txt = openai_ask(p, s2, c2, json_mode=json_mode, log=log)
+                    label = p.id + '/' + p.model
                 if label not in used: used.append(label)
                 if chain[0] is not p and (not spread or p.kind != chain[0].kind): chain.remove(p); chain.insert(0, p)      # another kind of AI had to step in: it leads from now on
                 _timing.add('ai_request', time.time() - _t_req, label)
                 return txt
             except GeminiError as ex:
                 problems.append('%s: %s' % (p.name, ex))
+                if getattr(ex, 'dead', False): dead[p.id] = str(ex)[:160]; log('   %s cannot be used in this run (no access / no credits) - skipping it from now on' % p.name)
+                elif getattr(ex, 'status', None) == 413: cool[p.id] = time.time() + 3600
                 if getattr(ex, 'quota', False) or getattr(ex, 'status', None) == 429: cool[p.id] = time.time() + 600
                 if len(chain) > 1: log('   %s failed - trying the next AI' % p.name)
         _timing.add('ai_request', time.time() - _t_req, 'failed')

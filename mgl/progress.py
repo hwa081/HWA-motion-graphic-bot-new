@@ -25,9 +25,19 @@ def parse_line(line, state):
     m = re.match(r'\[turn (\d+)/(\d+)\]', l)
     if m: k, n = int(m.group(1)), max(1, int(m.group(2))); return to(2, 6 + 58.0 * k / n, 'Code Studio: turn %d of %d (writes the scene, looks at it, fixes it)' % (k, n))
     m = re.match(r'\[part (\d+)/(\d+)\]', l)
-    if m: k, n = int(m.group(1)), max(1, int(m.group(2))); return to(2, 8 + 56.0 * (k - 1) / n, 'Long video: designing part %d of %d' % (k, n))
+    if m: k, n = int(m.group(1)), max(1, int(m.group(2))); st['part'] = [k, n, 'design']; st['note'] = None; return to(2, 8 + 56.0 * (k - 1) / n, 'Long video: designing part %d of %d' % (k, n))
     m = re.match(r'\[long-render\] part (\d+)/(\d+)', l)
-    if m: k, n = int(m.group(1)), max(1, int(m.group(2))); return to(4, 66 + 26.0 * (k - 1) / n, 'Long video: rendering part %d of %d' % (k, n))
+    if m: k, n = int(m.group(1)), max(1, int(m.group(2))); st['part'] = [k, n, 'render']; st['note'] = None; return to(4, 66 + 26.0 * (k - 1) / n, 'Long video: rendering part %d of %d' % (k, n))
+    m = re.match(r'part (\d+)/(\d+) designed and saved', l)
+    if m: st['part'] = [int(m.group(1)), int(m.group(2)), 'saved']; st['note'] = None; return True
+    # what the AI layer is doing right now (shown as a small grey line on the Studio page)
+    m = re.match(r'-> (.+?) \(try (\d+)\)', l)
+    if m: st['note'] = 'Asking %s%s' % (m.group(1)[:44], '' if m.group(2) == '1' else ' (try %s)' % m.group(2)); return True
+    if 'waiting' in l and 'retrying' in l or 'busy or unreachable' in l: st['note'] = 'The AI is busy - waiting a little, then trying again'; return True
+    if 'failed - trying the next AI' in l: st['note'] = 'That AI failed - trying the next one'; return True
+    if 'cannot be used in this run' in l: st['note'] = 'Skipping an AI that has no access'; return True
+    if 'trying again with a shorter prompt' in l: st['note'] = 'Shortening the prompt for a small AI'; return True
+    if 'quota' in l.lower() and ('skip' in l.lower() or 'used up' in l.lower()): st['note'] = 'An AI quota is used up - switching to the next one'; return True
     if l.startswith('[long-join]'): return to(5, 93, 'Joining the parts into one video')
     if l.startswith('[resume]'): return to(1, 10, 'Continuing from the saved work')
     m = re.match(r'\[spec\] attempt (\d+)/(\d+)', l)
@@ -125,7 +135,7 @@ class Progress:
     def snapshot(self, done=False):
         s = dict(self.state)
         return {'job': self.job, 'mode': self.mode, 'stages': self.stages, 'stage': s.get('stage', 0), 'pct': 100 if done else round(min(99.0, s.get('pct', 0)), 1), 'detail': s.get('detail', ''),
-                'frames': s.get('frames'), 'eta': s.get('eta'), 'elapsed': int(time.time() - self.t0), 'updated': int(time.time()), 'done': done}
+                'frames': s.get('frames'), 'part': s.get('part'), 'note': s.get('note'), 'eta': s.get('eta'), 'elapsed': int(time.time() - self.t0), 'updated': int(time.time()), 'done': done}
 
     def feed(self, line):
         with self._lock:
