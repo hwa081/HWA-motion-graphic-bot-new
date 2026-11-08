@@ -1799,6 +1799,62 @@ def _():
     finally:
         gemini.generate = real_gen; gemini.time.sleep = real_sleep; gemini.reset_health()
 
+@check('AI: a provider with no access / no credits is skipped for the rest of the run, a 413 (prompt too large) is retried once with a shorter prompt')
+def _():
+    from mgl import gemini, llm
+    gemini.reset_health()
+    big_ex = '\n\n'.join('EXAMPLE "e%d":\n%s' % (i, '{"a":"' + 'x' * 9000 + '"}') for i in range(4))
+    system = 'RULES\n' + 'r' * 3000 + '\n=== WORKING EXAMPLES ===\n' + big_ex + '\n\nEND-RULES'
+    user = 'Create.\n\nBRIEF: hello\n\n=== MEMORY (learned) ===\n' + 'm' * 5000 + '\nReturn ONLY the JSON object.'
+    contents = [{'role': 'user', 'parts': [{'text': user}]}]
+    s2, c2, fits = llm.shrink(system, contents, 7000, 16000)
+    assert fits and 'EXAMPLE "' not in s2 and 'RULES' in s2 and 'END-RULES' in s2, (fits, len(s2))
+    assert 'BRIEF: hello' in c2[0]['parts'][0]['text'] and 'Return ONLY the JSON object.' in c2[0]['parts'][0]['text']
+    # fake services
+    seen = []
+    real_http = llm._http
+    def http(url, key, body, timeout=240):
+        n = sum(len(m['content']) if isinstance(m['content'], str) else 0 for m in body['messages'])
+        seen.append((url, n))
+        if 'nomoney' in url: return 429, {'error': {'message': 'You have no credits remaining. Add credits'}}, {}
+        if 'small' in url and n > 25000: return 413, {'error': {'message': 'Request too large. Limit 7000, Requested %d, please reduce' % (n // 3)}}, {}
+        return 200, {'choices': [{'message': {'content': '{"ok": 1}'}}]}, {}
+    llm._http = http
+    try:
+        P = lambda i, u: llm.Provider(i, i, 'openai', 'k', 'https://%s/v1' % u, 'm')
+        ask = llm.make_multi_ask([P('a', 'nomoney.x'), P('b', 'small.x')], 50, log=lambda *a: None)
+        assert ask(system, contents) == '{"ok": 1}'
+        n_a = sum(1 for u, _ in seen if 'nomoney' in u); assert n_a == 1, seen           # no retries on "no credits"
+        n_b = [n for u, n in seen if 'small' in u]; assert len(n_b) == 2 and n_b[1] < n_b[0], n_b      # 413 -> shorter prompt
+        seen.clear(); ask(system, contents)
+        assert not any('nomoney' in u for u, _ in seen), seen                              # the dead one is not asked again
+        assert len([1 for u, _ in seen if 'small' in u]) == 1, seen                        # the learned limit shortens the prompt at once
+    finally:
+        llm._http = real_http
+    # Gemini 403 "free tier not available": the key's other models are not tried
+    calls = []; real_gen = gemini.generate
+    def fake(key, model, system, contents, json_mode=True, temperature=0.8, max_tokens=0):
+        calls.append(model); e = gemini.GeminiError('HTTP 403: free tier is not available'); e.status = 403; e.retry_after = None; e.daily = False; e.retired = False; e.dead = True; raise e
+    gemini.generate = fake
+    try:
+        try: gemini.ask('K', ['m1', 'm2', 'm3'], None, [{'role': 'user', 'parts': [{'text': 'x'}]}], log=lambda *a: None)
+        except gemini.GeminiError as ex: assert getattr(ex, 'dead', False)
+        assert calls == ['m1'], calls
+    finally:
+        gemini.generate = real_gen; gemini.reset_health()
+
+@check('progress: part counter and the AI activity note are sent to the Studio page')
+def _():
+    from mgl import progress as P
+    st = {'stage': 0, 'pct': 1}
+    P.parse_line('[part 3/10] The Nine Planet Myth', st); assert st['part'] == [3, 10, 'design'], st
+    P.parse_line('  -> Groq / openai/gpt-oss-120b (try 1)', st); assert st['note'].startswith('Asking Groq'), st
+    P.parse_line('    429 - waiting 8s then retrying', st); assert 'busy' in st['note'], st
+    P.parse_line('part 3/10 designed and saved (5 requests so far)', st); assert st['part'][2] == 'saved' and st['note'] is None, st
+    P.parse_line('[long-render] part 2/10', st); assert st['part'] == [2, 10, 'render'], st
+    pr = P.Progress('j', 'ai'); pr.state.update(st)
+    snap = pr.snapshot(); assert snap['part'] == [2, 10, 'render'] and 'note' in snap, snap
+
 @check('sound: your own sfx_pack files are used by name (premium / viral), others stay synthetic')
 def _():
     from mgl import sound as SN
