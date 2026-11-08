@@ -1,5 +1,36 @@
 [
  {
+  "id": "jmw8bde528tp",
+  "job": "jmw8bde528tp",
+  "kind": "video",
+  "title": "hi how are you",
+  "prompt": "hi how are you",
+  "mode": "ai",
+  "size": "16:9",
+  "dur": "6",
+  "ai": "gemini",
+  "date": "2026-11-08T21:23:10Z",
+  "ok": true,
+  "trashed": false,
+  "project": "default",
+  "quality": "draft",
+  "formats": "none",
+  "video": "outputs/jmw8bde528tp/video.mp4",
+  "video_name": "Kinetic_Greeting_The_Pulse_Reveal_with_sound.mp4",
+  "poster": "outputs/jmw8bde528tp/poster.jpg",
+  "spec": "outputs/jmw8bde528tp/spec.json",
+  "report": "outputs/jmw8bde528tp/report.md",
+  "design_id": "d-20261108-2123-88f8",
+  "timing": {
+   "total_s": 1410.7,
+   "ai_requests": 4,
+   "ai_request_s": 1394.0,
+   "ai_wait_s": 0,
+   "render_s": 4.0,
+   "files_s": 0.1
+  }
+ },
+ {
   "id": "jmw8b76l7xjr",
   "job": "jmw8b76l7xjr",
   "kind": "report",

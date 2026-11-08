@@ -75,5 +75,64 @@
    "nearest": "doc-30-steps-list",
    "similarity": 0.63
   }
+ },
+ {
+  "id": "d-20261108-2123-88f8",
+  "date": "2026-11-08T21:23:03Z",
+  "prompt": "hi how are you",
+  "summary": {
+   "backgrounds": [
+    "neon_night",
+    "ocean",
+    "mono_dark"
+   ],
+   "entrance_anims": {
+    "fade": 1
+   },
+   "layer_types": {
+    "blob": 1,
+    "particles": 1,
+    "text": 1
+   },
+   "kinds": [],
+   "transitions": [],
+   "camera": true,
+   "headlines": [
+    "HI"
+   ],
+   "layers": 3,
+   "duration": 6,
+   "size": "16:9"
+  },
+  "review_score": null,
+  "qa_errors": 0,
+  "qa_warnings": 0,
+  "rating": null,
+  "notes": [],
+  "size": "16:9",
+  "assets": 0,
+  "remix": {
+   "sources": [
+    "doc-14-big-stat",
+    "ui-104-onboarding-steps",
+    "doc-32-steps-list"
+   ],
+   "backgrounds": [
+    "mono_dark",
+    "neon_night"
+   ],
+   "transitions": [
+    "glitch",
+    "iris"
+   ]
+  },
+  "plan": {
+   "concept": "A kinetic greeting that transforms from a mysterious dark void into a vibrant neon connection, using the 'neon_night' aesthetic to visualize the instant spark of human acknowledgment.",
+   "signature": "The 'Pulse Reveal': The text doesn't just appear; it generates a rhythmic heartbeat effect where the letters pulse with the accent color before exploding into a soft glow."
+  },
+  "originality": {
+   "nearest": "doc-01-title-hero",
+   "similarity": 0.686
+  }
  }
 ]

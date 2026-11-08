@@ -8,5 +8,25 @@
   "source": "qa",
   "created": "2026-11-08T19:03:15Z",
   "last": "2026-11-08T19:03:15Z"
+ },
+ {
+  "id": "l585",
+  "kind": "dont",
+  "text": "Stacked text layers overlapped. Keep at least 1.2 x the font size between the y positions of two lines, and time them apart.",
+  "weight": 1,
+  "count": 1,
+  "source": "qa",
+  "created": "2026-11-08T21:23:03Z",
+  "last": "2026-11-08T21:23:03Z"
+ },
+ {
+  "id": "l560",
+  "kind": "dont",
+  "text": "A draft was almost a copy of an existing design (ui-106-command-palette, 84% alike). Always change backgrounds, animation family, transitions and layout when borrowing ideas.",
+  "weight": 1,
+  "count": 1,
+  "source": "originality",
+  "created": "2026-11-08T21:23:03Z",
+  "last": "2026-11-08T21:23:03Z"
  }
 ]
