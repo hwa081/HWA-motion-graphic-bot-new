@@ -1,5 +1,32 @@
 [
  {
+  "id": "jmw7qfsh0cr6",
+  "job": "jmw7qfsh0cr6",
+  "kind": "report",
+  "title": "A video for this voice-over",
+  "prompt": "A video for this voice-over",
+  "mode": "ai",
+  "size": "16:9",
+  "dur": "205",
+  "ai": "gemini",
+  "date": "2026-11-08T12:26:32Z",
+  "ok": false,
+  "trashed": false,
+  "project": "default",
+  "quality": "draft",
+  "formats": "none",
+  "note": "STOPPED: every AI failed:",
+  "report": "outputs/jmw7qfsh0cr6/report.md",
+  "timing": {
+   "total_s": 4438.6,
+   "ai_requests": 5,
+   "ai_request_s": 4405.7,
+   "ai_wait_s": 722.0,
+   "render_s": 0,
+   "files_s": 0
+  }
+ },
+ {
   "id": "jmw7sxdfwxl7",
   "job": "jmw7sxdfwxl7",
   "kind": "report",
