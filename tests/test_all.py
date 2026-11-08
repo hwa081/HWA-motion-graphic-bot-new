@@ -1820,6 +1820,7 @@ def _():
         if 'small' in url and n > 25000: return 413, {'error': {'message': 'Request too large. Limit 7000, Requested %d, please reduce' % (n // 3)}}, {}
         return 200, {'choices': [{'message': {'content': '{"ok": 1}'}}]}, {}
     llm._http = http
+    old_spread = os.environ.get('AI_SPREAD'); os.environ['AI_SPREAD'] = 'false'        # fixed order (otherwise the start provider is random)
     try:
         P = lambda i, u: llm.Provider(i, i, 'openai', 'k', 'https://%s/v1' % u, 'm')
         ask = llm.make_multi_ask([P('a', 'nomoney.x'), P('b', 'small.x')], 50, log=lambda *a: None)
@@ -1831,6 +1832,8 @@ def _():
         assert len([1 for u, _ in seen if 'small' in u]) == 1, seen                        # the learned limit shortens the prompt at once
     finally:
         llm._http = real_http
+        if old_spread is None: os.environ.pop('AI_SPREAD', None)
+        else: os.environ['AI_SPREAD'] = old_spread
     # Gemini 403 "free tier not available": the key's other models are not tried
     calls = []; real_gen = gemini.generate
     def fake(key, model, system, contents, json_mode=True, temperature=0.8, max_tokens=0):
@@ -1854,6 +1857,41 @@ def _():
     P.parse_line('[long-render] part 2/10', st); assert st['part'] == [2, 10, 'render'], st
     pr = P.Progress('j', 'ai'); pr.state.update(st)
     snap = pr.snapshot(); assert snap['part'] == [2, 10, 'render'] and 'note' in snap, snap
+
+@check('AI: free local model (Ollama) follows last, is shortened, is skipped for pictures and never leads')
+def _():
+    from mgl import gemini, llm
+    gemini.reset_health()
+    env = {'GEMINI_API_KEY': 'k1', 'LOCAL_AI': 'on'}
+    ps = llm.providers_from_env(env); assert [p.kind for p in ps] == ['gemini', 'ollama'] and ps[1].model == 'qwen3.5:4b', ps
+    assert [p.kind for p in llm.providers_from_env({'GEMINI_API_KEY': 'k1'})] == ['gemini']
+    system = 'RULES\n' + 'r' * 40000 + '\nEXAMPLE "e":\n{"a":"' + 'x' * 20000 + '"}\n\nEND'
+    user = 'BRIEF: hi\n\n=== MEMORY (learned) ===\n' + 'm' * 5000 + '\nReturn ONLY the JSON object.'
+    contents = [{'role': 'user', 'parts': [{'text': user}]}]
+    seen = []; real = llm._http
+    def http(url, key, body, timeout=240):
+        seen.append((url, body, timeout))
+        return 200, {'message': {'content': '<think>x</think>{"local": 1}'}}, {}
+    llm._http = http
+    real_gem = gemini.ask
+    def gem_fail(*a, **k):
+        e = gemini.GeminiError('HTTP 429 quota'); e.quota = True; e.transient = False; raise e
+    gemini.ask = gem_fail
+    try:
+        ask = llm.make_multi_ask(ps, 50, log=lambda *a: None)
+        assert ask(system, contents) == '{"local": 1}'
+        url, body, to = seen[-1]
+        assert url.endswith('/api/chat') and body['think'] is False and body['format'] == 'json' and body['options']['num_ctx'] == 16384 and to >= 600, (url, body['options'], to)
+        sent = sum(len(m['content']) for m in body['messages'])
+        assert sent < len(system) + len(user), sent                                    # shortened
+        assert ask.providers[0].kind == 'gemini'                                       # the local model does not take the lead
+        n = len(seen)
+        pic = [{'role': 'user', 'parts': [{'text': 'look'}, {'inlineData': {'mimeType': 'image/png', 'data': 'AA'}}]}]
+        try: ask(system, pic)
+        except gemini.GeminiError: pass
+        assert len(seen) == n, 'a request with a picture must not go to the local model'
+    finally:
+        llm._http = real; gemini.ask = real_gem; gemini.reset_health()
 
 @check('sound: your own sfx_pack files are used by name (premium / viral), others stay synthetic')
 def _():
