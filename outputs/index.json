@@ -1,5 +1,35 @@
 [
  {
+  "id": "jmw7ujgeaqsl",
+  "job": "jmw7ujgeaqsl",
+  "kind": "video",
+  "title": "A video for this voice-over",
+  "prompt": "A video for this voice-over",
+  "mode": "ai",
+  "size": "16:9",
+  "dur": "205",
+  "ai": "gemini",
+  "date": "2026-11-08T13:15:05Z",
+  "ok": true,
+  "trashed": false,
+  "project": "default",
+  "quality": "draft",
+  "long": true,
+  "formats": "none",
+  "video": "outputs/jmw7ujgeaqsl/video.mp4",
+  "video_name": "A_video_for_this_voice_over_with_sound.mp4",
+  "poster": "outputs/jmw7ujgeaqsl/poster.jpg",
+  "report": "outputs/jmw7ujgeaqsl/report.md",
+  "timing": {
+   "total_s": 441.6,
+   "ai_requests": 2,
+   "ai_request_s": 141.9,
+   "ai_wait_s": 8.0,
+   "render_s": 0,
+   "files_s": 0
+  }
+ },
+ {
   "id": "jmw7u8cg2upy",
   "job": "jmw7u8cg2upy",
   "kind": "report",
