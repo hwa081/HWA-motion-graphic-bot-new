@@ -139,6 +139,7 @@ def generate(key, model, system, contents, json_mode=True, temperature=0.8, max_
         if m: ex.retry_after = float(m.group(1))
     blob = (_err_msg(j) + ' ' + json.dumps(j.get('error', {}).get('details') or [])).lower()
     ex.daily = st == 429 and ('perday' in blob or 'per day' in blob or 'daily' in blob)        # the day's free quota is used up: waiting minutes will not help
+    ex.dead = st == 403 and any(w in blob for w in ('free tier', 'billing', 'project', 'suspended', 'leaked', 'denied'))      # this key / project has no access at all: no other model of it will work either
     ex.retired = st == 404 and ('no longer available' in blob or 'not found' in blob or 'not supported' in blob)
     raise ex
 
@@ -168,6 +169,9 @@ def ask_once(key, models, system, contents, json_mode=True, temperature=0.8, log
                 if getattr(ex, 'daily', False):
                     mark_spent(key, model, 180); transient = False
                     log('     %s: the free quota for today is used up - skipping it, no waiting' % model); break
+                if getattr(ex, 'dead', False):
+                    e2 = GeminiError('this key has no access (%s)' % ex); e2.transient = False; e2.dead = True
+                    log('     %s: this key / project has no free access - not trying its other models' % model); raise e2
                 if getattr(ex, 'retired', False):
                     _DEAD[model] = str(ex)[:120]; transient = False
                     log('     %s is no longer available for this key - removed from the list' % model); break
