@@ -9,3 +9,4 @@
 - photo_pluto-dwarf-planet-s_6595130.jpg: pluto, planet, space, astronomy, universe, pluto, pluto, pluto, pluto, pluto (pixabay, Pixabay Content License) https://pixabay.com/photos/pluto-planet-space-astronomy-6595130/
 - photo_astronomy-observator_7079057.jpg: observatory, astronomical, technology, galaxy, universe, star, space, darling, n (pixabay, Pixabay Content License) https://pixabay.com/photos/observatory-astronomical-technology-7079057/
 - photo_deep-space-telescope_6002811.jpg: radio telescopes, antennas, galaxy, space, stars, satellite dish, satellites, un (pixabay, Pixabay Content License) https://pixabay.com/photos/radio-telescopes-antennas-galaxy-6002811/
+- photo_space-telescope-dome_7079057.jpg: observatory, astronomical, technology, galaxy, universe, star, space, darling, n (pixabay, Pixabay Content License) https://pixabay.com/photos/observatory-astronomical-technology-7079057/
