@@ -274,6 +274,61 @@
    "count": 1,
    "created": "2026-11-07T19:19:52Z",
    "last": "2026-11-07T19:19:52Z"
+  },
+  {
+   "id": "t294",
+   "name": "Rack-Focused Step List",
+   "when": "Showcasing technical multi-step pipelines",
+   "how": "Stack list cards in z-space; animate 3D camera pan while animating aperture blur so only the active step stays sharp.",
+   "source": "reference: Dark Mode AI Sports SaaS Showcase",
+   "weight": 1,
+   "count": 1,
+   "created": "2026-11-09T12:03:02Z",
+   "last": "2026-11-09T12:03:02Z"
+  },
+  {
+   "id": "t129",
+   "name": "Icon-Wipe Transition",
+   "when": "Switching from overview montage to specific brand message",
+   "how": "Scale a brand shape from zero, overshoot past full screen, then cut to the next scene as it clears.",
+   "source": "reference: Dark Mode AI Sports SaaS Showcase",
+   "weight": 1,
+   "count": 1,
+   "created": "2026-11-09T12:03:02Z",
+   "last": "2026-11-09T12:03:02Z"
+  },
+  {
+   "id": "t845",
+   "name": "Floating Foreground Overlay",
+   "when": "Highlighting an interactive chat or AI assistant",
+   "how": "Place a high-contrast dark card with warm glow 100-200px forward in z-space over an application window.",
+   "source": "reference: Dark Mode AI Sports SaaS Showcase",
+   "weight": 1,
+   "count": 1,
+   "created": "2026-11-09T12:03:02Z",
+   "last": "2026-11-09T12:03:02Z"
+  },
+  {
+   "id": "t225",
+   "name": "Chart-to-Widget Camera Pull",
+   "when": "Connecting high-level narrative metrics to concrete UI dashboards.",
+   "how": "Animate a line chart full-screen, then pull back 3D camera to reveal it within a frosted glass card among secondary widgets.",
+   "source": "reference: SaaS Glassmorphic Ad Tech Promo",
+   "weight": 1,
+   "count": 1,
+   "created": "2026-11-09T13:14:06Z",
+   "last": "2026-11-09T13:14:06Z"
+  },
+  {
+   "id": "t524",
+   "name": "Pill Expansion Text Reveal",
+   "when": "Delivering punchy value propositions or contrast statements.",
+   "how": "Animate horizontal scale of a rounded pill shape with glow, masking text revealed simultaneously via opacity.",
+   "source": "reference: SaaS Glassmorphic Ad Tech Promo",
+   "weight": 1,
+   "count": 1,
+   "created": "2026-11-09T13:14:06Z",
+   "last": "2026-11-09T13:14:06Z"
   }
  ],
  "wishes": [

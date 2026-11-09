@@ -1,1 +1,285 @@
-[]
+[
+ {
+  "sha": "46b4e7ed0f176464",
+  "source": "From Klickpin.com- Authentic tradition-filled places for cozy moods made for cozy stylish inspiration to pin for futur-pin-id-1141240361842343978.mp4",
+  "title": "Dark Mode AI Sports SaaS Showcase",
+  "tags": [
+   "sports tech",
+   "ai dashboard",
+   "dark mode",
+   "orange accent",
+   "saas promo",
+   "3d perspective",
+   "ui showcase"
+  ],
+  "palette": [
+   "#000000",
+   "#0D0D0E",
+   "#FF5517",
+   "#FF7834",
+   "#FFFFFF",
+   "#8C8C8E"
+  ],
+  "backgrounds": "Pitch black background accented by subtle warm orange radial glows behind focal UI cards",
+  "typography": {
+   "headline": "Bold, sans-serif, title case, large display",
+   "body": "Regular/Medium, sans-serif, sentence case, crisp UI sizes",
+   "text_effects": "Clean vertical fade-up with slight tracking expansion"
+  },
+  "scenes": [
+   {
+    "t0": 0.0,
+    "t1": 3.1,
+    "archetype": "grid_gallery",
+    "description": "Grid of floating cards showcasing various industry AI applications, zooming into 'Sports'.",
+    "text": "Sports, AI, + More Info",
+    "motion": "Fast push-in toward the central orange Sports card.",
+    "camera": "push-in"
+   },
+   {
+    "t0": 3.1,
+    "t1": 7.5,
+    "archetype": "image_feature",
+    "description": "Composite cutout of diverse athletes and an F1 car erupting from an orange card.",
+    "text": "Sports is a Whole Different Ball Game",
+    "motion": "Layered cutout pop and float, headline fades in above.",
+    "camera": "pull-out"
+   },
+   {
+    "t0": 7.5,
+    "t1": 17.5,
+    "archetype": "split_screen",
+    "description": "Array of dark UI analytics panels with glowing charts surrounding a central AI brain emblem.",
+    "text": "Dashboard, Teams Performance, Fan Preferences",
+    "motion": "Pan across dashboard cards with depth-of-field shift to central circular icon.",
+    "camera": "pan"
+   },
+   {
+    "t0": 17.5,
+    "t1": 22.5,
+    "archetype": "logo_reveal",
+    "description": "Glowing four-point star icon transitions to the Machina Sports logo and feature grid.",
+    "text": "MACHINA SPORTS, The Ultimate Sports AI",
+    "motion": "Star scales up into full-screen wipe; logo and cards fade upward.",
+    "camera": "none"
+   },
+   {
+    "t0": 22.5,
+    "t1": 27.5,
+    "archetype": "card_fan",
+    "description": "Angled perspective glide across categorized AI workflow templates.",
+    "text": "Agent Templates, Content Creation, Matchday Studio, Sports Betting Copilot",
+    "motion": "Smooth diagonal camera drift over 3D tilted card array.",
+    "camera": "pan"
+   },
+   {
+    "t0": 27.5,
+    "t1": 35.0,
+    "archetype": "split_screen",
+    "description": "Layered sports analytics cards orbiting an active orange circular badge.",
+    "text": "Build & Deploy AI Agents, With Developer Studio",
+    "motion": "UI cards drift inward with subtle 3D parallax.",
+    "camera": "push-in"
+   },
+   {
+    "t0": 35.0,
+    "t1": 45.5,
+    "archetype": "timeline_steps",
+    "description": "Stepped workflow list highlighting data sync and model configuration with rack focus.",
+    "text": "Create Tailored AI Agents, Merge Real-Time Sports Data, Advanced AI Model",
+    "motion": "Camera pans vertically across list items; inactive rows blur heavily.",
+    "camera": "pan"
+   },
+   {
+    "t0": 45.5,
+    "t1": 53.0,
+    "archetype": "image_feature",
+    "description": "Interactive sports scores app interface with an AI chat assistant card floating in foreground.",
+    "text": "Matches, Your Personalized Recap, Chat",
+    "motion": "Floating chat card slides smoothly onto main interface.",
+    "camera": "push-in"
+   },
+   {
+    "t0": 53.0,
+    "t1": 57.0,
+    "archetype": "typographic_hero",
+    "description": "Centered punchy tagline framed by floating glowing orange accent stars.",
+    "text": "No Wasted Time, Just Results, Elevate Your Game",
+    "motion": "Clean scale and fade text reveal; star icons float subtly.",
+    "camera": "none"
+   },
+   {
+    "t0": 57.0,
+    "t1": 60.0,
+    "archetype": "logo_reveal",
+    "description": "Final brand logo lockup with glowing orange CTA pill button.",
+    "text": "MACHINA SPORTS, Book a Demo Today",
+    "motion": "Button scales slightly with pulsing warm drop shadow.",
+    "camera": "none"
+   }
+  ],
+  "transitions": [
+   "3D camera fly-through",
+   "star icon scale wipe",
+   "depth-of-field rack focus",
+   "quick direct cut"
+  ],
+  "pacing": {
+   "scene_seconds": "5.0",
+   "rhythm": "medium",
+   "notes": "Smooth continuous camera motion punctuated by snappy focal changes."
+  },
+  "motion": "Gliding 3D camera moves in z-space with heavy shallow depth of field, paired with subtle floating card parallax.",
+  "layout_rules": [
+   "Pitch black canvas with selective high-energy orange radial blooms",
+   "Deep 3D perspective tilt (approx 20-30 degrees) for multi-card layouts",
+   "Clear hierarchy placing headlines in upper third above floating UI clusters"
+  ],
+  "professional_because": [
+   "High-end 3D depth-of-field simulation makes flat UI feel tangible",
+   "Restrained orange and black palette yields premium sports-broadcast feel",
+   "Seamless transitions use graphic motifs as functional scene wipes"
+  ],
+  "weaknesses": [
+   "Fine data text on secondary cards is illegible during fast camera glides"
+  ],
+  "notes": "High contrast between vibrant neon orange (#FF5517) and ultra-deep grey/black drives visual impact.",
+  "techniques": [
+   {
+    "name": "Rack-Focused Step List",
+    "when": "Showcasing technical multi-step pipelines",
+    "how": "Stack list cards in z-space; animate 3D camera pan while animating aperture blur so only the active step stays sharp."
+   },
+   {
+    "name": "Icon-Wipe Transition",
+    "when": "Switching from overview montage to specific brand message",
+    "how": "Scale a brand shape from zero, overshoot past full screen, then cut to the next scene as it clears."
+   },
+   {
+    "name": "Floating Foreground Overlay",
+    "when": "Highlighting an interactive chat or AI assistant",
+    "how": "Place a high-contrast dark card with warm glow 100-200px forward in z-space over an application window."
+   }
+  ],
+  "aspect": "16:9",
+  "duration": 60.0,
+  "id": "s-30ec",
+  "date": "2026-11-09T12:03:02Z"
+ },
+ {
+  "sha": "8c96930396782387",
+  "source": "From Klickpin.com- Curious country progress reflections with charm and ideas for creative people for modern conversatio-pin-id-965811082600418830.mp4",
+  "title": "SaaS Glassmorphic Ad Tech Promo",
+  "tags": [
+   "saas",
+   "adtech",
+   "b2b",
+   "dashboard",
+   "glassmorphism",
+   "blue",
+   "explainer",
+   "corporate"
+  ],
+  "palette": [
+   "#020617",
+   "#0a2e7a",
+   "#1d63ff",
+   "#70a6ff",
+   "#ffffff"
+  ],
+  "backgrounds": "Deep navy radial glow shifting to luminous cyan-blue haze, then returning to dark blue with subtle grid lines",
+  "typography": {
+   "headline": "Bold, sans-serif, sentence case, large hero",
+   "body": "Medium, sans-serif, sentence case, compact UI labels",
+   "text_effects": "Pill-mask scale unroll, gentle positional fade, 3D spatial drift"
+  },
+  "scenes": [
+   {
+    "t0": 0.0,
+    "t1": 2.0,
+    "archetype": "ui_prompt_bar",
+    "description": "Dark scene with central glowing pill button clicked by an animated vector cursor.",
+    "text": "Launch Campaign",
+    "motion": "Button emerges with radial glow, cursor glides in and clicks",
+    "camera": "none"
+   },
+   {
+    "t0": 2.0,
+    "t1": 3.4,
+    "archetype": "chip_cluster",
+    "description": "Click spawns floating glassmorphic analytics widgets, capped by an upward light beam burst.",
+    "text": "Current vs Optimized Budget, Campaigns, Meta logo",
+    "motion": "Cards float inward on 3D planes, cone of light shoots upward",
+    "camera": "push-in"
+   },
+   {
+    "t0": 3.4,
+    "t1": 5.0,
+    "archetype": "chip_cluster",
+    "description": "Bright gradient field populated by spherical user profile icons linked by cursor motion.",
+    "text": "",
+    "motion": "Avatars scale and bob in depth as cursor navigates between them",
+    "camera": "pan"
+   },
+   {
+    "t0": 5.0,
+    "t1": 7.4,
+    "archetype": "typographic_hero",
+    "description": "Centred glowing glass capsule unrolling statement text on a light blue field.",
+    "text": "Many Leads ≠ Many Clients",
+    "motion": "Pill horizontally expands from center, text reveals smoothly",
+    "camera": "none"
+   },
+   {
+    "t0": 7.4,
+    "t1": 10.1,
+    "archetype": "chart_reveal",
+    "description": "Headline appears over an animated line chart, pulling back into a glass dashboard container surrounded by metric cards.",
+    "text": "Marketing celebrates low CPLs, Generated Leads",
+    "motion": "Chart draws on X-axis, camera pulls back to nest graph inside a UI card layout",
+    "camera": "pull-out"
+   }
+  ],
+  "transitions": [
+   "light cone zoom-through",
+   "seamless background gradient blend",
+   "depth push-in/pull-out"
+  ],
+  "pacing": {
+   "scene_seconds": "2.0",
+   "rhythm": "medium",
+   "notes": "Snappy SaaS product flow alternating between micro UI interactions and macro concept statements."
+  },
+  "motion": "Polished exponential easing, smooth spatial float, glassmorphic sheen reflections, zero aggressive motion blur.",
+  "layout_rules": [
+   "Strict central focal anchors for core copy and buttons",
+   "Secondary dashboard widgets distributed symmetrically across outer thirds",
+   "Consistent rounded corner geometry (capsules and high-radius cards)"
+  ],
+  "professional_because": [
+   "Refined glassmorphic materials with frosted borders and soft drop shadows",
+   "Consistent cursor-driven narrative guiding visual hierarchy across cuts"
+  ],
+  "weaknesses": [
+   "Rapid text cut at 7.4s demands high viewer reading speed",
+   "Persistent logo watermark on lower right overlaps UI modules"
+  ],
+  "notes": "Beliv8 branded product marketing template optimized for B2B performance ad creative.",
+  "techniques": [
+   {
+    "name": "Chart-to-Widget Camera Pull",
+    "when": "Connecting high-level narrative metrics to concrete UI dashboards.",
+    "how": "Animate a line chart full-screen, then pull back 3D camera to reveal it within a frosted glass card among secondary widgets."
+   },
+   {
+    "name": "Pill Expansion Text Reveal",
+    "when": "Delivering punchy value propositions or contrast statements.",
+    "how": "Animate horizontal scale of a rounded pill shape with glow, masking text revealed simultaneously via opacity."
+   }
+  ],
+  "aspect": "16:9",
+  "duration": 10.1,
+  "id": "s-25cf",
+  "date": "2026-11-09T13:14:06Z"
+ }
+]
