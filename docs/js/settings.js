@@ -3,10 +3,20 @@
   'use strict';
   const S = window.Studio, G = S.gh, $ = S.$, $$ = S.$$, esc = S.esc;
   const PRESETS = [
-    ['OpenAI', 'https://api.openai.com/v1', 'gpt-4o-mini'], ['OpenRouter', 'https://openrouter.ai/api/v1', 'google/gemini-2.5-flash'], ['Groq', 'https://api.groq.com/openai/v1', 'llama-3.3-70b-versatile'],
+    ['OpenAI', 'https://api.openai.com/v1', 'gpt-4o-mini'], ['OpenRouter', 'https://openrouter.ai/api/v1', 'google/gemini-2.5-flash'], ['Groq', 'https://api.groq.com/openai/v1', 'openai/gpt-oss-120b'],
     ['DeepSeek', 'https://api.deepseek.com/v1', 'deepseek-chat'], ['Mistral', 'https://api.mistral.ai/v1', 'mistral-large-latest'], ['Together', 'https://api.together.xyz/v1', 'meta-llama/Llama-3.3-70B-Instruct-Turbo'],
+    ['NVIDIA (free credits)', 'https://integrate.api.nvidia.com/v1', 'meta/llama-3.3-70b-instruct'], ['OpenRouter (free models)', 'https://openrouter.ai/api/v1', 'openai/gpt-oss-120b:free'],
     ['Custom', '', '']
   ];
+  // open-source models you can use for free (names change often: copy the exact model name from the service's model page, then press Test)
+  const HINTS = {
+    'NVIDIA (free credits)': 'Free key at build.nvidia.com (no card, ~1,000 credits a month, ~40 requests a minute). Open models there: DeepSeek-V4, Qwen3.5, Kimi, GLM, Nemotron, Llama, Mistral. Open a model page, press "View Code" and copy its model name into Model.',
+    'OpenRouter (free models)': 'Free key at openrouter.ai. Models whose name ends in :free cost nothing (about 50 requests a day). Busy models answer 429: pick another :free model.',
+    'Groq': 'Free key at console.groq.com. Open models: gpt-oss-120b, Llama, Qwen. The free tier allows only 7-8k tokens a minute, so very big prompts can fail (413): the bot then shortens them.',
+    'Mistral': 'Free key at console.mistral.ai (no card). Open models: Mistral Small / Nemo; the large ones are not open.',
+    'DeepSeek': 'DeepSeek is cheap, not free: add a few dollars of credit at platform.deepseek.com.',
+    'OpenAI': 'OpenAI is paid: it needs credit on your account (no free tier).'
+  };
   const OPTIONS = [
     ['MAX_REQUESTS', 'Max AI requests per video', '14', 'Protects your free quota.'],
     ['PLAN', 'Director plan before building', 'true', 'true / false. Costs 1 extra request, makes better videos.'],
@@ -33,7 +43,8 @@
     refreshModels();
   }
   function refreshModels() {
-    const list = [{ id: 'gemini', label: 'Gemini' + (st.vars.GEMINI_MODEL ? ' · ' + st.vars.GEMINI_MODEL : '') }].concat(st.providers.map(p => ({ id: p.id, label: p.name + ' · ' + p.model })));
+    const list = [{ id: 'auto', label: 'Auto · whichever AI is available' }, { id: 'gemini', label: 'Gemini' + (st.vars.GEMINI_MODEL ? ' · ' + st.vars.GEMINI_MODEL : '') }].concat(st.providers.map(p => ({ id: p.id, label: p.name + ' · ' + p.model })));
+    if ((st.vars.LOCAL_AI || '').toLowerCase() === 'on') list.push({ id: 'local', label: 'Local ' + (st.vars.LOCAL_AI_MODEL || 'qwen3.5:4b') + ' · free, slow' });
     S.setModels(list);
   }
   S.settingsLoad = load;
@@ -131,7 +142,8 @@
       extra: `<div data-pid="${esc(p.id)}">
         <div class="row"><label>Service</label><select class="pp">${preset}</select><input class="pn" placeholder="Name" value="${esc(p.name || '')}"></div>
         <div class="row"><label>Base URL</label><input class="pu" placeholder="https://api.example.com/v1" value="${esc(p.base_url || '')}"></div>
-        <div class="row"><label>Model</label><input class="pm" placeholder="model name" value="${esc(p.model || '')}"></div></div>` });
+        <div class="row"><label>Model</label><input class="pm" placeholder="model name" value="${esc(p.model || '')}"></div>
+        <div class="meta ph" style="margin:6px 0 0 0;line-height:1.4">${esc(HINTS[p.preset || 'Custom'] || '')}</div></div>` });
   }
 
   function wireRest() {
@@ -154,7 +166,7 @@
       const kind = p.dataset.kind, secret = p.dataset.secret, msg = $('.m', p), keyIn = $('.k', p);
       const wrap = $('[data-pid]', p); const pid = wrap && wrap.dataset.pid;
       if (wrap) {
-        $('.pp', p).onchange = e => { const pr = PRESETS.find(x => x[0] === e.target.value); if (pr && pr[1]) { $('.pu', p).value = pr[1]; $('.pm', p).value = pr[2]; $('.pn', p).value = pr[0]; } };
+        $('.pp', p).onchange = e => { const pr = PRESETS.find(x => x[0] === e.target.value); if (pr && pr[1]) { $('.pu', p).value = pr[1]; $('.pm', p).value = pr[2]; $('.pn', p).value = pr[0]; } const ph = $('.ph', p); if (ph) ph.textContent = HINTS[e.target.value] || ''; };
       }
       const test = async () => {
         const k = keyIn.value.trim();
