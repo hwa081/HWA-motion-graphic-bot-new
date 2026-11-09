@@ -49,7 +49,11 @@
         <input data-keep="rmx" id="rmxIn" class="in" placeholder="Topic, e.g. documentary about the ocean"><button class="btn primary" id="rmxGo">Make a plan</button></div>
       <div class="card"><h3>Study: teach it a technique</h3><p>Paste a tutorial text or a link. The bot turns it into reusable techniques.</p>
         <textarea data-keep="std" id="stdIn" class="in" rows="3" placeholder="Text or https://… link"></textarea><button class="btn primary" id="stdGo">Study</button></div>
-      <div class="card"><h3>Learn from reference videos</h3><p>Analyses the videos in the repository's <b>reference/</b> folder and remembers their style.</p><button class="btn primary" id="lrnGo">Learn</button></div>
+      <div class="card"><h3>Learn: remember a style</h3><p>Choose where the bot learns from.</p>
+        <select data-keep="lrnSrc" id="lrnSrc"><option value="reference">The reference/ folder (videos in the repository)</option><option value="liked">My liked designs (rated 4-5 stars)</option><option value="upload">A video file I upload now</option></select>
+        <div class="meta" id="lrnHint"></div>
+        <div class="meta" id="lrnUpRow" style="display:none"><button class="btn" id="lrnUp" style="height:30px">Choose a video…</button> <span id="lrnUpName"></span></div>
+        <button class="btn primary" id="lrnGo">Learn</button></div>
       <div class="card"><h3>Evolve: build a missing effect</h3><p>Builds the most wanted effect from the wishlist with Code Studio and adds it to the library.</p><button class="btn primary" id="evoGo">Build it</button></div>
       <div class="card"><h3>Test all keys in the cloud</h3><p>Checks every saved key from inside GitHub.</p><button class="btn primary" id="ckGo">Test keys</button></div>
       <div class="card" style="grid-column:1/-1"><h3>Recent results</h3><div id="repList"></div></div>`;
@@ -61,7 +65,16 @@
     $('#cmpGo').onclick = () => { const a = upPath || $('#cmpA').value, b = $('#cmpB').value; if (!a || !b) return S.toast('Pick the example and your video', true); S.tool('compare', '', a + ',' + b, 'Comparing'); };
     $('#rmxGo').onclick = () => { const t = $('#rmxIn').value.trim(); if (!t) return S.toast('Write a topic', true); S.tool('remix', t, '', 'Making a remix plan', { duration: String(st.cfg.dur), size: st.cfg.size }); };
     $('#stdGo').onclick = () => { const t = $('#stdIn').value.trim(); if (!t) return S.toast('Paste a text or link', true); S.tool('study', t, '', 'Studying'); };
-    $('#lrnGo').onclick = () => S.tool('learn', '', 'reference', 'Learning from references');
+    const HINTS = { reference: 'Looks at every video in the repository\'s reference/ folder (needs a working Gemini key).', liked: 'Learns from the design plans of videos you rated 4-5 stars. Works with any AI, even when the video file is gone.', upload: 'Uploads one video (max 25 MB) into reference/ and learns only from it (needs a working Gemini key).' };
+    let lrnPath = '';
+    const lrnSync = () => { const v = $('#lrnSrc').value; $('#lrnHint').textContent = HINTS[v] || ''; $('#lrnUpRow').style.display = v === 'upload' ? '' : 'none'; };
+    $('#lrnSrc').onchange = lrnSync; lrnSync();
+    $('#lrnUp').onclick = () => { const f = document.createElement('input'); f.type = 'file'; f.accept = 'video/*'; f.onchange = async () => { const file = f.files[0]; if (!file) return; if (file.size > 25 * 1024 * 1024) return S.toast('Max 25 MB', true);
+      try { S.toast('Uploading…'); lrnPath = 'reference/' + Date.now().toString(36) + '_' + file.name.replace(/[^A-Za-z0-9._-]+/g, '_'); await G.putFile(lrnPath, await G.fileToB64(file), 'upload video to learn from (studio)'); $('#lrnUpName').textContent = file.name; S.toast('Uploaded'); } catch (e) { lrnPath = ''; S.toast(e.message, true); } }; f.click(); };
+    $('#lrnGo').onclick = () => { const v = $('#lrnSrc').value;
+      if (v === 'upload') { if (!lrnPath) return S.toast('Choose a video first', true); S.tool('learn', '', lrnPath, 'Learning from your video'); }
+      else if (v === 'liked') S.tool('learn', '', '@liked', 'Learning from your liked designs');
+      else S.tool('learn', '', 'reference', 'Learning from references'); };
     $('#evoGo').onclick = () => S.tool('evolve', '', '', 'Building a new effect');
     $('#ckGo').onclick = () => S.hooks.cloudCheck();
     const reps = S.reports();
