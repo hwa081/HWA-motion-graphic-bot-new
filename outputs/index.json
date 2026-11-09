@@ -1,5 +1,29 @@
 [
  {
+  "id": "jmw9phi5t2r2",
+  "job": "jmw9phi5t2r2",
+  "kind": "report",
+  "title": "learn",
+  "prompt": "",
+  "mode": "learn",
+  "size": "16:9",
+  "dur": "10",
+  "ai": "gemini",
+  "date": "2026-11-09T20:29:29Z",
+  "ok": true,
+  "trashed": false,
+  "formats": "none",
+  "report": "outputs/jmw9phi5t2r2/report.md",
+  "timing": {
+   "total_s": 381.0,
+   "ai_requests": 11,
+   "ai_request_s": 375.0,
+   "ai_wait_s": 70.0,
+   "render_s": 0,
+   "files_s": 0
+  }
+ },
+ {
   "id": "jmw9dz0fmlgy",
   "job": "jmw9dz0fmlgy",
   "kind": "video",
