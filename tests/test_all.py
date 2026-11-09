@@ -1926,6 +1926,30 @@ def _():
     finally:
         shutil.rmtree(root, ignore_errors=True)
 
+@check('AI selector: Auto = default first + all others, one chosen AI goes first, "local" can be chosen per video')
+def _():
+    import run as RUN
+    from mgl import llm
+    keep = {k: os.environ.get(k) for k in ('GEMINI_API_KEY', 'AI_PROVIDERS', 'AI_PROVIDER', 'AI', 'AI_FALLBACK', 'LOCAL_AI', llm.secret_name('nv'))}
+    try:
+        os.environ.update({'GEMINI_API_KEY': 'g1', 'AI_PROVIDERS': json.dumps([{'id': 'nv', 'name': 'NVIDIA', 'base_url': 'https://x/v1', 'model': 'm'}]), llm.secret_name('nv'): 'k', 'LOCAL_AI': 'on'})
+        os.environ.pop('AI_PROVIDER', None)
+        def chain(ai, fb='true', default=None):
+            os.environ['AI'] = ai; os.environ['AI_FALLBACK'] = fb
+            if default: os.environ['AI_PROVIDER'] = default
+            else: os.environ.pop('AI_PROVIDER', None)
+            return [p.id for p in RUN.make_ask(budget=5).providers]
+        assert chain('auto') == ['gemini', 'nv', 'local'], chain('auto')
+        assert chain('auto', default='nv') == ['nv', 'gemini', 'local']
+        assert chain('auto', fb='false', default='nv') == ['nv', 'gemini', 'local']        # Auto always has the others as backup
+        assert chain('nv') == ['nv', 'gemini', 'local']
+        assert chain('local') == ['local', 'gemini', 'nv']
+        assert chain('nv', fb='false') == ['nv']                                           # a fixed choice without backup
+    finally:
+        for k, v in keep.items():
+            if v is None: os.environ.pop(k, None)
+            else: os.environ[k] = v
+
 @check('sound: your own sfx_pack files are used by name (premium / viral), others stay synthetic')
 def _():
     from mgl import sound as SN
