@@ -1,1 +1,1 @@
-{"job": "jmw97ig34q52", "mode": "learn", "stages": ["Start", "Work", "Save"], "stage": 0, "pct": 1.0, "detail": "Starting the cloud computer", "frames": null, "part": null, "note": "Asking gemini-3.8-flash", "eta": null, "elapsed": 102, "updated": 1794225783, "done": false}
+{"job": "jmw97ig34q52", "mode": "learn", "stages": ["Start", "Work", "Save"], "stage": 0, "pct": 1.0, "detail": "Starting the cloud computer", "frames": null, "part": null, "note": "The AI is busy - waiting a little, then trying again", "eta": null, "elapsed": 342, "updated": 1794226023, "done": false}
