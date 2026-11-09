@@ -52,6 +52,8 @@ def make_ask(required=True, budget=None):
         return None
     wanted = (os.environ.get('AI') or os.environ.get('AI_PROVIDER') or 'gemini').strip()
     fallback = os.environ.get('AI_FALLBACK', 'true').strip().lower() not in ('false', '0', 'no', 'off')
+    if wanted.lower() == 'auto':                                         # "Auto": the default AI first, then whichever others are available (a dead one is skipped)
+        wanted = (os.environ.get('AI_PROVIDER') or 'gemini').strip(); fallback = True
     chain = llm.order(provs, wanted, fallback)
     if len(chain) == 1 and chain[0].kind == 'gemini':
         return agent.make_ask(chain[0].key, budget=budget)           # the classic path (Gemini only)

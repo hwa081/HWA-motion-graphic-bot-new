@@ -1,3 +1,7 @@
+## Choose the AI for every video + free open-source services
+- Create settings -> AI dropdown: **Auto** (new default: your default AI first, then whichever others are available; a dead or used-up one is skipped), Gemini, every AI you added, and **Local Qwen** (shown when LOCAL_AI is on; the workflow then starts Ollama for that video only if you picked it). A fixed choice still has the others as backup unless "fallback" is off in Settings.
+- New presets with a short how-to-get-a-free-key note: **NVIDIA (free credits)** (DeepSeek-V4, Qwen3.5, Kimi, GLM, Nemotron, Llama ...), **OpenRouter (free models)** (:free models). Groq now defaults to gpt-oss-120b. Model names change often: copy the exact name from the service's page and press Test.
+
 ## Learn: choose where to learn from
 - Tools -> "Learn: remember a style" now has a selector: **the reference/ folder**, **my liked designs** (videos you rated 4-5 stars: the bot studies their design plans, text only, so any AI can do it and the video file may be gone) or **a video I upload now** (max 25 MB, saved in reference/, learned on its own).
 - `run.py --mode learn --files @liked | <video file> | <folder>`; `mgl/reference.py`: `learn_paths`, `learn_liked`. Already learned items are skipped.
