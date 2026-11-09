@@ -40,3 +40,10 @@
 *   **Over-movement:** Avoid aggressive `spin` or `bounce` animations on primary UI elements in Look B (Corporate). Stick to `rise` or `pop`.
 *   **Contrast Neglect:** In Look A, ensure secondary card text isn't washed out by the orange glow. Use semi-transparent overlays (`opacity: 0.8`) before adding text.
 *   **Layout Clut
+
+DOCUMENTARY / EDITORIAL COLLAGE STYLE (learned from 6 refs: crime-board title sequence, vintage typewriter dossier, Sony history doc, map with boats, cut-out person with doodles). Use for history, true-crime, biography, explainers, 'story of X'.
+LOOK: a physical desk/wall feel: dark slate or concrete bg with vignette, ONE strong accent (blood red or lemon-yellow label) + warm paper tan; polaroid frames (white rrect + photo), torn paper cards, tape chips, pill date label with typewriter font. Photos black-and-white or sepia. Never glossy gradients here.
+STRUCTURE: slow, 2-4 s per scene; each scene is ONE subject: big dated title (MAY / 1946 on a yellow label) -> portraits with name tapes -> objects. End on a short hard title (red, glow) after a flash.
+MOTION: items drop in like placed on a table: pop + small rotation (-7..+7 deg), 0.2-0.5 s apart; tape/floor-plan lines draw by wipe; red string lines connect photos one by one; camera slowly pushes 1.0->1.08 and resets at each scene; typed text (chars step 0.04) for facts and dates; scene change = wipe or stripes transition, never random.
+CUTOUT STYLE: a person cut out with a thick white outline on dark bg, small doodle icons (gear, pie chart, dollar notes) pop around the head with bounce - one icon per spoken idea.
+SOUND (premium/viral): paper slide whoosh per item, soft thud on stamp/title, typewriter ticks while text types, riser into the final title, deep rumble drop on the red title; sparse, 1 sound per visible event.

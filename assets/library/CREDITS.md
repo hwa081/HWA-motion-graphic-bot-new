@@ -11,3 +11,5 @@
 - photo_deep-space-telescope_6002811.jpg: radio telescopes, antennas, galaxy, space, stars, satellite dish, satellites, un (pixabay, Pixabay Content License) https://pixabay.com/photos/radio-telescopes-antennas-galaxy-6002811/
 - photo_space-telescope-dome_7079057.jpg: observatory, astronomical, technology, galaxy, universe, star, space, darling, n (pixabay, Pixabay Content License) https://pixabay.com/photos/observatory-astronomical-technology-7079057/
 - photo_space-telescope-deep_11098.jpg: galaxy, space, universe, night sky, sky, outer space, milky way, stars, cosmos,  (pixabay, Pixabay Content License) https://pixabay.com/photos/galaxy-space-universe-night-sky-11098/
+- vector_rocket-booster_7757105.png: rocket, spaceship, launch, fire, stars, space, nature, night sky, sky, astronomy (pixabay, Pixabay Content License) https://pixabay.com/vectors/rocket-spaceship-launch-fire-stars-7757105/
+- vector_spaceship-sleek_156418.png: rocket, space, satellite, orbit, space exploration, retro, rocket, rocket, satel (pixabay, Pixabay Content License) https://pixabay.com/vectors/rocket-space-satellite-orbit-156418/
