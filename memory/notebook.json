@@ -329,6 +329,61 @@
    "count": 1,
    "created": "2026-11-09T13:14:06Z",
    "last": "2026-11-09T13:14:06Z"
+  },
+  {
+   "id": "t429",
+   "name": "Grid_Flood",
+   "when": "When content loads rapidly or data overflows the viewport.",
+   "how": "1. Set background to a subtle color (background_style: solid). 2. Add a grid layer (grid) covering the screen at z-index 0. 3. Start with opacity 0. 4. Trigger entrance animation 'wipe_right' on the grid layer over 0.5s. 5. Simultaneously fade in a card (card) layer containing the main data point.",
+   "source": "study: https://pin.it/3Pzsf94M0",
+   "weight": 1,
+   "count": 1,
+   "created": "2026-11-09T14:22:26Z",
+   "last": "2026-11-09T14:22:26Z"
+  },
+  {
+   "id": "t45",
+   "name": "Card_Pop_Spin",
+   "when": "When a new piece of content becomes the focal point of attention.",
+   "how": "1. Place a card (card) layer in the center at z-index 5, opacity 0. 2. Add a circle (circle) layer behind it at z-index 4, radius large, color accent. 3. Trigger entrance animation 'pop' on the circle over 0.3s. 4. Immediately trigger 'spin' on the card over 0.6s.",
+   "source": "study: https://pin.it/3Pzsf94M0",
+   "weight": 1,
+   "count": 1,
+   "created": "2026-11-09T14:22:26Z",
+   "last": "2026-11-09T14:22:26Z"
+  },
+  {
+   "id": "t885",
+   "name": "Chart_Rise_Glow",
+   "when": "When presenting statistical data or trends that need emphasis.",
+   "how": "1. Create a chart (chart) layer at z-index 3, opacity 0. 2. Add a line (line) layer on top of the chart at z-index 4. 3. Use entrance animation 'rise' for the chart over 0.8s. 4. Apply entrance animation 'zoom' with scale 1.2 to the specific line segment representing the peak.",
+   "source": "study: https://pin.it/3Pzsf94M0",
+   "weight": 1,
+   "count": 1,
+   "created": "2026-11-09T14:22:26Z",
+   "last": "2026-11-09T14:22:26Z"
+  },
+  {
+   "id": "t976",
+   "name": "Iris_Divider",
+   "when": "When transitioning between two distinct sections of information.",
+   "how": "1. Set background to a neutral style (background_style: solid). 2. Create a card (card) layer covering the full screen at z-index -1, opacity 0. 3. Use transition 'iris' for the card over 0.5s to create the reveal effect.",
+   "source": "study: https://pin.it/3Pzsf94M0",
+   "weight": 1,
+   "count": 1,
+   "created": "2026-11-09T14:22:26Z",
+   "last": "2026-11-09T14:22:26Z"
+  },
+  {
+   "id": "t565",
+   "name": "Blob_Scale_Entrance",
+   "when": "When introducing a new visual element or logo to the feed.",
+   "how": "1. Place a blob (blob) layer at z-index 2, opacity 0. 2. Set color to match brand accent. 3. Trigger entrance animation 'zoom' over 0.4s from scale 0 to 1.",
+   "source": "study: https://pin.it/3Pzsf94M0",
+   "weight": 1,
+   "count": 1,
+   "created": "2026-11-09T14:22:26Z",
+   "last": "2026-11-09T14:22:26Z"
   }
  ],
  "wishes": [

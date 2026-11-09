@@ -1,5 +1,29 @@
 [
  {
+  "id": "jmw9cks9e2f7",
+  "job": "jmw9cks9e2f7",
+  "kind": "report",
+  "title": "https://pin.it/3Pzsf94M0",
+  "prompt": "https://pin.it/3Pzsf94M0",
+  "mode": "study",
+  "size": "16:9",
+  "dur": "10",
+  "ai": "gemini",
+  "date": "2026-11-09T14:22:26Z",
+  "ok": true,
+  "trashed": false,
+  "formats": "none",
+  "report": "outputs/jmw9cks9e2f7/report.md",
+  "timing": {
+   "total_s": 89.4,
+   "ai_requests": 1,
+   "ai_request_s": 87.8,
+   "ai_wait_s": 8.0,
+   "render_s": 0,
+   "files_s": 0
+  }
+ },
+ {
   "id": "jmw97ig34q52",
   "job": "jmw97ig34q52",
   "kind": "report",
