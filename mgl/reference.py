@@ -3,7 +3,7 @@
 video  ->  contact sheets (frames with time stamps)  ->  Gemini analyses the design  ->  style card saved in memory
 many videos  ->  style cards  ->  Gemini writes one style guide (patterns, rules, named recipes) used in every later prompt
 """
-import hashlib, os, re
+import json, hashlib, os, re
 import cv2, numpy as np
 from . import gemini
 
@@ -118,14 +118,11 @@ def analyze_video(ask, path, log=print):
     return _clean_card(data, path, sha, info)
 
 
-def learn_folder(mem, ask, folder, limit=5, log=print):
-    """analyse reference videos in `folder` that are not in memory yet (max `limit` per run). returns (new_cards, skipped, failed)"""
-    if not os.path.isdir(folder):
-        raise FileNotFoundError('reference folder not found: %s' % folder)
-    files = sorted(f for f in os.listdir(folder) if f.lower().endswith(VIDEO_EXT))
+def learn_paths(mem, ask, paths, limit=5, log=print):
+    """analyse the given video files that are not in memory yet (max `limit` per run). returns (new_cards, skipped, failed)"""
     new, skipped, failed = [], [], []
-    for fn in files:
-        p = os.path.join(folder, fn)
+    for p in paths:
+        fn = os.path.basename(p)
         try:
             sha = video_sha(p)
         except Exception as ex:
@@ -143,6 +140,53 @@ def learn_folder(mem, ask, folder, limit=5, log=print):
         except Exception as ex:
             log('   failed: %s' % ex)
             failed.append((fn, str(ex)[:200]))
+    return new, skipped, failed
+
+
+def learn_folder(mem, ask, folder, limit=5, log=print):
+    """analyse reference videos in `folder` that are not in memory yet (max `limit` per run). returns (new_cards, skipped, failed)"""
+    if not os.path.isdir(folder):
+        raise FileNotFoundError('reference folder not found: %s' % folder)
+    files = sorted(f for f in os.listdir(folder) if f.lower().endswith(VIDEO_EXT))
+    return learn_paths(mem, ask, [os.path.join(folder, f) for f in files], limit, log)
+
+
+def design_prompt(name, info, spec_json):
+    tail = analysis_prompt(info, name).split('\n\nReturn one JSON object', 1)[1]
+    return ('Below is the design plan (JSON: scenes, layers, animations, timing) of the video "%s" (%.1f s, aspect %s) that the user rated as GOOD. '
+            'Work out what made it work and describe its design so another designer can recreate its STRUCTURE and FEEL with new content.\n\nPLAN:\n%s\n\n'
+            'Return one JSON object' % (name, info['duration'], info['aspect'], spec_json)) + tail
+
+
+def learn_liked(mem, ask, limit=5, log=print):
+    """learn from the design plans of the videos the user rated 4-5 (text only: works even when the video file is gone). returns (new_cards, skipped, failed)"""
+    new, skipped, failed = [], [], []
+    liked = [d for d in mem.designs if (d.get('rating') or 0) >= 4 and d.get('id')]
+    for d in liked[::-1]:                                          # newest first
+        did, name = d['id'], ('liked: ' + (d.get('prompt') or did)[:50])
+        sha = 'design-' + did
+        if mem.has_source(sha):
+            skipped.append(did); continue
+        sp = os.path.join(mem.dir, 'specs', did + '.json')
+        if not os.path.isfile(sp):
+            failed.append((did, 'no design plan file (code-mode design)')); continue
+        if len(new) >= limit:
+            log('   limit of %d new designs per run reached - run learn again for the rest' % limit)
+            break
+        log('   studying your liked design %s ...' % did)
+        try:
+            spec = json.load(open(sp, encoding='utf-8'))
+            dur = float(spec.get('duration') or 0) or float(sum(float(sc.get('duration') or 0) for sc in (spec.get('scenes') or []) if isinstance(sc, dict))) or 10.0
+            asp = str(spec.get('size') or spec.get('aspect') or '16:9')
+            info = {'duration': dur, 'aspect': asp if asp in ('16:9', '9:16', '1:1') else '16:9'}
+            txt = ask(ANALYZE_SYSTEM, [{'role': 'user', 'parts': [{'text': design_prompt(name, info, json.dumps(spec, separators=(',', ':'), ensure_ascii=False)[:9000])}]}])
+            data = gemini.extract_json(txt)
+            if not isinstance(data, dict): raise ValueError('analysis was not a JSON object')
+            card = _clean_card(data, name, sha, info)
+            mem.add_style(card); new.append(card)
+        except Exception as ex:
+            log('   failed: %s' % ex)
+            failed.append((did, str(ex)[:200]))
     return new, skipped, failed
 
 
