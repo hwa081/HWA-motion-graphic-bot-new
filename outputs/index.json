@@ -1,5 +1,33 @@
 [
  {
+  "id": "jmw8uy2zpfj0",
+  "job": "jmw8uy2zpfj0",
+  "kind": "report",
+  "title": "You probably learned in school that our solar system has nine planets, and Pluto is the la",
+  "prompt": "You probably learned in school that our solar system has nine planets, and Pluto is the last one. Then in 2006, Pluto lost its planet status and became a dwarf planet. Many of us assumed there was nothing big left in this story. But on October 27, 2026, news arrived that reopened it. Beyond Pluto’s average distance, about 46 astronomical units away, a new dwarf planet candidate has been found, nam",
+  "mode": "ai",
+  "size": "16:9",
+  "dur": "30",
+  "ai": "gemini",
+  "date": "2026-11-09T06:35:27Z",
+  "ok": false,
+  "trashed": false,
+  "project": "default",
+  "quality": "draft",
+  "formats": "none",
+  "note": "ERROR: every AI failed:",
+  "report": "outputs/jmw8uy2zpfj0/report.md",
+  "design_id": "d-20261108-2123-88f8",
+  "timing": {
+   "total_s": 1669.1,
+   "ai_requests": 1,
+   "ai_request_s": 1668.9,
+   "ai_wait_s": 78.0,
+   "render_s": 0,
+   "files_s": 0
+  }
+ },
+ {
   "id": "jmw8bde528tp",
   "job": "jmw8bde528tp",
   "kind": "video",
