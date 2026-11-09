@@ -1893,6 +1893,39 @@ def _():
     finally:
         llm._http = real; gemini.ask = real_gem; gemini.reset_health()
 
+@check('learn: from liked designs (text only), from one uploaded file, and from the folder')
+def _():
+    import json as _j, tempfile, shutil
+    from mgl import reference as RF
+    from mgl.memory import Memory
+    root = tempfile.mkdtemp()
+    try:
+        mem = Memory(root)
+        spec = S.load('examples/saas_intro.json') if hasattr(S, 'load') else _j.load(open('examples/saas_intro.json', encoding='utf-8'))
+        d1 = mem.add_design('a saas intro', spec); d2 = mem.add_design('another one', spec); mem.add_design('unrated', spec)
+        mem.designs[0]['rating'] = 5; mem.designs[1]['rating'] = 4
+        prompts = []
+        def ask(system, contents, json_mode=True):
+            prompts.append(contents[0]['parts'][0]['text'])
+            return _j.dumps({'title': 'Liked style', 'tags': ['saas'], 'palette': ['#112233'], 'backgrounds': 'dark', 'scenes': [], 'techniques': [{'name': 'x', 'when': 'y', 'how': 'z'}]})
+        new, skipped, failed = RF.learn_liked(mem, ask, limit=5, log=lambda *a: None)
+        assert len(new) == 2 and not skipped and not failed, (new, skipped, failed)
+        assert all('rated as GOOD' in p and 'PLAN:' in p and 'Return one JSON object' in p for p in prompts), prompts[0][:300]
+        new2, skipped2, _ = RF.learn_liked(mem, ask, limit=5, log=lambda *a: None)
+        assert not new2 and len(skipped2) == 2                                         # already learned: not asked again
+        # one uploaded video file
+        import cv2
+        vp = os.path.join(root, 'clip.mp4'); w = cv2.VideoWriter(vp, cv2.VideoWriter_fourcc(*'mp4v'), 10, (160, 90))
+        for i in range(30): w.write(np.full((90, 160, 3), i * 8 % 255, np.uint8))
+        w.release()
+        n3, s3, f3 = RF.learn_paths(mem, lambda sy, c, json_mode=True: ask(sy, [{'parts': [{'text': 'rated as GOOD PLAN: Return one JSON object'}]}]), [vp], limit=3, log=lambda *a: None)
+        assert len(n3) == 1 and not f3, (n3, f3)
+        folder = os.path.join(root, 'ref'); os.makedirs(folder); shutil.copy(vp, os.path.join(folder, 'a.mp4'))
+        n4, s4, f4 = RF.learn_folder(mem, lambda sy, c, json_mode=True: ask(sy, [{'parts': [{'text': 'rated as GOOD PLAN: Return one JSON object'}]}]), folder, limit=3, log=lambda *a: None)
+        assert not n4 and s4 == ['a.mp4'], (n4, s4, f4)                                # same video: already known
+    finally:
+        shutil.rmtree(root, ignore_errors=True)
+
 @check('sound: your own sfx_pack files are used by name (premium / viral), others stay synthetic')
 def _():
     from mgl import sound as SN
