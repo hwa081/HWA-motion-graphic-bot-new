@@ -1,3 +1,7 @@
+## Learn: choose where to learn from
+- Tools -> "Learn: remember a style" now has a selector: **the reference/ folder**, **my liked designs** (videos you rated 4-5 stars: the bot studies their design plans, text only, so any AI can do it and the video file may be gone) or **a video I upload now** (max 25 MB, saved in reference/, learned on its own).
+- `run.py --mode learn --files @liked | <video file> | <folder>`; `mgl/reference.py`: `learn_paths`, `learn_liked`. Already learned items are skipped.
+
 ## Free local AI backup (Qwen3.5 4B on the runner)
 - Set the repository variable `LOCAL_AI` to `on` (or type `on` in Settings -> Options -> "Free local AI backup"): the workflow installs Ollama on the GitHub runner, downloads `qwen3.5:4b` (about 3 GB, `LOCAL_AI_MODEL` changes the model) and the bot adds "Local Qwen (free)" as the very last AI. It is used only when every other AI failed, it never takes the lead, it is skipped for requests with pictures (Gemini does those), and its prompt is always shortened (about 11k tokens). Never runs out of quota, but slow on 4 CPU cores. If Ollama cannot be installed the step is skipped (`continue-on-error`) and nothing else changes.
 - Fixed a random test (the 413 test depended on the key rotation start).

@@ -406,8 +406,14 @@ def mode_learn(folder, out):
     if ask is None: return 1
     mem = Memory(ROOT)
     limit = int(os.environ.get('LEARN_LIMIT', '5') or 5)
+    liked = folder.strip() == '@liked'
     try:
-        new, skipped, failed = RF.learn_folder(mem, ask, folder, limit=limit)
+        if liked:
+            new, skipped, failed = RF.learn_liked(mem, ask, limit=limit)
+        elif os.path.isfile(folder):                                     # one uploaded video
+            new, skipped, failed = RF.learn_paths(mem, ask, [folder], limit=limit)
+        else:
+            new, skipped, failed = RF.learn_folder(mem, ask, folder, limit=limit)
     except FileNotFoundError as ex:
         print(ex); print('Create the folder in the repo (Add file -> Upload files) and put the reference videos in it.'); return 1
     guide = None
@@ -418,13 +424,13 @@ def mode_learn(folder, out):
         except Exception as ex:
             print('style guide skipped: %s' % ex)
     mem.save()
-    lines = ['# Learning report', '', 'Folder: %s' % folder, 'Newly analysed (%d): %s' % (len(new), ', '.join(c['source'] + ' -> ' + c['title'] for c in new) or '-'),
+    lines = ['# Learning report', '', ('Source: your liked designs (rated 4-5)' if liked else ('File: %s' % folder if os.path.isfile(folder) else 'Folder: %s' % folder)), 'Newly analysed (%d): %s' % (len(new), ', '.join(c['source'] + ' -> ' + c['title'] for c in new) or '-'),
              'Already known (%d): %s' % (len(skipped), ', '.join(skipped) or '-'), 'Failed (%d): %s' % (len(failed), '; '.join('%s: %s' % f for f in failed) or '-'),
              'Total remembered styles: %d' % len(mem.styles), 'Gemini requests used: %d' % ask.calls]
     open(os.path.join(out, 'learn_report.md'), 'w', encoding='utf-8').write('\n'.join(lines))
     print('\n'.join(lines))
     if not new and not skipped:
-        print('No reference videos could be analysed.' if failed else 'The folder has no video files (%s).' % ', '.join(VIDEO_EXT))
+        print('No reference videos could be analysed.' if failed else ('No liked designs yet: rate a finished video 4-5 stars (thumbs up) on the Studio page, then press Learn again.' if liked else 'The folder has no video files (%s).' % ', '.join(VIDEO_EXT)))
         return 1
     return 0
 
