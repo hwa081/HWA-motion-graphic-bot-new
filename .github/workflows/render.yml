@@ -140,8 +140,8 @@ jobs:
       - name: Install Python packages
         run: pip install -r requirements.txt
 
-      - name: Start the free local AI (only if the variable LOCAL_AI is "on")
-        if: ${{ vars.LOCAL_AI == 'on' }}
+      - name: Start the free local AI (when LOCAL_AI is "on" or this video asks for it)
+        if: ${{ vars.LOCAL_AI == 'on' || inputs.ai == 'local' }}
         continue-on-error: true
         env:
           LOCAL_AI_MODEL_VAR: ${{ vars.LOCAL_AI_MODEL }}
