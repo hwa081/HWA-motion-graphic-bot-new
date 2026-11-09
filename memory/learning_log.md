@@ -12,3 +12,10 @@ Design: backgrounds neon_night, ocean, mono_dark; entrances fade; transitions no
 What was wrong at first: Text overlap: at 2.5s "HOW" (layer 3) and "ARE" (layer 4) cover each other. Move one (e.g. y by 86 px) or time
 Fixed by the bot: Text overlap: at 2.5s "HOW" (layer 3) and "ARE" (layer 4) cover each other. Move
 Still open: nothing
+
+## d-20261109-1155-f2db - 16:9 (out)
+Brief: You probably learned in school that our solar system has nine planets, and Pluto is the last one. Then in 2006, Pluto lost its planet status and became a dwarf 
+Design: backgrounds mono_dark, mono_light, ocean, neon_night; entrances slide_up, fade, slide_down, pop, slide_right; transitions glitch, iris; camera yes
+What was wrong at first: Text cut off: at 27.8s layer 44 "Deep In Frozen Darkness" extends beyond the 1920x1080 canvas (text is 854px w; Variety: the scenes starting at 0.0s and 5.6s are built from the same kinds of layers (chip, circle, rrect, te
+Fixed by the bot: Text cut off: at 27.8s layer 44 "Deep In Frozen Darkness" extends beyond the 192; Variety: the scenes starting at 0.0s and 5.6s are built from the same kinds of l
+Still open: nothing

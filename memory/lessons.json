@@ -28,5 +28,25 @@
   "source": "originality",
   "created": "2026-11-08T21:23:03Z",
   "last": "2026-11-08T21:23:03Z"
+ },
+ {
+  "id": "l261",
+  "kind": "dont",
+  "text": "Long text got cut off at the canvas edge. Keep every text line short: width is about characters x size x 0.6 and must stay under 90% of the canvas width.",
+  "weight": 1,
+  "count": 1,
+  "source": "qa",
+  "created": "2026-11-09T11:55:13Z",
+  "last": "2026-11-09T11:55:13Z"
+ },
+ {
+  "id": "l150",
+  "kind": "dont",
+  "text": "Consecutive scenes looked alike. Give every scene a different layout archetype.",
+  "weight": 1,
+  "count": 1,
+  "source": "qa",
+  "created": "2026-11-09T11:55:13Z",
+  "last": "2026-11-09T11:55:13Z"
  }
 ]
