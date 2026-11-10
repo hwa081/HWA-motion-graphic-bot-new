@@ -356,8 +356,13 @@
   "review_score": null,
   "qa_errors": 0,
   "qa_warnings": 1,
-  "rating": null,
-  "notes": [],
+  "rating": 1,
+  "notes": [
+   {
+    "date": "2026-11-10T18:50:56Z",
+    "note": "filmora file is not working"
+   }
+  ],
   "size": "16:9",
   "assets": 1,
   "remix": {

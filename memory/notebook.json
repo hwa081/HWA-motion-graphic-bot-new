@@ -392,9 +392,9 @@
    "how": "a rounded glass pill (card layer, white rim, blur) in the centre; a cursor arrow flies on a curved path, squeezes 0.9 on click, then 4-6 UI cards pop out around it with overshoot, 0.2 s apart; pop SFX per card",
    "source": "owner reference videos",
    "weight": 5,
-   "count": 5,
+   "count": 6,
    "created": "2026-11-10T10:06:43Z",
-   "last": "2026-11-10T16:31:40Z"
+   "last": "2026-11-10T18:50:56Z"
   },
   {
    "id": "t423",
@@ -403,9 +403,9 @@
    "how": "a bright vertical beam drops from the top at the cut, flash 0.15 s, next scene uses a pastel gradient; whoosh + shimmer SFX",
    "source": "owner reference videos",
    "weight": 5,
-   "count": 5,
+   "count": 6,
    "created": "2026-11-10T10:06:43Z",
-   "last": "2026-11-10T16:31:40Z"
+   "last": "2026-11-10T18:50:56Z"
   },
   {
    "id": "t487",
@@ -414,9 +414,9 @@
    "how": "5 glossy gradient spheres with white icons pop left to right every 0.4 s (scale 0 -> 1.15 -> 1) with tiny labels under them; pop SFX each",
    "source": "owner reference videos",
    "weight": 5,
-   "count": 5,
+   "count": 6,
    "created": "2026-11-10T10:06:43Z",
-   "last": "2026-11-10T16:31:40Z"
+   "last": "2026-11-10T18:50:56Z"
   },
   {
    "id": "t833",
@@ -425,9 +425,9 @@
    "how": "B&W cutout with 8-10 px white outline rises from the bottom (0.9 s ease-out), then flat colour icons (pie, gear, cash) pop BEHIND it every 0.3 s on a dark paper texture; paper whoosh + pops",
    "source": "owner reference videos",
    "weight": 5,
-   "count": 5,
+   "count": 6,
    "created": "2026-11-10T10:06:43Z",
-   "last": "2026-11-10T16:31:40Z"
+   "last": "2026-11-10T18:50:56Z"
   },
   {
    "id": "t361",
@@ -436,9 +436,9 @@
    "how": "text reveal per character at 0.16-0.33 s with a key tick SFX on every character, rolling digits for dates, paper and polaroids slide in with rotation and shadow",
    "source": "owner reference videos",
    "weight": 5,
-   "count": 5,
+   "count": 6,
    "created": "2026-11-10T10:06:43Z",
-   "last": "2026-11-10T16:31:40Z"
+   "last": "2026-11-10T18:50:56Z"
   },
   {
    "id": "t838",
@@ -447,9 +447,9 @@
    "how": "dark desk from above, masking-tape outline lines, objects slide in with soft shadows, label tape per object, camera glides to a new prop group every ~2 s, handwriting stroke text",
    "source": "owner reference videos",
    "weight": 5,
-   "count": 5,
+   "count": 6,
    "created": "2026-11-10T10:06:43Z",
-   "last": "2026-11-10T16:31:40Z"
+   "last": "2026-11-10T18:50:56Z"
   },
   {
    "id": "t968",
@@ -458,9 +458,9 @@
    "how": "strong blur at top and bottom bands, vignette, tiny sharp subjects in the middle band, hand-drawn red circle (0.6 s) and dashed route that draws; typing click SFX on drawings",
    "source": "owner reference videos",
    "weight": 5,
-   "count": 5,
+   "count": 6,
    "created": "2026-11-10T10:06:43Z",
-   "last": "2026-11-10T16:31:40Z"
+   "last": "2026-11-10T18:50:56Z"
   },
   {
    "id": "t60",
@@ -469,9 +469,9 @@
    "how": "logo glows, thin line draws to an icon with a caption (number first), camera pans along to the next; each stat 2-3 s; icon pop SFX",
    "source": "owner reference videos",
    "weight": 5,
-   "count": 5,
+   "count": 6,
    "created": "2026-11-10T10:06:43Z",
-   "last": "2026-11-10T16:31:40Z"
+   "last": "2026-11-10T18:50:56Z"
   },
   {
    "id": "t827",
@@ -480,9 +480,9 @@
    "how": "zoom through a logo/object with radial blur (0.4-2 s), whoosh SFX rising, land on the next scene already sharp",
    "source": "owner reference videos",
    "weight": 5,
-   "count": 5,
+   "count": 6,
    "created": "2026-11-10T10:06:43Z",
-   "last": "2026-11-10T16:31:40Z"
+   "last": "2026-11-10T18:50:56Z"
   },
   {
    "id": "t240",
@@ -491,9 +491,9 @@
    "how": "many dark UI panels staggered 0.1-0.2 s with depth blur, one saturated brand-colour circle or logo in the centre, slow pull-out; pop per panel",
    "source": "owner reference videos",
    "weight": 5,
-   "count": 5,
+   "count": 6,
    "created": "2026-11-10T10:06:43Z",
-   "last": "2026-11-10T16:31:40Z"
+   "last": "2026-11-10T18:50:56Z"
   },
   {
    "id": "t931",
@@ -502,9 +502,9 @@
    "how": "yellow bar wipes in from the left behind the word in 0.3 s while the word slams in; marker SFX",
    "source": "owner reference videos",
    "weight": 5,
-   "count": 5,
+   "count": 6,
    "created": "2026-11-10T10:06:43Z",
-   "last": "2026-11-10T16:31:40Z"
+   "last": "2026-11-10T18:50:56Z"
   },
   {
    "id": "t393",
@@ -513,9 +513,9 @@
    "how": "cards on a perspective plane, tab pills highlight in orange one by one, camera glides along the plane",
    "source": "owner reference videos",
    "weight": 5,
-   "count": 5,
+   "count": 6,
    "created": "2026-11-10T10:06:43Z",
-   "last": "2026-11-10T16:31:40Z"
+   "last": "2026-11-10T18:50:56Z"
   }
  ],
  "wishes": [

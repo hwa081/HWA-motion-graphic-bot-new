@@ -68,5 +68,25 @@
   "source": "qa",
   "created": "2026-11-10T17:39:35Z",
   "last": "2026-11-10T17:39:35Z"
+ },
+ {
+  "id": "l751",
+  "kind": "dont",
+  "text": "Avoid relying on proprietary or complex file formats (like specific Filmora versions) for final delivery; ensure compatibility.",
+  "weight": 3,
+  "count": 1,
+  "source": "feedback",
+  "created": "2026-11-10T19:02:25Z",
+  "last": "2026-11-10T19:02:25Z"
+ },
+ {
+  "id": "l236",
+  "kind": "dont",
+  "text": "Do not use a high density of complex elements (e.g., over 20 layers or excessive custom/icon usage) if the core message delivery is failing.",
+  "weight": 2,
+  "count": 1,
+  "source": "feedback",
+  "created": "2026-11-10T19:02:25Z",
+  "last": "2026-11-10T19:02:25Z"
  }
 ]
