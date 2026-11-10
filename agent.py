@@ -106,8 +106,13 @@ def attach_images(paths, root=ROOT, max_side=768, limit=4):
     return parts
 
 
+LANG_RULE = ('LANGUAGE: the brief / script may be written in Hindi (Devanagari or Roman Hindi), Urdu or another language. Understand its meaning, '
+             'then write EVERY on-screen text (titles, captions, labels, numbers) in simple, correct ENGLISH. Never put Devanagari / Urdu script on screen. '
+             'Keep names, brands and numbers as they are. Make the visuals match what the script says.')
+
+
 def build_user_prompt(prompt, duration, size_key, assets, mem_ctx, has_reference, style_card, user_images, extra_blocks=''):
-    t = 'Create a scene spec for this video.\n\nBRIEF: %s\n\nDURATION: exactly %s seconds (set "duration": %s).\n%s\n' % (prompt.strip(), duration, duration, canvas_text(size_key))
+    t = 'Create a scene spec for this video.\n\nBRIEF: %s\n\nDURATION: exactly %s seconds (set "duration": %s).\n%s\n%s\n' % (prompt.strip(), duration, duration, LANG_RULE, canvas_text(size_key))
     t += _design_block(prompt)
     if extra_blocks:
         t += '\n' + extra_blocks

@@ -140,3 +140,9 @@ Filmora .wfp: media type (audio ke saath 8, bina audio 2), thumb.fsthumb, ID for
 - The video is exactly as long as the voice; each sentence = one scene; key words/numbers appear when spoken; after the design, cuts and layer starts snap to the sentence starts; the voice is loudness-normalised and mixed in, sound effects duck under it.
 - Long voice-overs (over 60 s) are made in parts at sentence boundaries (same saved-part resume as long videos).
 - Page: "Voice" attach button (length read in the browser, no text needed). Storyboard tiles show the spoken sentence under each scene.
+
+## update17
+- Several AIs now work together on ONE long video: part 1 is made first, the other parts are shared between all usable AIs at the same time; if an AI fails, another AI that has finished its own part takes over (MAX_WORKERS, PARALLEL=off to disable).
+- The video card shows which AI works on which part.
+- A Hindi / Urdu script is understood and all on-screen text is written in English.
+- Sound: your own sounds are found in a folder named sfx, sfx_pack, sounds or audio (any capitals, sub-folders too), used in EVERY sound style, files with an unclear name are still used (short = pop, long = whoosh), and the log lists which files were used.
