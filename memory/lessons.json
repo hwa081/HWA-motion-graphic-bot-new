@@ -3,50 +3,70 @@
   "id": "l379",
   "kind": "dont",
   "text": "Text was hard to read on its background. Use light text on dark backgrounds and near-black text on light backgrounds.",
-  "weight": 2,
-  "count": 4,
+  "weight": 4,
+  "count": 11,
   "source": "qa",
   "created": "2026-11-08T19:03:15Z",
-  "last": "2026-11-10T10:58:00Z"
+  "last": "2026-11-10T17:58:43Z"
  },
  {
   "id": "l585",
   "kind": "dont",
   "text": "Stacked text layers overlapped. Keep at least 1.2 x the font size between the y positions of two lines, and time them apart.",
-  "weight": 1,
-  "count": 2,
+  "weight": 4,
+  "count": 10,
   "source": "qa",
   "created": "2026-11-08T21:23:03Z",
-  "last": "2026-11-10T10:58:00Z"
+  "last": "2026-11-10T17:58:43Z"
  },
  {
   "id": "l560",
   "kind": "dont",
   "text": "A draft was almost a copy of an existing design (ui-106-command-palette, 84% alike). Always change backgrounds, animation family, transitions and layout when borrowing ideas.",
-  "weight": 1,
-  "count": 1,
+  "weight": 2,
+  "count": 3,
   "source": "originality",
   "created": "2026-11-08T21:23:03Z",
-  "last": "2026-11-08T21:23:03Z"
+  "last": "2026-11-10T17:39:35Z"
  },
  {
   "id": "l261",
   "kind": "dont",
   "text": "Long text got cut off at the canvas edge. Keep every text line short: width is about characters x size x 0.6 and must stay under 90% of the canvas width.",
-  "weight": 1,
-  "count": 2,
+  "weight": 3,
+  "count": 7,
   "source": "qa",
   "created": "2026-11-09T11:55:13Z",
-  "last": "2026-11-10T15:01:30Z"
+  "last": "2026-11-10T17:58:43Z"
  },
  {
   "id": "l150",
   "kind": "dont",
   "text": "Consecutive scenes looked alike. Give every scene a different layout archetype.",
-  "weight": 1,
-  "count": 2,
+  "weight": 2,
+  "count": 4,
   "source": "qa",
   "created": "2026-11-09T11:55:13Z",
-  "last": "2026-11-10T10:58:00Z"
+  "last": "2026-11-10T17:58:43Z"
+ },
+ {
+  "id": "l651",
+  "kind": "dont",
+  "text": "The whole video used one background style. Change background style between scenes with a fade.",
+  "weight": 1,
+  "count": 1,
+  "source": "qa",
+  "created": "2026-11-10T17:39:35Z",
+  "last": "2026-11-10T17:39:35Z"
+ },
+ {
+  "id": "l393",
+  "kind": "dont",
+  "text": "There were no transitions between scenes. Use wipe, iris, stripes, flash or glitch transitions at scene changes.",
+  "weight": 1,
+  "count": 1,
+  "source": "qa",
+  "created": "2026-11-10T17:39:35Z",
+  "last": "2026-11-10T17:39:35Z"
  }
 ]

@@ -1,0 +1,280 @@
+{
+ "title": "Starship Flight 15: The Ultimate Goal",
+ "duration": 35.0,
+ "size": "16:9",
+ "fps": 30,
+ "background": [
+  {
+   "t": 0,
+   "style": "mono_dark"
+  },
+  {
+   "t": 15.0,
+   "style": "neon_night",
+   "fade": 1.0
+  }
+ ],
+ "camera": [
+  {
+   "t": 0,
+   "zoom": 1.0,
+   "x": 960,
+   "y": 540
+  },
+  {
+   "t": 35.0,
+   "zoom": 1.2,
+   "x": 960,
+   "y": 540
+  }
+ ],
+ "layers": [
+  {
+   "type": "grid",
+   "kind": "lines",
+   "spacing": 100,
+   "color": [
+    0.1,
+    0.1,
+    0.3
+   ],
+   "fill_opacity": 0.1,
+   "scroll": {
+    "x": 5,
+    "y": 2
+   },
+   "vignette": 0.9,
+   "start": 0,
+   "end": 35.0
+  },
+  {
+   "type": "blob",
+   "x": 960,
+   "y": 540,
+   "r": 700,
+   "color": [
+    0.2,
+    0.1,
+    0.4
+   ],
+   "color2": [
+    0.5,
+    0.1,
+    0.8
+   ],
+   "fill_opacity": 0.3,
+   "softness": 0.85,
+   "start": 0,
+   "end": 35.0
+  },
+  {
+   "type": "image",
+   "w": 1600,
+   "h": 900,
+   "r": 40,
+   "start": 0,
+   "shadow": 0.6,
+   "shadow_color": [
+    0.8,
+    0.1,
+    0.9
+   ],
+   "shadow_blur": 50,
+   "fit": "cover",
+   "keys": {
+    "zoom": [
+     [
+      0,
+      0.8
+     ],
+     [
+      10.0,
+      1.1,
+      "inout"
+     ],
+     [
+      35.0,
+      1.2,
+      "linear"
+     ]
+    ],
+    "pan_x": [
+     [
+      0,
+      -0.2
+     ],
+     [
+      10.0,
+      0.0,
+      "inout"
+     ],
+     [
+      35.0,
+      0.2,
+      "linear"
+     ]
+    ]
+   },
+   "in": {
+    "anim": "zoom",
+    "dur": 1.0
+   },
+   "end": 35.0,
+   "path": "assets/library/illustration_starship-launch-conc_5570682.jpg"
+  },
+  {
+   "type": "text",
+   "text": "Starship Flight 15",
+   "x": 960,
+   "y": 110,
+   "size": 150,
+   "font": "bold_italic",
+   "color": [
+    1,
+    1,
+    1
+   ],
+   "start": 0.5,
+   "fixed": true,
+   "in": {
+    "anim": "slide_down",
+    "dur": 0.8
+   },
+   "end": 35.0
+  },
+  {
+   "type": "text",
+   "text": "The Ultimate Goal",
+   "x": 960,
+   "y": 250,
+   "size": 90,
+   "font": "medium",
+   "color": [
+    0.5,
+    0.8,
+    1
+   ],
+   "start": 2.5,
+   "fixed": true,
+   "in": {
+    "anim": "fade",
+    "dur": 0.7
+   },
+   "end": 35.0
+  },
+  {
+   "type": "rrect",
+   "x": 960,
+   "y": 750,
+   "w": 1400,
+   "h": 100,
+   "r": 20,
+   "fill": [
+    0,
+    0,
+    0
+   ],
+   "fill_opacity": 0.5,
+   "border": [
+    0.5,
+    0.5,
+    0.5
+   ],
+   "border_opacity": 0.5,
+   "border_w": 2,
+   "start": 5.0,
+   "end": 35.0,
+   "in": {
+    "anim": "wipe_up",
+    "dur": 1.0
+   }
+  },
+  {
+   "type": "text",
+   "text": "Target Mission Date: November 13th",
+   "x": 960,
+   "y": 790,
+   "size": 50,
+   "font": "medium",
+   "color": [
+    1,
+    1,
+    1
+   ],
+   "start": 5.5,
+   "fixed": true,
+   "in": {
+    "anim": "fade",
+    "dur": 0.7
+   },
+   "end": 35.0
+  },
+  {
+   "type": "text",
+   "text": "Objective: Mid-Flight Capture",
+   "x": 960,
+   "y": 880,
+   "size": 70,
+   "font": "bold",
+   "color": [
+    1,
+    0.5,
+    0
+   ],
+   "start": 15.0,
+   "fixed": true,
+   "in": {
+    "anim": "slide_right",
+    "dur": 1.2
+   },
+   "end": 35.0
+  },
+  {
+   "type": "chip",
+   "emoji": "🎯",
+   "label": "The Big Catch",
+   "scale": 1.1,
+   "rot": 0,
+   "start": 16.0,
+   "end": 35.0,
+   "in": {
+    "anim": "bounce",
+    "dur": 0.6
+   }
+  },
+  {
+   "type": "particles",
+   "count": 80,
+   "color": [
+    0.3,
+    0.8,
+    1
+   ],
+   "size": 2,
+   "speed": 1.5,
+   "seed": 10,
+   "start": 0,
+   "end": 35.0
+  },
+  {
+   "type": "text",
+   "text": "Catching the upper 'Ship' section mid-flight.",
+   "x": 960,
+   "y": 600,
+   "size": 65,
+   "font": "medium",
+   "color": [
+    0.9,
+    0.9,
+    0.9
+   ],
+   "start": 22.0,
+   "fixed": true,
+   "in": {
+    "anim": "slide_up",
+    "dur": 1.0
+   },
+   "end": 35.0
+  }
+ ]
+}

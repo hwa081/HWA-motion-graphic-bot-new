@@ -1,0 +1,350 @@
+{
+ "title": "Mechanics of Capture",
+ "duration": 30.0,
+ "size": "16:9",
+ "fps": 30,
+ "background": [
+  {
+   "t": 0,
+   "style": "neon_night"
+  },
+  {
+   "t": 15.0,
+   "style": "mono_dark",
+   "fade": 0.5
+  }
+ ],
+ "camera": [
+  {
+   "t": 0,
+   "zoom": 1.0,
+   "x": 960,
+   "y": 540
+  },
+  {
+   "t": 30,
+   "zoom": 1.15,
+   "x": 960,
+   "y": 540
+  }
+ ],
+ "layers": [
+  {
+   "type": "grid",
+   "kind": "crosses",
+   "spacing": 120,
+   "color": [
+    0.1,
+    0.1,
+    0.3
+   ],
+   "fill_opacity": 0.08,
+   "scroll": {
+    "x": 10,
+    "y": -5
+   },
+   "start": 0,
+   "end": 30
+  },
+  {
+   "type": "blob",
+   "x": 960,
+   "y": 540,
+   "r": 900,
+   "color": [
+    0.05,
+    0.0,
+    0.15
+   ],
+   "color2": [
+    0.2,
+    0.0,
+    0.3
+   ],
+   "fill_opacity": 0.3,
+   "softness": 0.8,
+   "start": 0,
+   "end": 30
+  },
+  {
+   "type": "text",
+   "text": "THE MECHANICS OF CAPTURE",
+   "font": "bold_italic",
+   "size": 117,
+   "x": 960,
+   "y": 180,
+   "anchor": "c",
+   "color": [
+    1,
+    1,
+    1
+   ],
+   "start": 0.0,
+   "end": 3.5,
+   "in": {
+    "anim": "wipe_down",
+    "dur": 0.7
+   },
+   "fixed": true
+  },
+  {
+   "type": "transition",
+   "style": "glitch",
+   "direction": "left",
+   "color": [
+    0.1,
+    0.8,
+    0.8
+   ],
+   "start": 4.0,
+   "end": 4.5
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     750,
+     480
+    ],
+    [
+     1200,
+     480
+    ]
+   ],
+   "width": 5,
+   "color": [
+    0.1,
+    0.8,
+    0.8
+   ],
+   "start": 4.5,
+   "end": 28,
+   "in": {
+    "anim": "rise",
+    "dur": 0.7
+   }
+  },
+  {
+   "type": "card",
+   "kind": "custom",
+   "title": "Physics",
+   "big_text": "FORCE",
+   "subtitle": "Momentum Transfer",
+   "emoji": "⚛️",
+   "header": [
+    0.2,
+    0.0,
+    0.1
+   ],
+   "body": [
+    0.1,
+    0.1,
+    0.3
+   ],
+   "body2": [
+    0.15,
+    0.1,
+    0.25
+   ],
+   "yaw": -8,
+   "roll": -3,
+   "x": 500,
+   "y": 540,
+   "scale": 1.2,
+   "start": 5.0,
+   "end": 10.5,
+   "in": {
+    "anim": "pop",
+    "dur": 0.6
+   }
+  },
+  {
+   "type": "card",
+   "kind": "custom",
+   "title": "Engineering",
+   "big_text": "ARM",
+   "subtitle": "Structural Integrity",
+   "emoji": "🦾",
+   "header": [
+    0.1,
+    0.2,
+    0.1
+   ],
+   "body": [
+    0.05,
+    0.1,
+    0.3
+   ],
+   "body2": [
+    0.08,
+    0.15,
+    0.25
+   ],
+   "yaw": 8,
+   "roll": 3,
+   "x": 1450,
+   "y": 540,
+   "scale": 1.2,
+   "start": 6.0,
+   "end": 11.5,
+   "in": {
+    "anim": "pop",
+    "dur": 0.6
+   }
+  },
+  {
+   "type": "progress",
+   "kind": "ring",
+   "x": 960,
+   "y": 540,
+   "w": 550,
+   "h": 550,
+   "color": [
+    0.1,
+    0.8,
+    0.8
+   ],
+   "track": [
+    0.05,
+    0.05,
+    0.1
+   ],
+   "label": "System Load",
+   "grow": {
+    "start": 5.5,
+    "dur": 3.5
+   },
+   "start": 5.5,
+   "end": 15.0,
+   "in": {
+    "anim": "fade",
+    "dur": 0.5
+   }
+  },
+  {
+   "type": "text",
+   "text": "Calculating Trajectory...",
+   "font": "medium_italic",
+   "size": 50,
+   "x": 960,
+   "y": 790,
+   "anchor": "c",
+   "color": [
+    0.7,
+    0.7,
+    0.9
+   ],
+   "start": 5.0,
+   "end": 18.0,
+   "in": {
+    "anim": "slide_up",
+    "dur": 0.5
+   }
+  },
+  {
+   "type": "chip",
+   "emoji": "⚙️",
+   "label": "Guidance System",
+   "scale": 1,
+   "rot": 0,
+   "x": 300,
+   "y": 630,
+   "start": 8.0,
+   "end": 13.0,
+   "in": {
+    "anim": "slide_left",
+    "dur": 0.5
+   }
+  },
+  {
+   "type": "chip",
+   "emoji": "🛰️",
+   "label": "Orbital Control",
+   "scale": 1,
+   "rot": 0,
+   "x": 1300,
+   "y": 630,
+   "start": 9.0,
+   "end": 14.0,
+   "in": {
+    "anim": "slide_right",
+    "dur": 0.5
+   }
+  },
+  {
+   "type": "transition",
+   "style": "flash",
+   "direction": "down",
+   "color": [
+    0.1,
+    0.8,
+    0.8
+   ],
+   "start": 14.5,
+   "end": 15.0
+  },
+  {
+   "type": "image",
+   "w": 1100,
+   "h": 750,
+   "r": 60,
+   "shadow": 0.7,
+   "shadow_color": [
+    0.1,
+    0.8,
+    0.8
+   ],
+   "start": 15.5,
+   "end": 27.0,
+   "in": {
+    "anim": "blur",
+    "dur": 0.8
+   },
+   "keys": {
+    "zoom": [
+     [
+      15.5,
+      1.0
+     ],
+     [
+      23.5,
+      1.2,
+      "in"
+     ]
+    ],
+    "pan_x": [
+     [
+      15.5,
+      0
+     ],
+     [
+      23.5,
+      0.1,
+      "in"
+     ]
+    ]
+   },
+   "path": "assets/library/vector_space-capture-mechan_33819.png"
+  },
+  {
+   "type": "text",
+   "text": "Precision required for success.",
+   "font": "medium",
+   "size": 55,
+   "x": 960,
+   "y": 920,
+   "anchor": "c",
+   "color": [
+    0.8,
+    0.8,
+    0.9
+   ],
+   "start": 22.0,
+   "end": 30.0,
+   "in": {
+    "anim": "fade",
+    "dur": 0.7
+   }
+  }
+ ]
+}

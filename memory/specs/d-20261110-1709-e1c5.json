@@ -1,0 +1,290 @@
+{
+ "title": "SpaceX Catch: Past Successes & Present Hurdles",
+ "duration": 25.0,
+ "size": "16:9",
+ "fps": 30,
+ "background": [
+  {
+   "t": 0.0,
+   "style": "mono_dark"
+  },
+  {
+   "t": 12.5,
+   "style": "neon_night",
+   "fade": 0.5
+  }
+ ],
+ "camera": [
+  {
+   "t": 0.0,
+   "zoom": 1.0,
+   "x": 960,
+   "y": 540
+  },
+  {
+   "t": 6.25,
+   "zoom": 1.15,
+   "x": 960,
+   "y": 540
+  },
+  {
+   "t": 12.5,
+   "zoom": 1.25,
+   "x": 960,
+   "y": 540
+  },
+  {
+   "t": 18.75,
+   "zoom": 1.35,
+   "x": 960,
+   "y": 540
+  },
+  {
+   "t": 25.0,
+   "zoom": 1.3,
+   "x": 960,
+   "y": 540
+  }
+ ],
+ "layers": [
+  {
+   "type": "grid",
+   "kind": "crosses",
+   "spacing": 80,
+   "color": [
+    0.1,
+    0.1,
+    0.3
+   ],
+   "fill_opacity": 0.1,
+   "scroll": {
+    "x": 10,
+    "y": 5
+   },
+   "vignette": 0.9,
+   "start": 0.0,
+   "end": 25.0
+  },
+  {
+   "type": "blob",
+   "x": 960,
+   "y": 540,
+   "r": 700,
+   "color": [
+    0.1,
+    0.3,
+    0.5
+   ],
+   "color2": [
+    0.4,
+    0.1,
+    0.6
+   ],
+   "fill_opacity": 0.4,
+   "softness": 0.75,
+   "start": 0.0,
+   "end": 25.0
+  },
+  {
+   "type": "image",
+   "w": 1600,
+   "h": 1000,
+   "r": 50,
+   "start": 0.0,
+   "shadow": 0.5,
+   "shadow_color": [
+    0.8,
+    0.1,
+    0.9
+   ],
+   "shadow_blur": 50,
+   "fit": "cover",
+   "keys": {
+    "zoom": [
+     [
+      0.0,
+      1.0
+     ],
+     [
+      6.25,
+      1.2
+     ]
+    ],
+    "pan_x": [
+     [
+      0.0,
+      -0.1
+     ],
+     [
+      6.25,
+      0.1
+     ]
+    ]
+   },
+   "in": {
+    "anim": "zoom",
+    "dur": 0.8
+   },
+   "end": 25.0,
+   "path": "assets/library/illustration_spacecraft-capture-s_4828098.jpg"
+  },
+  {
+   "type": "rrect",
+   "x": 960,
+   "y": 1000,
+   "w": 1920,
+   "h": 100,
+   "r": 0,
+   "fill": [
+    0.05,
+    0.05,
+    0.15
+   ],
+   "fill_opacity": 0.8,
+   "start": 0.0,
+   "end": 25.0,
+   "fixed": true
+  },
+  {
+   "type": "text",
+   "text": "PAST SUCCESSES",
+   "x": 960,
+   "y": 970,
+   "size": 80,
+   "font": "bold_italic",
+   "color": [
+    0.1,
+    0.9,
+    0.8
+   ],
+   "start": 0.5,
+   "fixed": true,
+   "in": {
+    "anim": "slide_up",
+    "dur": 0.6
+   },
+   "end": 12.5
+  },
+  {
+   "type": "text",
+   "text": "Booster Catch: October 2024",
+   "x": 960,
+   "y": 1040,
+   "size": 48,
+   "font": "medium",
+   "color": [
+    0.9,
+    0.9,
+    0.9
+   ],
+   "start": 1.5,
+   "fixed": true,
+   "in": {
+    "anim": "fade",
+    "dur": 0.5
+   },
+   "end": 13.0
+  },
+  {
+   "type": "transition",
+   "style": "iris",
+   "direction": "left",
+   "color": [
+    0.9,
+    0.1,
+    0.8
+   ],
+   "start": 12.0,
+   "end": 13.5
+  },
+  {
+   "type": "text",
+   "text": "PRESENT HURDLES",
+   "x": 960,
+   "y": 970,
+   "size": 80,
+   "font": "bold_italic",
+   "color": [
+    0.8,
+    0.1,
+    0.9
+   ],
+   "start": 13.8,
+   "fixed": true,
+   "in": {
+    "anim": "pop",
+    "dur": 0.7
+   },
+   "end": 25.0
+  },
+  {
+   "type": "card",
+   "kind": "custom",
+   "title": "Ship Module",
+   "big_text": "UNCAUGHT",
+   "subtitle": "The Ultimate Test",
+   "emoji": "🚀",
+   "header": [
+    0.8,
+    0.1,
+    0.9
+   ],
+   "body": [
+    0.1,
+    0.1,
+    0.3
+   ],
+   "body2": [
+    0.9,
+    0.9,
+    0.9
+   ],
+   "yaw": -20,
+   "roll": -5,
+   "x": 600,
+   "y": 600,
+   "scale": 1.3,
+   "start": 14.0,
+   "end": 25.0,
+   "in": {
+    "anim": "tilt",
+    "dur": 0.8
+   }
+  },
+  {
+   "type": "chip",
+   "emoji": "⚠️",
+   "label": "Main Stage",
+   "scale": 1.0,
+   "rot": 0,
+   "x": 1300,
+   "y": 600,
+   "start": 14.5,
+   "end": 25.0,
+   "in": {
+    "anim": "rise",
+    "dur": 0.5
+   }
+  },
+  {
+   "type": "text",
+   "text": "Never before.",
+   "x": 960,
+   "y": 720,
+   "size": 40,
+   "font": "medium",
+   "color": [
+    0.7,
+    0.7,
+    0.7
+   ],
+   "start": 14.5,
+   "fixed": true,
+   "in": {
+    "anim": "fade",
+    "dur": 0.5
+   },
+   "end": 25.0
+  }
+ ]
+}

@@ -1,0 +1,257 @@
+{
+ "title": "Cricket Meets Space: The Big Catch",
+ "duration": 30.0,
+ "size": "16:9",
+ "fps": 30,
+ "background": [
+  {
+   "t": 0,
+   "style": "mono_dark"
+  },
+  {
+   "t": 15.0,
+   "style": "neon_night",
+   "fade": 0.5
+  }
+ ],
+ "camera": [
+  {
+   "t": 0,
+   "zoom": 1.0,
+   "x": 960,
+   "y": 540
+  },
+  {
+   "t": 30.0,
+   "zoom": 1.2,
+   "x": 960,
+   "y": 540
+  }
+ ],
+ "layers": [
+  {
+   "type": "grid",
+   "kind": "crosses",
+   "spacing": 80,
+   "color": [
+    0.1,
+    0.1,
+    0.2
+   ],
+   "fill_opacity": 0.05,
+   "scroll": {
+    "x": 10,
+    "y": 5
+   },
+   "vignette": 0.9,
+   "start": 0,
+   "end": 30.0
+  },
+  {
+   "type": "image",
+   "w": 1920,
+   "h": 1080,
+   "r": 0,
+   "start": 0,
+   "shadow": 0.3,
+   "shadow_blur": 20,
+   "fit": "cover",
+   "keys": {
+    "zoom": [
+     [
+      0,
+      1.0
+     ],
+     [
+      10,
+      1.15,
+      "linear"
+     ]
+    ],
+    "pan_x": [
+     [
+      0,
+      -0.1
+     ],
+     [
+      10,
+      0.1,
+      "linear"
+     ]
+    ]
+   },
+   "in": {
+    "anim": "wipe_down",
+    "dur": 1.0
+   },
+   "end": 30.0,
+   "path": "assets/library/photo_cricket-fielder-catc_7874036.jpg"
+  },
+  {
+   "type": "rrect",
+   "x": 960,
+   "y": 900,
+   "w": 1200,
+   "h": 80,
+   "r": 15,
+   "fill": [
+    0.1,
+    0.1,
+    0.3
+   ],
+   "fill_opacity": 0.8,
+   "border": [
+    0.3,
+    0.8,
+    1
+   ],
+   "border_opacity": 1,
+   "border_w": 2,
+   "start": 1.5,
+   "end": 30.0,
+   "in": {
+    "anim": "slide_up",
+    "dur": 0.5
+   },
+   "fixed": true
+  },
+  {
+   "type": "text",
+   "text": "A SPECTACULAR CATCH",
+   "x": 960,
+   "y": 850,
+   "size": 70,
+   "font": "bold_italic",
+   "color": [
+    1,
+    1,
+    1
+   ],
+   "start": 2.0,
+   "end": 12.0,
+   "in": {
+    "anim": "pop",
+    "dur": 0.4
+   },
+   "fixed": true
+  },
+  {
+   "type": "transition",
+   "style": "stripes",
+   "direction": "left",
+   "color": [
+    0.3,
+    0.8,
+    1
+   ],
+   "start": 12.0,
+   "end": 13.5
+  },
+  {
+   "type": "image",
+   "w": 1920,
+   "h": 1080,
+   "r": 0,
+   "start": 13.5,
+   "shadow": 0.5,
+   "shadow_blur": 40,
+   "fit": "cover",
+   "keys": {
+    "zoom": [
+     [
+      0,
+      1.0
+     ],
+     [
+      16,
+      1.1
+     ]
+    ],
+    "pan_x": [
+     [
+      0,
+      -0.3
+     ],
+     [
+      16,
+      0.3
+     ]
+    ]
+   },
+   "in": {
+    "anim": "zoom",
+    "dur": 1.2
+   },
+   "end": 30.0,
+   "path": "assets/library/illustration_spacecraft-steel-arm_9910124.jpg"
+  },
+  {
+   "type": "rrect",
+   "x": 960,
+   "y": 900,
+   "w": 1200,
+   "h": 80,
+   "r": 15,
+   "fill": [
+    0.1,
+    0.1,
+    0.3
+   ],
+   "fill_opacity": 0.8,
+   "border": [
+    1,
+    1,
+    1
+   ],
+   "border_opacity": 1,
+   "border_w": 3,
+   "start": 15.0,
+   "end": 30.0,
+   "in": {
+    "anim": "slide_up",
+    "dur": 0.5
+   },
+   "fixed": true
+  },
+  {
+   "type": "text",
+   "text": "SPACEX: CATCHING THE COSMOS",
+   "x": 960,
+   "y": 850,
+   "size": 75,
+   "font": "bold_italic",
+   "color": [
+    1,
+    1,
+    1
+   ],
+   "start": 16.0,
+   "end": 30.0,
+   "in": {
+    "anim": "rise",
+    "dur": 0.6
+   },
+   "fixed": true
+  },
+  {
+   "type": "text",
+   "text": "Aiming for the monumental task.",
+   "x": 960,
+   "y": 925,
+   "size": 48,
+   "font": "medium",
+   "color": [
+    0.7,
+    0.7,
+    0.9
+   ],
+   "start": 18.0,
+   "end": 30.0,
+   "in": {
+    "anim": "fade",
+    "dur": 0.5
+   },
+   "fixed": true
+  }
+ ]
+}
