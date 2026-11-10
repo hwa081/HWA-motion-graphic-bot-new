@@ -1,0 +1,1024 @@
+{
+ "version": 1,
+ "styles": [
+  {
+   "sha": "8c96930396782387",
+   "source": "user reference 260cf7a6",
+   "title": "Glass UI product promo (cobalt glow to pastel sky)",
+   "tags": [
+    "saas",
+    "product",
+    "glass",
+    "blue",
+    "ui",
+    "campaign",
+    "marketing",
+    "cursor"
+   ],
+   "palette": [
+    "#020617",
+    "#1d4ed8",
+    "#60a5fa",
+    "#e0f2fe",
+    "#ffffff",
+    "#0b1f5c"
+   ],
+   "backgrounds": "black with a big cobalt radial glow (scene 1) -> pastel sky-blue soft gradient with wave shapes and white glass bubbles (scene 2) -> deep navy grid with soft blue glow (scene 3) -> light frosted blue for the dashboard collage",
+   "typography": {
+    "headline": "clean geometric sans (Inter-like), medium weight, 1 key word in bold",
+    "body": "small UI labels",
+    "text_effects": "typed inside a glass pill, then words slide/blur in from the side one by one"
+   },
+   "scenes": [
+    {
+     "t0": 0,
+     "t1": 0.5,
+     "archetype": "logo_reveal",
+     "description": "black screen, a glowing ring/moon blooms in the centre",
+     "text": "",
+     "motion": "fade + scale up of the glow",
+     "camera": "none"
+    },
+    {
+     "t0": 0.5,
+     "t1": 3.4,
+     "archetype": "product",
+     "description": "glass pill button \"Launch Campaign\" with white rim light; a blue cursor arrow flies in and clicks it; then UI cards (Campaigns, Spain selector, bar chart, Meta logo tile, 103.1k audience card) pop out around it in a staggered burst",
+     "text": "Launch Campaign",
+     "motion": "cursor curve path, click squeeze, cards pop with overshoot every ~0.2 s",
+     "camera": "slow push-in"
+    },
+    {
+     "t0": 3.1,
+     "t1": 3.6,
+     "archetype": "transition",
+     "description": "a bright light beam drops from the top and the scene flashes into a light world",
+     "text": "",
+     "motion": "beam + flash wipe",
+     "camera": "none"
+    },
+    {
+     "t0": 3.5,
+     "t1": 5.0,
+     "archetype": "icons",
+     "description": "white user-icon bubbles float in a sky-blue gradient; 3 big ones get picked by an arrow cursor",
+     "text": "",
+     "motion": "float, scale emphasis of the chosen bubble",
+     "camera": "none"
+    },
+    {
+     "t0": 5.2,
+     "t1": 7.5,
+     "archetype": "text",
+     "description": "white glass pill types \"Many Leads != Many Clients\" in navy text",
+     "text": "Many Leads ≠ Many Clients",
+     "motion": "typing reveal, pill grows with the text",
+     "camera": "none"
+    },
+    {
+     "t0": 7.8,
+     "t1": 10.1,
+     "archetype": "chart",
+     "description": "dark navy: headline words slide in, a smooth area chart draws, the chart card then scales back and becomes the centre of a dashboard collage with side stat cards",
+     "text": "Marketing celebrates low CPLs",
+     "motion": "word-by-word slide + blur, line draw, card scale-out",
+     "camera": "pull-out"
+    }
+   ],
+   "transitions": [
+    "light beam flash",
+    "fade through a glow",
+    "zoom-out of a card into a collage"
+   ],
+   "pacing": {
+    "scene_seconds": "2.5",
+    "rhythm": "fast",
+    "notes": "every 0.2-0.4 s something new appears"
+   },
+   "motion": "smooth springs, cards overshoot 5-8 %, cursor follows a curved path and clicks (squeeze 0.9 -> 1), soft blur on entering text",
+   "layout_rules": [
+    "one hero object centred, supporting cards on a ring around it",
+    "small brand badge fixed bottom-right all the time",
+    "big empty margins around the hero",
+    "max 2 text sizes per scene"
+   ],
+   "professional_because": [
+    "one hero per scene",
+    "consistent glass material (rim light + blur)",
+    "colour world changes with the story beat (dark = problem, light = solution)"
+   ],
+   "weaknesses": [],
+   "notes": "Tiny logo badge bottom-right for the whole video. AUDIO (measured): silent clip (no audio track): music and SFX are added later: click at the cursor press, pop on every card, whoosh on the beam.",
+   "aspect": "16:9",
+   "duration": 10.1,
+   "fps": 30,
+   "seed": true
+  },
+  {
+   "sha": "8126cc03271fa484",
+   "source": "user reference 3c68db50",
+   "title": "Soft gradient SaaS logo and feature spheres (purple)",
+   "tags": [
+    "saas",
+    "logo",
+    "purple",
+    "gradient",
+    "icons",
+    "hr",
+    "features",
+    "soft"
+   ],
+   "palette": [
+    "#c026d3",
+    "#7c3aed",
+    "#a78bfa",
+    "#f5f3ff",
+    "#ffffff"
+   ],
+   "backgrounds": "white with big blurred magenta and violet blobs that drift slowly; at the end it dims to soft grey",
+   "typography": {
+    "headline": "rounded geometric sans, bold white logo word",
+    "body": "tagline regular white",
+    "text_effects": "logo blur-in then sharpens; tagline fades up"
+   },
+   "scenes": [
+    {
+     "t0": 0,
+     "t1": 1.4,
+     "archetype": "logo_reveal",
+     "description": "white wordmark blurs in and sharpens, tagline appears under it",
+     "text": "The People Success Platform",
+     "motion": "blur-to-sharp + small float up",
+     "camera": "none"
+    },
+    {
+     "t0": 1.8,
+     "t1": 3.6,
+     "archetype": "icons",
+     "description": "five glossy purple spheres with white icons pop in one after another from left to right with small labels",
+     "text": "Objectives, Feedback, Engagement, Performance, Learning",
+     "motion": "each sphere scales 0 -> 1.15 -> 1 every ~0.4 s; the newest is the biggest",
+     "camera": "none"
+    },
+    {
+     "t0": 4.2,
+     "t1": 9.3,
+     "archetype": "transition",
+     "description": "spheres shrink out one by one, background dims to grey for the next scene",
+     "text": "",
+     "motion": "scale out + desaturate",
+     "camera": "none"
+    }
+   ],
+   "transitions": [
+    "dim to grey",
+    "spheres scale out"
+   ],
+   "pacing": {
+    "scene_seconds": "4.5",
+    "rhythm": "medium",
+    "notes": "rhythm of 0.4 s per icon"
+   },
+   "motion": "scale pops with overshoot, long soft blurs",
+   "layout_rules": [
+    "logo top-centre, row of icons centred below, tiny labels",
+    "white text on colour glow (no boxes)"
+   ],
+   "professional_because": [
+    "one colour family",
+    "glossy 3D-looking spheres with inner shine"
+   ],
+   "weaknesses": [],
+   "notes": " AUDIO (measured): near silent (tiny noise only): clean music bed plus a soft pop for each sphere every 0.4 s.",
+   "aspect": "16:9",
+   "duration": 9.3,
+   "fps": 30,
+   "seed": true
+  },
+  {
+   "sha": "ad2f17152d7126ba",
+   "source": "user reference 4d6f4131",
+   "title": "SaaS founder explainer with floating product UI (indigo)",
+   "tags": [
+    "saas",
+    "explainer",
+    "voiceover",
+    "ui screenshots",
+    "indigo",
+    "money",
+    "pricing",
+    "long"
+   ],
+   "palette": [
+    "#070418",
+    "#1e1b4b",
+    "#4f46e5",
+    "#6366f1",
+    "#ffffff",
+    "#facc15"
+   ],
+   "backgrounds": "deep indigo/navy gradient with subtle noise, floating dollar bills in the money scenes, bright white UI cards on top",
+   "typography": {
+    "headline": "big white sans (Inter), 1-2 lines, key words in indigo or bold",
+    "body": "UI text inside screenshots",
+    "text_effects": "kinetic words appear in time with the voice; one script-font word (\"Cut\") with a hand-drawn underline as accent"
+   },
+   "scenes": [
+    {
+     "t0": 0,
+     "t1": 5,
+     "archetype": "text",
+     "description": "hook sentence \"What if just 430 customers\" large and centred, a number counts up",
+     "text": "What if just 430 customers",
+     "motion": "words blur-in on the voice",
+     "camera": "slow push"
+    },
+    {
+     "t0": 5,
+     "t1": 14,
+     "archetype": "product",
+     "description": "calculator card and dark result card side by side over falling dollar bills, big revenue number counts to $1,000,920",
+     "text": "$1,000,920",
+     "motion": "count-up, parallax bills",
+     "camera": "slow zoom"
+    },
+    {
+     "t0": 14,
+     "t1": 25,
+     "archetype": "diagram",
+     "description": "tree diagram: logo box connected by lines to competitor logos; then people avatars below a $10,000,000 box",
+     "text": "So here is ...",
+     "motion": "lines draw, avatars pop in a row",
+     "camera": "none"
+    },
+    {
+     "t0": 25,
+     "t1": 50,
+     "archetype": "product",
+     "description": "screenshots of the web app in laptop/browser frames glide in with soft shadow and depth blur; feature pills (\"Host events\") float above",
+     "text": "Host events",
+     "motion": "cards slide + 3D tilt, blurred neighbours at the edges",
+     "camera": "pan"
+    },
+    {
+     "t0": 48,
+     "t1": 56,
+     "archetype": "device",
+     "description": "phone mockup with app icon, then a modal form \"Create New Plan\" being typed",
+     "text": "Create New Plan",
+     "motion": "typing cursor in fields",
+     "camera": "push-in"
+    },
+    {
+     "t0": 62,
+     "t1": 100,
+     "archetype": "pricing",
+     "description": "pricing cards (Monthly / Yearly / Lifetime), strike-through prices, notification stack on a phone (purchased Premium Membership +$99), browser collage, final offer card",
+     "text": "$139/mo, Lifetime $2990, $599",
+     "motion": "cards rise, strike-through draws, notifications drop in one by one",
+     "camera": "none"
+    },
+    {
+     "t0": 104,
+     "t1": 111,
+     "archetype": "end",
+     "description": "fade to dark indigo",
+     "text": "",
+     "motion": "fade",
+     "camera": "none"
+    }
+   ],
+   "transitions": [
+    "hard cut on the voice",
+    "blur-slide of the next card",
+    "zoom into a screenshot"
+   ],
+   "pacing": {
+    "scene_seconds": "5",
+    "rhythm": "medium",
+    "notes": "a cut or new card about every 5 s, something moves every 1-2 s"
+   },
+   "motion": "ease-out slides, depth-of-field blur on cards that are not in focus, counters, strike-throughs and typing for proof",
+   "layout_rules": [
+    "hero UI card 60-70 % of the frame",
+    "real-looking screenshots, never empty boxes",
+    "dark background keeps white cards readable",
+    "captions in the lower third max 2 lines"
+   ],
+   "professional_because": [
+    "story told with real numbers",
+    "each scene proves one claim with a UI or a number",
+    "consistent dark indigo world"
+   ],
+   "weaknesses": [],
+   "notes": "Long videos stay interesting by changing the UI object every 3-5 s. AUDIO (measured): voice-over (RMS -16 dB, peak +3 dB over-driven, bass-led voice ~585 Hz centroid) with short UI pop and whoosh hits at 41.6, 43.6, 65.0, 76.8, 87-89 s (about one hit per new card, 1-2 s apart).",
+   "aspect": "16:9",
+   "duration": 111.3,
+   "fps": 30,
+   "seed": true
+  },
+  {
+   "sha": "ff11f8e7d4576794",
+   "source": "user reference 68f09dd3",
+   "title": "Paper-cutout documentary portrait with pop-up icons (B&W)",
+   "tags": [
+    "cutout",
+    "portrait",
+    "documentary",
+    "collage",
+    "black and white",
+    "icons",
+    "business",
+    "news"
+   ],
+   "palette": [
+    "#1b1b1b",
+    "#2a2a2a",
+    "#ffffff",
+    "#3b5bdb",
+    "#2f9e44",
+    "#e8590c"
+   ],
+   "backgrounds": "dark charcoal crumpled-paper texture with a soft vignette",
+   "typography": {
+    "headline": "none in this clip",
+    "body": "",
+    "text_effects": ""
+   },
+   "scenes": [
+    {
+     "t0": 0,
+     "t1": 1,
+     "archetype": "text",
+     "description": "empty textured background (anticipation)",
+     "text": "",
+     "motion": "static",
+     "camera": "none"
+    },
+    {
+     "t0": 1,
+     "t1": 2.1,
+     "archetype": "image",
+     "description": "B&W person cutout with thick white sticker outline rises from the bottom edge",
+     "text": "",
+     "motion": "slide up with ease-out and a tiny settle",
+     "camera": "none"
+    },
+    {
+     "t0": 2.1,
+     "t1": 7,
+     "archetype": "icons",
+     "description": "flat coloured infographic pieces (blue pie chart, green circle, grey gear, cash stack) pop in BEHIND the person one every ~0.3 s",
+     "text": "",
+     "motion": "scale pop with overshoot, slight rotation",
+     "camera": "slow push-in"
+    }
+   ],
+   "transitions": [
+    "none (single shot)"
+   ],
+   "pacing": {
+    "scene_seconds": "7",
+    "rhythm": "medium",
+    "notes": "build-up of elements, 0.3 s apart"
+   },
+   "motion": "pop overshoot 10 %, white outline (stroke 8-10 px) around every cutout",
+   "layout_rules": [
+    "subject centred, props behind and around it",
+    "only grey + 3 accent colours, subject in B&W so the colour props stand out"
+   ],
+   "professional_because": [
+    "cutout outline makes the subject pop",
+    "monochrome subject + colour icons"
+   ],
+   "weaknesses": [],
+   "notes": "Great for stories about a person or company. AUDIO (measured): silent clip: add a soft paper whoosh for the rise and a pop per icon (every 0.3 s).",
+   "aspect": "16:9",
+   "duration": 7.0,
+   "fps": 30,
+   "seed": true
+  },
+  {
+   "sha": "46b4e7ed0f176464",
+   "source": "user reference 753aa5a1",
+   "title": "Dark tech product launch with orange accent (AI sports platform)",
+   "tags": [
+    "saas",
+    "ai",
+    "dark",
+    "orange",
+    "platform",
+    "launch",
+    "dashboard",
+    "collage",
+    "sports"
+   ],
+   "palette": [
+    "#0a0806",
+    "#1c1410",
+    "#ff5a1f",
+    "#f97316",
+    "#ffffff",
+    "#3b2a1f"
+   ],
+   "backgrounds": "near-black warm background with a soft orange glow at the bottom edge; UI cards in dark grey with thin orange outlines",
+   "typography": {
+    "headline": "bold modern sans (Poppins-like), white, orange for the key word",
+    "body": "small grey",
+    "text_effects": "big titles slide in with blur, tab pills highlight in orange"
+   },
+   "scenes": [
+    {
+     "t0": 0,
+     "t1": 3,
+     "archetype": "image",
+     "description": "AI image cards with \"AI\" badges drift in a tilted grid",
+     "text": "AI",
+     "motion": "slow drift + depth blur",
+     "camera": "push"
+    },
+    {
+     "t0": 3,
+     "t1": 8,
+     "archetype": "hero",
+     "description": "tall orange rectangle with category word, then a cutout collage of athletes breaking out of it, sparkle stars",
+     "text": "Sports is a Whole Different Ball Game",
+     "motion": "cutouts scale from the rectangle, sparkles twinkle",
+     "camera": "zoom"
+    },
+    {
+     "t0": 8,
+     "t1": 18,
+     "archetype": "dashboard",
+     "description": "many UI panels (feeds, charts, win percentage ring, fan preferences) form a dense collage; an orange circle with a brain icon grows in the middle",
+     "text": "",
+     "motion": "panels slide in staggered, charts animate",
+     "camera": "slow pull-out"
+    },
+    {
+     "t0": 18,
+     "t1": 28,
+     "archetype": "logo_reveal",
+     "description": "orange 4-point star flies in and turns into the logo \"MACHINA SPORTS\"; then a 3D tilted grid of feature cards",
+     "text": "The Ultimate Sports AI",
+     "motion": "star morph, cards in perspective",
+     "camera": "3D tilt"
+    },
+    {
+     "t0": 28,
+     "t1": 60,
+     "archetype": "product",
+     "description": "tab pills (Content Creation, Scouting, Matchday...) with matching feature cards; camera glides across the tilted card plane, then screenshots of a quiz and podcast widgets",
+     "text": "Agent Templates",
+     "motion": "tab highlight moves, camera pans along the plane",
+     "camera": "pan"
+    }
+   ],
+   "transitions": [
+    "zoom through a panel",
+    "shape morph (star to logo)",
+    "whip pan"
+   ],
+   "pacing": {
+    "scene_seconds": "5",
+    "rhythm": "medium",
+    "notes": "cuts at 2.9, 6.1, 12.6, 17.7, 20.0, 22.2, 32.7, 37.9, 55.4 s"
+   },
+   "motion": "perspective camera moves, long ease-in-out, orange accent only for the thing to look at",
+   "layout_rules": [
+    "one accent colour only",
+    "dense collage in the background but one bright hero in the centre",
+    "safe margins 6 %"
+   ],
+   "professional_because": [
+    "strong brand colour discipline",
+    "depth: blur + scale difference between layers"
+   ],
+   "weaknesses": [],
+   "notes": "A dense collage works when the hero element is the only saturated colour. AUDIO (measured): voice + music mix (RMS -12.6 dB, loud, peak +2.9 dB, centroid 630 Hz); hits at 0.4, 0.7, 1.7, 2.5, 3.3, 4.2 s (one every ~0.85 s = beat grid) in the intro, then 9-25 s dense hits every 0.3-0.8 s on panel entrances.",
+   "aspect": "16:9",
+   "duration": 60.0,
+   "fps": 25,
+   "seed": true
+  },
+  {
+   "sha": "d8a21519dd12aab3",
+   "source": "user reference 76d4fe9b",
+   "title": "Top-down crime-board flat-lay title sequence (cinematic)",
+   "tags": [
+    "cinematic",
+    "flat lay",
+    "top down",
+    "thriller",
+    "title sequence",
+    "props",
+    "handwriting",
+    "korean",
+    "investigation"
+   ],
+   "palette": [
+    "#1f2a2a",
+    "#2d3b3a",
+    "#e8e4d8",
+    "#c9b79c",
+    "#b8312f",
+    "#ffffff"
+   ],
+   "backgrounds": "dark slate-green desk seen from above with white masking-tape outlines of a floor plan; soft top light with vignette",
+   "typography": {
+    "headline": "handwritten brush script for the key phrase",
+    "body": "typed label tapes (black text on grey tape) next to each object",
+    "text_effects": "script text writes itself stroke by stroke; labels slap on like tape"
+   },
+   "scenes": [
+    {
+     "t0": 0,
+     "t1": 4.7,
+     "archetype": "hero",
+     "description": "shoes and papers on the desk, a handwritten word fades in at the right",
+     "text": "",
+     "motion": "slow camera drift; handwriting draws",
+     "camera": "pan"
+    },
+    {
+     "t0": 4.7,
+     "t1": 11,
+     "archetype": "image",
+     "description": "a new object set (ID card, syringe, handcuffs, bullets) slides into frame over the tape outline; a photo and notebook follow",
+     "text": "",
+     "motion": "objects slide/drop in with soft shadow",
+     "camera": "pan"
+    },
+    {
+     "t0": 11,
+     "t1": 24,
+     "archetype": "device",
+     "description": "phone, clipboard form, folders with ID cards, toy car lights, money, newspaper; every ~2 s the camera glides to the next prop group",
+     "text": "",
+     "motion": "camera glide + props slide",
+     "camera": "pan"
+    }
+   ],
+   "transitions": [
+    "camera glide to the next prop group",
+    "whip at the very end"
+   ],
+   "pacing": {
+    "scene_seconds": "2.1",
+    "rhythm": "medium",
+    "notes": "a new prop group every 2.1 s"
+   },
+   "motion": "slow smooth camera glides, objects drop in with shadows, no bounce",
+   "layout_rules": [
+    "every object has a label tape",
+    "objects aligned to the tape floor plan",
+    "ample dark empty space around groups"
+   ],
+   "professional_because": [
+    "physical realism: shadows, depth of field, texture",
+    "story told with props, not text"
+   ],
+   "weaknesses": [],
+   "notes": "Use for crime / mystery / investigation / history topics. AUDIO (measured): music-led (RMS -15.6 dB, bass-led 340 Hz centroid); onsets every 0.2-1 s from 8 s (soft hits on each prop landing).",
+   "aspect": "16:9",
+   "duration": 50.0,
+   "fps": 24,
+   "seed": true
+  },
+  {
+   "sha": "771791996321ee10",
+   "source": "user reference 794dfc55",
+   "title": "Vintage dossier: typewriter, polaroids, tape (sepia)",
+   "tags": [
+    "vintage",
+    "history",
+    "dossier",
+    "typewriter",
+    "polaroid",
+    "sepia",
+    "biography",
+    "retro"
+   ],
+   "palette": [
+    "#1a1a1a",
+    "#c9a36b",
+    "#e8d3a8",
+    "#5a4632",
+    "#2b2b2b",
+    "#f2f0eb"
+   ],
+   "backgrounds": "dark charcoal board; aged paper sheets with folds, film strip, torn paper, masking tape",
+   "typography": {
+    "headline": "bold serif caps on paper (name)",
+    "body": "typewriter mono / small serif lorem lines",
+    "text_effects": "typewriter: characters appear one by one with a tick sound"
+   },
+   "scenes": [
+    {
+     "t0": 0,
+     "t1": 8,
+     "archetype": "hero",
+     "description": "typewriter photo, two polaroids with tape, a paper sheet with a name that types in, date counter (day, month, year) rolling",
+     "text": "DR. MATTHEW EARNSHAW  20 OCT 1985",
+     "motion": "items slide in with rotation and a drop shadow, typed text, rolling digits",
+     "camera": "none"
+    },
+    {
+     "t0": 8,
+     "t1": 15,
+     "archetype": "hero",
+     "description": "board clears (a tape strip falls), next person card with polaroid and group photo, typed name",
+     "text": "BASIL DODGER",
+     "motion": "same choreography reused",
+     "camera": "none"
+    }
+   ],
+   "transitions": [
+    "clear the board then reuse the layout"
+   ],
+   "pacing": {
+    "scene_seconds": "8",
+    "rhythm": "medium",
+    "notes": "template repeats for each person"
+   },
+   "motion": "slight rotation (-4..+4 deg) when landing, shadow grows during the drop, typing 0.33 s per character",
+   "layout_rules": [
+    "paper left, photos right, date under",
+    "tape piece on every photo"
+   ],
+   "professional_because": [
+    "tactile materials",
+    "a repeatable template per person"
+   ],
+   "weaknesses": [],
+   "notes": " AUDIO (measured): typewriter ticks measured every ~0.33 s from 14.5 s to 29.5 s (one tick per character), soft paper whoosh at 6.5 s; RMS -19 dB.",
+   "aspect": "16:9",
+   "duration": 31.0,
+   "fps": 24,
+   "seed": true
+  },
+  {
+   "sha": "103ab7d1ebbf8fae",
+   "source": "user reference a1395a30",
+   "title": "Tilt-shift miniature map with tiny boats (depth of field)",
+   "tags": [
+    "map",
+    "tilt shift",
+    "miniature",
+    "history",
+    "travel",
+    "geography",
+    "blur",
+    "boats"
+   ],
+   "palette": [
+    "#4a7fb0",
+    "#d9936b",
+    "#b8312f",
+    "#ffffff",
+    "#1c2833"
+   ],
+   "backgrounds": "aged blue-and-sand cracked map texture, heavy vignette, soft grey clouds in the blurred far field",
+   "typography": {
+    "headline": "none",
+    "body": "",
+    "text_effects": ""
+   },
+   "scenes": [
+    {
+     "t0": 0,
+     "t1": 1.9,
+     "archetype": "image",
+     "description": "top-down map; a red hand-drawn circle draws on a region",
+     "text": "",
+     "motion": "circle draws in 0.6 s",
+     "camera": "push-in"
+    },
+    {
+     "t0": 1.9,
+     "t1": 14.3,
+     "archetype": "hero",
+     "description": "camera tilts down to eye level: tiny sailboats on the map, strong tilt-shift blur at top and bottom, a dashed red route draws across",
+     "text": "",
+     "motion": "slow lateral camera drift, route dashes animate",
+     "camera": "pan"
+    }
+   ],
+   "transitions": [
+    "camera tilt from top-down to low angle"
+   ],
+   "pacing": {
+    "scene_seconds": "7",
+    "rhythm": "slow",
+    "notes": ""
+   },
+   "motion": "very slow camera, route line draws with dashes",
+   "layout_rules": [
+    "subject in the sharp middle band, blur at top and bottom"
+   ],
+   "professional_because": [
+    "miniature look from selective blur + vignette"
+   ],
+   "weaknesses": [],
+   "notes": " AUDIO (measured): typing clicks measured every 0.16 s from 1.4 to 4.4 s (the red circle / label drawing), a second burst 6.2-7.5 s, then 9.9-11.2 s; RMS -20 dB.",
+   "aspect": "16:9",
+   "duration": 14.3,
+   "fps": 30,
+   "seed": true
+  },
+  {
+   "sha": "2c8ca2176b7495f1",
+   "source": "user reference e26bf9d6",
+   "title": "Brand history with polaroids, highlighter and whip-zoom (Sony)",
+   "tags": [
+    "history",
+    "brand",
+    "timeline",
+    "polaroid",
+    "workshop",
+    "zoom transition",
+    "documentary",
+    "electronics"
+   ],
+   "palette": [
+    "#8a9096",
+    "#d62828",
+    "#e9f542",
+    "#1e88e5",
+    "#7a5230",
+    "#0b2a4a"
+   ],
+   "backgrounds": "concrete wall with shelves of old electronics -> wooden workbench with blue blueprint sheet -> deep blue gradient for the product",
+   "typography": {
+    "headline": "heavy red condensed caps \"MAY\" with a yellow highlighter bar behind the year",
+    "body": "tiny handwritten labels",
+    "text_effects": "date slams in; highlighter bar wipes in from the left"
+   },
+   "scenes": [
+    {
+     "t0": 0,
+     "t1": 6,
+     "archetype": "hero",
+     "description": "wall of vintage instruments; red date appears, two polaroid portraits fly in and tilt",
+     "text": "MAY 1946",
+     "motion": "slam + highlighter wipe, polaroids rotate in",
+     "camera": "slow push"
+    },
+    {
+     "t0": 6,
+     "t1": 8.5,
+     "archetype": "transition",
+     "description": "camera tilts down from the wall to the workbench with the blueprint",
+     "text": "SONY",
+     "motion": "tilt-down",
+     "camera": "tilt"
+    },
+    {
+     "t0": 8.3,
+     "t1": 11,
+     "archetype": "transition",
+     "description": "fast zoom blur through the logo into a real store, then into the product",
+     "text": "",
+     "motion": "whip zoom with radial blur (2.4 s of blur frames)",
+     "camera": "zoom"
+    },
+    {
+     "t0": 11,
+     "t1": 24,
+     "archetype": "product",
+     "description": "product on a blue gradient with light sweep",
+     "text": "WALKMAN",
+     "motion": "slow rotate + light sweep",
+     "camera": "orbit"
+    }
+   ],
+   "transitions": [
+    "camera tilt",
+    "zoom blur through a logo",
+    "match cut to the product"
+   ],
+   "pacing": {
+    "scene_seconds": "5",
+    "rhythm": "medium",
+    "notes": ""
+   },
+   "motion": "whip-zoom with radial blur between worlds",
+   "layout_rules": [
+    "date top right, photos around it",
+    "one accent colour per scene (red date, yellow bar)"
+   ],
+   "professional_because": [
+    "each beat changes the physical world (wall, desk, store, studio)"
+   ],
+   "weaknesses": [],
+   "notes": " AUDIO (measured): voice + music (RMS -18.5 dB, peak 0.3 dB); hits at 3.3, 4.3 (polaroids), 8.3-10.7 (zoom blur whoosh), then sparse 11-22 s.",
+   "aspect": "16:9",
+   "duration": 24.0,
+   "fps": 30,
+   "seed": true
+  },
+  {
+   "sha": "087614ae205fae11",
+   "source": "user reference f4e77100",
+   "title": "Moody investigation board seen from behind (cinematic plate)",
+   "tags": [
+    "cinematic",
+    "thriller",
+    "investigation",
+    "dark",
+    "live action look",
+    "slow push",
+    "pinboard"
+   ],
+   "palette": [
+    "#0e0e12",
+    "#3a1a1a",
+    "#b03030",
+    "#d9d4c8",
+    "#2b3a3a"
+   ],
+   "backgrounds": "dark room, red rim light on the person, pinboard of photos and sketches softly lit",
+   "typography": {
+    "headline": "none",
+    "body": "",
+    "text_effects": ""
+   },
+   "scenes": [
+    {
+     "t0": 0,
+     "t1": 26.6,
+     "archetype": "hero",
+     "description": "a person seen from behind studies a pinboard of faces; very slow push-in, faint head movement and light flicker, details sharpen over time",
+     "text": "",
+     "motion": "imperceptible push-in",
+     "camera": "push-in"
+    }
+   ],
+   "transitions": [
+    "none"
+   ],
+   "pacing": {
+    "scene_seconds": "26",
+    "rhythm": "slow",
+    "notes": "one long shot"
+   },
+   "motion": "almost no motion, tension from stillness",
+   "layout_rules": [
+    "subject in the left third, board right of centre",
+    "dark frame, only the board is lit"
+   ],
+   "professional_because": [
+    "mood through light and stillness"
+   ],
+   "weaknesses": [],
+   "notes": "AI-video style plate: use as a background for titles. AUDIO (measured): silent clip: a low drone plus an occasional paper rustle or heartbeat would fit.",
+   "aspect": "16:9",
+   "duration": 26.6,
+   "fps": 24,
+   "seed": true
+  },
+  {
+   "sha": "86e8f6a3bc427c18",
+   "source": "user reference f5b4b763",
+   "title": "Dark teal stats explainer with line connectors (creator economy)",
+   "tags": [
+    "stats",
+    "numbers",
+    "infographic",
+    "teal",
+    "dark",
+    "connectors",
+    "handwriting",
+    "company story"
+   ],
+   "palette": [
+    "#050f14",
+    "#0d3b4a",
+    "#22b5d4",
+    "#ffffff",
+    "#ffd60a",
+    "#f08a5d"
+   ],
+   "backgrounds": "near-black teal with faint dust particles and giant blurred gears; a warm orange-pink flash at the transition",
+   "typography": {
+    "headline": "clean sans for stats (white, 1 line)",
+    "body": "handwriting font for the story sentence",
+    "text_effects": "stats slide in under their icon; handwritten sentence types and the key words get a yellow highlighter underline"
+   },
+   "scenes": [
+    {
+     "t0": 0,
+     "t1": 9,
+     "archetype": "diagram",
+     "description": "glowing logo; a thin line draws down to a person icon with \"4.6 million creators.\"; the camera pans right, a second line draws to a money icon \"1.41 billion in revenue.\", then a handshake icon \"7.2 billion transactions.\"",
+     "text": "4.6 million creators. 1.41 billion in revenue. 7.2 billion transactions.",
+     "motion": "line draws with ease, icon pops, caption fades up; camera pans along the chain",
+     "camera": "pan"
+    },
+    {
+     "t0": 9,
+     "t1": 10,
+     "archetype": "transition",
+     "description": "warm colour flash and whip",
+     "text": "",
+     "motion": "flash + blur",
+     "camera": "none"
+    },
+    {
+     "t0": 10,
+     "t1": 26.7,
+     "archetype": "text",
+     "description": "handwritten line typed over giant gears; key phrase gets a yellow underline",
+     "text": "A company built on personal connection outperformed",
+     "motion": "typing + highlighter underline draw",
+     "camera": "slow push"
+    }
+   ],
+   "transitions": [
+    "warm flash whip"
+   ],
+   "pacing": {
+    "scene_seconds": "8",
+    "rhythm": "medium",
+    "notes": ""
+   },
+   "motion": "lines draw 0.6 s, icons pop with overshoot, camera pans to follow the chain",
+   "layout_rules": [
+    "icon above its caption, spacing equal along the line",
+    "one yellow highlight per scene"
+   ],
+   "professional_because": [
+    "numbers get big icons, easy to scan"
+   ],
+   "weaknesses": [],
+   "notes": " AUDIO (measured): music + voice (RMS -15.7 dB, 60 fps clip); hits at 2.4, 6.8, 8.9-9.4 (flash), 10.9, 12.8, 13.8, 14.2, 15.2 ... about one per sentence or per new stat.",
+   "aspect": "16:9",
+   "duration": 26.7,
+   "fps": 60,
+   "seed": true
+  }
+ ],
+ "guide": "USER-TAUGHT EDITING + SOUND RULES (measured on 10 reference videos: SaaS promos, cinematic title sequences, history explainers):\nLOOK: one hero object per scene (60-70 % of the frame), rest supporting; one accent colour on a dark or soft-gradient background; tiny logo badge fixed in a corner; real-looking UI screenshots, never empty boxes; depth = blur on off-focus layers + scale difference; physical styles (paper, tape, polaroid, flat-lay) use shadows + slight rotation (-4..+4 deg).\nRHYTHM: something new every 0.2-0.4 s in a hook, a new object/card about every 2-5 s; cuts every 2.5-5 s (long videos ~5 s); story colour change = story beat (dark = problem, light = solution).\nMOTION: ease-out slides, overshoot 5-10 % on pops, cursor on a curved path with click squeeze, lines draw 0.6 s, camera glides/pushes slowly (never static for >3 s), whip-zoom blur or light-beam flash to change worlds, typewriter 0.16-0.33 s per character.\nSOUND: every visual event has a hit - pop/click on each card or icon (spacing 0.2-0.85 s), one tick per typed character, whoosh on every transition / whip / camera glide, soft paper or tape sound for physical items, riser into a big reveal. Mix: music bed + effects around -16 dB RMS, peaks near -1 dBFS, bass-led (200-700 Hz) with clear highs for ticks; voice-over on top. Silent clips (4 of 10 had no audio) are made to get music + effects added afterwards.\nTEXT: 1-2 lines, 2 sizes max, key word bold or coloured; handwriting font for a personal sentence with a yellow highlighter underline; numbers count up; strike-through old prices.",
+ "techniques": [
+  {
+   "name": "Glass pill and cursor click",
+   "when": "product / feature intro",
+   "how": "a rounded glass pill (card layer, white rim, blur) in the centre; a cursor arrow flies on a curved path, squeezes 0.9 on click, then 4-6 UI cards pop out around it with overshoot, 0.2 s apart; pop SFX per card"
+  },
+  {
+   "name": "Light-beam world change",
+   "when": "switch from problem (dark) to solution (light)",
+   "how": "a bright vertical beam drops from the top at the cut, flash 0.15 s, next scene uses a pastel gradient; whoosh + shimmer SFX"
+  },
+  {
+   "name": "Sequential glossy icon row",
+   "when": "list of features",
+   "how": "5 glossy gradient spheres with white icons pop left to right every 0.4 s (scale 0 -> 1.15 -> 1) with tiny labels under them; pop SFX each"
+  },
+  {
+   "name": "Cutout sticker rise with pop-up props",
+   "when": "story about a person or company",
+   "how": "B&W cutout with 8-10 px white outline rises from the bottom (0.9 s ease-out), then flat colour icons (pie, gear, cash) pop BEHIND it every 0.3 s on a dark paper texture; paper whoosh + pops"
+  },
+  {
+   "name": "Typewriter with tick per character",
+   "when": "dates, names, titles in vintage or history styles",
+   "how": "text reveal per character at 0.16-0.33 s with a key tick SFX on every character, rolling digits for dates, paper and polaroids slide in with rotation and shadow"
+  },
+  {
+   "name": "Top-down flat-lay with tape floor plan",
+   "when": "mystery / investigation / history",
+   "how": "dark desk from above, masking-tape outline lines, objects slide in with soft shadows, label tape per object, camera glides to a new prop group every ~2 s, handwriting stroke text"
+  },
+  {
+   "name": "Tilt-shift miniature",
+   "when": "maps, history, travel",
+   "how": "strong blur at top and bottom bands, vignette, tiny sharp subjects in the middle band, hand-drawn red circle (0.6 s) and dashed route that draws; typing click SFX on drawings"
+  },
+  {
+   "name": "Line connector stats chain",
+   "when": "numbers and facts",
+   "how": "logo glows, thin line draws to an icon with a caption (number first), camera pans along to the next; each stat 2-3 s; icon pop SFX"
+  },
+  {
+   "name": "Whip-zoom blur between worlds",
+   "when": "location or era change",
+   "how": "zoom through a logo/object with radial blur (0.4-2 s), whoosh SFX rising, land on the next scene already sharp"
+  },
+  {
+   "name": "Dense UI collage with one hero",
+   "when": "platform / dashboard launch",
+   "how": "many dark UI panels staggered 0.1-0.2 s with depth blur, one saturated brand-colour circle or logo in the centre, slow pull-out; pop per panel"
+  },
+  {
+   "name": "Highlighter bar behind the key word",
+   "when": "dates, names, key claims",
+   "how": "yellow bar wipes in from the left behind the word in 0.3 s while the word slams in; marker SFX"
+  },
+  {
+   "name": "Tilted 3D card grid with tabs",
+   "when": "feature list",
+   "how": "cards on a perspective plane, tab pills highlight in orange one by one, camera glides along the plane"
+  }
+ ]
+}
