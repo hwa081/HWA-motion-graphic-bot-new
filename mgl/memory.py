@@ -319,7 +319,7 @@ class Memory:
         with open(p, 'a', encoding='utf-8') as f: f.write('\n' + text.strip() + '\n')
 
     # ---------------------------------------------------------------- prompt context
-    def context_for_prompt(self, prompt, max_chars=6500):
+    def context_for_prompt(self, prompt, max_chars=8000):
         parts = []
         bk = self.brand_kit()
         if bk:
@@ -328,7 +328,7 @@ class Memory:
         if ls:
             parts.append('LESSONS LEARNED FROM EARLIER VIDEOS (follow them):\n' + '\n'.join('- %s: %s' % ('DO' if l['kind'] == 'do' else "DON'T", l['text']) for l in ls))
         sg = self.style_guide()
-        if sg: parts.append('STYLE GUIDE learned from the reference videos the user collected:\n' + sg[:4200])
+        if sg: parts.append('STYLE GUIDE learned from the reference videos the user collected:\n' + sg[:5200])
         sty = self.relevant_styles(prompt, 2)
         if sty:
             parts.append('REFERENCE STYLE CARDS (borrow structure and motion ideas, never copy content):\n' + '\n'.join(json.dumps({k: v for k, v in s.items() if k in ('title', 'palette', 'typography', 'motion', 'transitions', 'pacing', 'scenes', 'notes')}, ensure_ascii=False)[:900] for s in sty))
