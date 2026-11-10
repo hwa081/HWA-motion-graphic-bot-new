@@ -281,5 +281,763 @@
   "duration": 10.1,
   "id": "s-25cf",
   "date": "2026-11-09T13:14:06Z"
+ },
+ {
+  "sha": "8126cc03271fa484",
+  "source": "user reference 3c68db50",
+  "title": "Soft gradient SaaS logo and feature spheres (purple)",
+  "tags": [
+   "saas",
+   "logo",
+   "purple",
+   "gradient",
+   "icons",
+   "hr",
+   "features",
+   "soft"
+  ],
+  "palette": [
+   "#c026d3",
+   "#7c3aed",
+   "#a78bfa",
+   "#f5f3ff",
+   "#ffffff"
+  ],
+  "backgrounds": "white with big blurred magenta and violet blobs that drift slowly; at the end it dims to soft grey",
+  "typography": {
+   "headline": "rounded geometric sans, bold white logo word",
+   "body": "tagline regular white",
+   "text_effects": "logo blur-in then sharpens; tagline fades up"
+  },
+  "scenes": [
+   {
+    "t0": 0,
+    "t1": 1.4,
+    "archetype": "logo_reveal",
+    "description": "white wordmark blurs in and sharpens, tagline appears under it",
+    "text": "The People Success Platform",
+    "motion": "blur-to-sharp + small float up",
+    "camera": "none"
+   },
+   {
+    "t0": 1.8,
+    "t1": 3.6,
+    "archetype": "icons",
+    "description": "five glossy purple spheres with white icons pop in one after another from left to right with small labels",
+    "text": "Objectives, Feedback, Engagement, Performance, Learning",
+    "motion": "each sphere scales 0 -> 1.15 -> 1 every ~0.4 s; the newest is the biggest",
+    "camera": "none"
+   },
+   {
+    "t0": 4.2,
+    "t1": 9.3,
+    "archetype": "transition",
+    "description": "spheres shrink out one by one, background dims to grey for the next scene",
+    "text": "",
+    "motion": "scale out + desaturate",
+    "camera": "none"
+   }
+  ],
+  "transitions": [
+   "dim to grey",
+   "spheres scale out"
+  ],
+  "pacing": {
+   "scene_seconds": "4.5",
+   "rhythm": "medium",
+   "notes": "rhythm of 0.4 s per icon"
+  },
+  "motion": "scale pops with overshoot, long soft blurs",
+  "layout_rules": [
+   "logo top-centre, row of icons centred below, tiny labels",
+   "white text on colour glow (no boxes)"
+  ],
+  "professional_because": [
+   "one colour family",
+   "glossy 3D-looking spheres with inner shine"
+  ],
+  "weaknesses": [],
+  "notes": " AUDIO (measured): near silent (tiny noise only): clean music bed plus a soft pop for each sphere every 0.4 s.",
+  "aspect": "16:9",
+  "duration": 9.3,
+  "fps": 30,
+  "seed": true,
+  "id": "seed-8126cc",
+  "date": "2026-11-10T10:06:43Z"
+ },
+ {
+  "sha": "ad2f17152d7126ba",
+  "source": "user reference 4d6f4131",
+  "title": "SaaS founder explainer with floating product UI (indigo)",
+  "tags": [
+   "saas",
+   "explainer",
+   "voiceover",
+   "ui screenshots",
+   "indigo",
+   "money",
+   "pricing",
+   "long"
+  ],
+  "palette": [
+   "#070418",
+   "#1e1b4b",
+   "#4f46e5",
+   "#6366f1",
+   "#ffffff",
+   "#facc15"
+  ],
+  "backgrounds": "deep indigo/navy gradient with subtle noise, floating dollar bills in the money scenes, bright white UI cards on top",
+  "typography": {
+   "headline": "big white sans (Inter), 1-2 lines, key words in indigo or bold",
+   "body": "UI text inside screenshots",
+   "text_effects": "kinetic words appear in time with the voice; one script-font word (\"Cut\") with a hand-drawn underline as accent"
+  },
+  "scenes": [
+   {
+    "t0": 0,
+    "t1": 5,
+    "archetype": "text",
+    "description": "hook sentence \"What if just 430 customers\" large and centred, a number counts up",
+    "text": "What if just 430 customers",
+    "motion": "words blur-in on the voice",
+    "camera": "slow push"
+   },
+   {
+    "t0": 5,
+    "t1": 14,
+    "archetype": "product",
+    "description": "calculator card and dark result card side by side over falling dollar bills, big revenue number counts to $1,000,920",
+    "text": "$1,000,920",
+    "motion": "count-up, parallax bills",
+    "camera": "slow zoom"
+   },
+   {
+    "t0": 14,
+    "t1": 25,
+    "archetype": "diagram",
+    "description": "tree diagram: logo box connected by lines to competitor logos; then people avatars below a $10,000,000 box",
+    "text": "So here is ...",
+    "motion": "lines draw, avatars pop in a row",
+    "camera": "none"
+   },
+   {
+    "t0": 25,
+    "t1": 50,
+    "archetype": "product",
+    "description": "screenshots of the web app in laptop/browser frames glide in with soft shadow and depth blur; feature pills (\"Host events\") float above",
+    "text": "Host events",
+    "motion": "cards slide + 3D tilt, blurred neighbours at the edges",
+    "camera": "pan"
+   },
+   {
+    "t0": 48,
+    "t1": 56,
+    "archetype": "device",
+    "description": "phone mockup with app icon, then a modal form \"Create New Plan\" being typed",
+    "text": "Create New Plan",
+    "motion": "typing cursor in fields",
+    "camera": "push-in"
+   },
+   {
+    "t0": 62,
+    "t1": 100,
+    "archetype": "pricing",
+    "description": "pricing cards (Monthly / Yearly / Lifetime), strike-through prices, notification stack on a phone (purchased Premium Membership +$99), browser collage, final offer card",
+    "text": "$139/mo, Lifetime $2990, $599",
+    "motion": "cards rise, strike-through draws, notifications drop in one by one",
+    "camera": "none"
+   },
+   {
+    "t0": 104,
+    "t1": 111,
+    "archetype": "end",
+    "description": "fade to dark indigo",
+    "text": "",
+    "motion": "fade",
+    "camera": "none"
+   }
+  ],
+  "transitions": [
+   "hard cut on the voice",
+   "blur-slide of the next card",
+   "zoom into a screenshot"
+  ],
+  "pacing": {
+   "scene_seconds": "5",
+   "rhythm": "medium",
+   "notes": "a cut or new card about every 5 s, something moves every 1-2 s"
+  },
+  "motion": "ease-out slides, depth-of-field blur on cards that are not in focus, counters, strike-throughs and typing for proof",
+  "layout_rules": [
+   "hero UI card 60-70 % of the frame",
+   "real-looking screenshots, never empty boxes",
+   "dark background keeps white cards readable",
+   "captions in the lower third max 2 lines"
+  ],
+  "professional_because": [
+   "story told with real numbers",
+   "each scene proves one claim with a UI or a number",
+   "consistent dark indigo world"
+  ],
+  "weaknesses": [],
+  "notes": "Long videos stay interesting by changing the UI object every 3-5 s. AUDIO (measured): voice-over (RMS -16 dB, peak +3 dB over-driven, bass-led voice ~585 Hz centroid) with short UI pop and whoosh hits at 41.6, 43.6, 65.0, 76.8, 87-89 s (about one hit per new card, 1-2 s apart).",
+  "aspect": "16:9",
+  "duration": 111.3,
+  "fps": 30,
+  "seed": true,
+  "id": "seed-ad2f17",
+  "date": "2026-11-10T10:06:43Z"
+ },
+ {
+  "sha": "ff11f8e7d4576794",
+  "source": "user reference 68f09dd3",
+  "title": "Paper-cutout documentary portrait with pop-up icons (B&W)",
+  "tags": [
+   "cutout",
+   "portrait",
+   "documentary",
+   "collage",
+   "black and white",
+   "icons",
+   "business",
+   "news"
+  ],
+  "palette": [
+   "#1b1b1b",
+   "#2a2a2a",
+   "#ffffff",
+   "#3b5bdb",
+   "#2f9e44",
+   "#e8590c"
+  ],
+  "backgrounds": "dark charcoal crumpled-paper texture with a soft vignette",
+  "typography": {
+   "headline": "none in this clip",
+   "body": "",
+   "text_effects": ""
+  },
+  "scenes": [
+   {
+    "t0": 0,
+    "t1": 1,
+    "archetype": "text",
+    "description": "empty textured background (anticipation)",
+    "text": "",
+    "motion": "static",
+    "camera": "none"
+   },
+   {
+    "t0": 1,
+    "t1": 2.1,
+    "archetype": "image",
+    "description": "B&W person cutout with thick white sticker outline rises from the bottom edge",
+    "text": "",
+    "motion": "slide up with ease-out and a tiny settle",
+    "camera": "none"
+   },
+   {
+    "t0": 2.1,
+    "t1": 7,
+    "archetype": "icons",
+    "description": "flat coloured infographic pieces (blue pie chart, green circle, grey gear, cash stack) pop in BEHIND the person one every ~0.3 s",
+    "text": "",
+    "motion": "scale pop with overshoot, slight rotation",
+    "camera": "slow push-in"
+   }
+  ],
+  "transitions": [
+   "none (single shot)"
+  ],
+  "pacing": {
+   "scene_seconds": "7",
+   "rhythm": "medium",
+   "notes": "build-up of elements, 0.3 s apart"
+  },
+  "motion": "pop overshoot 10 %, white outline (stroke 8-10 px) around every cutout",
+  "layout_rules": [
+   "subject centred, props behind and around it",
+   "only grey + 3 accent colours, subject in B&W so the colour props stand out"
+  ],
+  "professional_because": [
+   "cutout outline makes the subject pop",
+   "monochrome subject + colour icons"
+  ],
+  "weaknesses": [],
+  "notes": "Great for stories about a person or company. AUDIO (measured): silent clip: add a soft paper whoosh for the rise and a pop per icon (every 0.3 s).",
+  "aspect": "16:9",
+  "duration": 7.0,
+  "fps": 30,
+  "seed": true,
+  "id": "seed-ff11f8",
+  "date": "2026-11-10T10:06:43Z"
+ },
+ {
+  "sha": "d8a21519dd12aab3",
+  "source": "user reference 76d4fe9b",
+  "title": "Top-down crime-board flat-lay title sequence (cinematic)",
+  "tags": [
+   "cinematic",
+   "flat lay",
+   "top down",
+   "thriller",
+   "title sequence",
+   "props",
+   "handwriting",
+   "korean",
+   "investigation"
+  ],
+  "palette": [
+   "#1f2a2a",
+   "#2d3b3a",
+   "#e8e4d8",
+   "#c9b79c",
+   "#b8312f",
+   "#ffffff"
+  ],
+  "backgrounds": "dark slate-green desk seen from above with white masking-tape outlines of a floor plan; soft top light with vignette",
+  "typography": {
+   "headline": "handwritten brush script for the key phrase",
+   "body": "typed label tapes (black text on grey tape) next to each object",
+   "text_effects": "script text writes itself stroke by stroke; labels slap on like tape"
+  },
+  "scenes": [
+   {
+    "t0": 0,
+    "t1": 4.7,
+    "archetype": "hero",
+    "description": "shoes and papers on the desk, a handwritten word fades in at the right",
+    "text": "",
+    "motion": "slow camera drift; handwriting draws",
+    "camera": "pan"
+   },
+   {
+    "t0": 4.7,
+    "t1": 11,
+    "archetype": "image",
+    "description": "a new object set (ID card, syringe, handcuffs, bullets) slides into frame over the tape outline; a photo and notebook follow",
+    "text": "",
+    "motion": "objects slide/drop in with soft shadow",
+    "camera": "pan"
+   },
+   {
+    "t0": 11,
+    "t1": 24,
+    "archetype": "device",
+    "description": "phone, clipboard form, folders with ID cards, toy car lights, money, newspaper; every ~2 s the camera glides to the next prop group",
+    "text": "",
+    "motion": "camera glide + props slide",
+    "camera": "pan"
+   }
+  ],
+  "transitions": [
+   "camera glide to the next prop group",
+   "whip at the very end"
+  ],
+  "pacing": {
+   "scene_seconds": "2.1",
+   "rhythm": "medium",
+   "notes": "a new prop group every 2.1 s"
+  },
+  "motion": "slow smooth camera glides, objects drop in with shadows, no bounce",
+  "layout_rules": [
+   "every object has a label tape",
+   "objects aligned to the tape floor plan",
+   "ample dark empty space around groups"
+  ],
+  "professional_because": [
+   "physical realism: shadows, depth of field, texture",
+   "story told with props, not text"
+  ],
+  "weaknesses": [],
+  "notes": "Use for crime / mystery / investigation / history topics. AUDIO (measured): music-led (RMS -15.6 dB, bass-led 340 Hz centroid); onsets every 0.2-1 s from 8 s (soft hits on each prop landing).",
+  "aspect": "16:9",
+  "duration": 50.0,
+  "fps": 24,
+  "seed": true,
+  "id": "seed-d8a215",
+  "date": "2026-11-10T10:06:43Z"
+ },
+ {
+  "sha": "771791996321ee10",
+  "source": "user reference 794dfc55",
+  "title": "Vintage dossier: typewriter, polaroids, tape (sepia)",
+  "tags": [
+   "vintage",
+   "history",
+   "dossier",
+   "typewriter",
+   "polaroid",
+   "sepia",
+   "biography",
+   "retro"
+  ],
+  "palette": [
+   "#1a1a1a",
+   "#c9a36b",
+   "#e8d3a8",
+   "#5a4632",
+   "#2b2b2b",
+   "#f2f0eb"
+  ],
+  "backgrounds": "dark charcoal board; aged paper sheets with folds, film strip, torn paper, masking tape",
+  "typography": {
+   "headline": "bold serif caps on paper (name)",
+   "body": "typewriter mono / small serif lorem lines",
+   "text_effects": "typewriter: characters appear one by one with a tick sound"
+  },
+  "scenes": [
+   {
+    "t0": 0,
+    "t1": 8,
+    "archetype": "hero",
+    "description": "typewriter photo, two polaroids with tape, a paper sheet with a name that types in, date counter (day, month, year) rolling",
+    "text": "DR. MATTHEW EARNSHAW  20 OCT 1985",
+    "motion": "items slide in with rotation and a drop shadow, typed text, rolling digits",
+    "camera": "none"
+   },
+   {
+    "t0": 8,
+    "t1": 15,
+    "archetype": "hero",
+    "description": "board clears (a tape strip falls), next person card with polaroid and group photo, typed name",
+    "text": "BASIL DODGER",
+    "motion": "same choreography reused",
+    "camera": "none"
+   }
+  ],
+  "transitions": [
+   "clear the board then reuse the layout"
+  ],
+  "pacing": {
+   "scene_seconds": "8",
+   "rhythm": "medium",
+   "notes": "template repeats for each person"
+  },
+  "motion": "slight rotation (-4..+4 deg) when landing, shadow grows during the drop, typing 0.33 s per character",
+  "layout_rules": [
+   "paper left, photos right, date under",
+   "tape piece on every photo"
+  ],
+  "professional_because": [
+   "tactile materials",
+   "a repeatable template per person"
+  ],
+  "weaknesses": [],
+  "notes": " AUDIO (measured): typewriter ticks measured every ~0.33 s from 14.5 s to 29.5 s (one tick per character), soft paper whoosh at 6.5 s; RMS -19 dB.",
+  "aspect": "16:9",
+  "duration": 31.0,
+  "fps": 24,
+  "seed": true,
+  "id": "seed-771791",
+  "date": "2026-11-10T10:06:43Z"
+ },
+ {
+  "sha": "103ab7d1ebbf8fae",
+  "source": "user reference a1395a30",
+  "title": "Tilt-shift miniature map with tiny boats (depth of field)",
+  "tags": [
+   "map",
+   "tilt shift",
+   "miniature",
+   "history",
+   "travel",
+   "geography",
+   "blur",
+   "boats"
+  ],
+  "palette": [
+   "#4a7fb0",
+   "#d9936b",
+   "#b8312f",
+   "#ffffff",
+   "#1c2833"
+  ],
+  "backgrounds": "aged blue-and-sand cracked map texture, heavy vignette, soft grey clouds in the blurred far field",
+  "typography": {
+   "headline": "none",
+   "body": "",
+   "text_effects": ""
+  },
+  "scenes": [
+   {
+    "t0": 0,
+    "t1": 1.9,
+    "archetype": "image",
+    "description": "top-down map; a red hand-drawn circle draws on a region",
+    "text": "",
+    "motion": "circle draws in 0.6 s",
+    "camera": "push-in"
+   },
+   {
+    "t0": 1.9,
+    "t1": 14.3,
+    "archetype": "hero",
+    "description": "camera tilts down to eye level: tiny sailboats on the map, strong tilt-shift blur at top and bottom, a dashed red route draws across",
+    "text": "",
+    "motion": "slow lateral camera drift, route dashes animate",
+    "camera": "pan"
+   }
+  ],
+  "transitions": [
+   "camera tilt from top-down to low angle"
+  ],
+  "pacing": {
+   "scene_seconds": "7",
+   "rhythm": "slow",
+   "notes": ""
+  },
+  "motion": "very slow camera, route line draws with dashes",
+  "layout_rules": [
+   "subject in the sharp middle band, blur at top and bottom"
+  ],
+  "professional_because": [
+   "miniature look from selective blur + vignette"
+  ],
+  "weaknesses": [],
+  "notes": " AUDIO (measured): typing clicks measured every 0.16 s from 1.4 to 4.4 s (the red circle / label drawing), a second burst 6.2-7.5 s, then 9.9-11.2 s; RMS -20 dB.",
+  "aspect": "16:9",
+  "duration": 14.3,
+  "fps": 30,
+  "seed": true,
+  "id": "seed-103ab7",
+  "date": "2026-11-10T10:06:43Z"
+ },
+ {
+  "sha": "2c8ca2176b7495f1",
+  "source": "user reference e26bf9d6",
+  "title": "Brand history with polaroids, highlighter and whip-zoom (Sony)",
+  "tags": [
+   "history",
+   "brand",
+   "timeline",
+   "polaroid",
+   "workshop",
+   "zoom transition",
+   "documentary",
+   "electronics"
+  ],
+  "palette": [
+   "#8a9096",
+   "#d62828",
+   "#e9f542",
+   "#1e88e5",
+   "#7a5230",
+   "#0b2a4a"
+  ],
+  "backgrounds": "concrete wall with shelves of old electronics -> wooden workbench with blue blueprint sheet -> deep blue gradient for the product",
+  "typography": {
+   "headline": "heavy red condensed caps \"MAY\" with a yellow highlighter bar behind the year",
+   "body": "tiny handwritten labels",
+   "text_effects": "date slams in; highlighter bar wipes in from the left"
+  },
+  "scenes": [
+   {
+    "t0": 0,
+    "t1": 6,
+    "archetype": "hero",
+    "description": "wall of vintage instruments; red date appears, two polaroid portraits fly in and tilt",
+    "text": "MAY 1946",
+    "motion": "slam + highlighter wipe, polaroids rotate in",
+    "camera": "slow push"
+   },
+   {
+    "t0": 6,
+    "t1": 8.5,
+    "archetype": "transition",
+    "description": "camera tilts down from the wall to the workbench with the blueprint",
+    "text": "SONY",
+    "motion": "tilt-down",
+    "camera": "tilt"
+   },
+   {
+    "t0": 8.3,
+    "t1": 11,
+    "archetype": "transition",
+    "description": "fast zoom blur through the logo into a real store, then into the product",
+    "text": "",
+    "motion": "whip zoom with radial blur (2.4 s of blur frames)",
+    "camera": "zoom"
+   },
+   {
+    "t0": 11,
+    "t1": 24,
+    "archetype": "product",
+    "description": "product on a blue gradient with light sweep",
+    "text": "WALKMAN",
+    "motion": "slow rotate + light sweep",
+    "camera": "orbit"
+   }
+  ],
+  "transitions": [
+   "camera tilt",
+   "zoom blur through a logo",
+   "match cut to the product"
+  ],
+  "pacing": {
+   "scene_seconds": "5",
+   "rhythm": "medium",
+   "notes": ""
+  },
+  "motion": "whip-zoom with radial blur between worlds",
+  "layout_rules": [
+   "date top right, photos around it",
+   "one accent colour per scene (red date, yellow bar)"
+  ],
+  "professional_because": [
+   "each beat changes the physical world (wall, desk, store, studio)"
+  ],
+  "weaknesses": [],
+  "notes": " AUDIO (measured): voice + music (RMS -18.5 dB, peak 0.3 dB); hits at 3.3, 4.3 (polaroids), 8.3-10.7 (zoom blur whoosh), then sparse 11-22 s.",
+  "aspect": "16:9",
+  "duration": 24.0,
+  "fps": 30,
+  "seed": true,
+  "id": "seed-2c8ca2",
+  "date": "2026-11-10T10:06:43Z"
+ },
+ {
+  "sha": "087614ae205fae11",
+  "source": "user reference f4e77100",
+  "title": "Moody investigation board seen from behind (cinematic plate)",
+  "tags": [
+   "cinematic",
+   "thriller",
+   "investigation",
+   "dark",
+   "live action look",
+   "slow push",
+   "pinboard"
+  ],
+  "palette": [
+   "#0e0e12",
+   "#3a1a1a",
+   "#b03030",
+   "#d9d4c8",
+   "#2b3a3a"
+  ],
+  "backgrounds": "dark room, red rim light on the person, pinboard of photos and sketches softly lit",
+  "typography": {
+   "headline": "none",
+   "body": "",
+   "text_effects": ""
+  },
+  "scenes": [
+   {
+    "t0": 0,
+    "t1": 26.6,
+    "archetype": "hero",
+    "description": "a person seen from behind studies a pinboard of faces; very slow push-in, faint head movement and light flicker, details sharpen over time",
+    "text": "",
+    "motion": "imperceptible push-in",
+    "camera": "push-in"
+   }
+  ],
+  "transitions": [
+   "none"
+  ],
+  "pacing": {
+   "scene_seconds": "26",
+   "rhythm": "slow",
+   "notes": "one long shot"
+  },
+  "motion": "almost no motion, tension from stillness",
+  "layout_rules": [
+   "subject in the left third, board right of centre",
+   "dark frame, only the board is lit"
+  ],
+  "professional_because": [
+   "mood through light and stillness"
+  ],
+  "weaknesses": [],
+  "notes": "AI-video style plate: use as a background for titles. AUDIO (measured): silent clip: a low drone plus an occasional paper rustle or heartbeat would fit.",
+  "aspect": "16:9",
+  "duration": 26.6,
+  "fps": 24,
+  "seed": true,
+  "id": "seed-087614",
+  "date": "2026-11-10T10:06:43Z"
+ },
+ {
+  "sha": "86e8f6a3bc427c18",
+  "source": "user reference f5b4b763",
+  "title": "Dark teal stats explainer with line connectors (creator economy)",
+  "tags": [
+   "stats",
+   "numbers",
+   "infographic",
+   "teal",
+   "dark",
+   "connectors",
+   "handwriting",
+   "company story"
+  ],
+  "palette": [
+   "#050f14",
+   "#0d3b4a",
+   "#22b5d4",
+   "#ffffff",
+   "#ffd60a",
+   "#f08a5d"
+  ],
+  "backgrounds": "near-black teal with faint dust particles and giant blurred gears; a warm orange-pink flash at the transition",
+  "typography": {
+   "headline": "clean sans for stats (white, 1 line)",
+   "body": "handwriting font for the story sentence",
+   "text_effects": "stats slide in under their icon; handwritten sentence types and the key words get a yellow highlighter underline"
+  },
+  "scenes": [
+   {
+    "t0": 0,
+    "t1": 9,
+    "archetype": "diagram",
+    "description": "glowing logo; a thin line draws down to a person icon with \"4.6 million creators.\"; the camera pans right, a second line draws to a money icon \"1.41 billion in revenue.\", then a handshake icon \"7.2 billion transactions.\"",
+    "text": "4.6 million creators. 1.41 billion in revenue. 7.2 billion transactions.",
+    "motion": "line draws with ease, icon pops, caption fades up; camera pans along the chain",
+    "camera": "pan"
+   },
+   {
+    "t0": 9,
+    "t1": 10,
+    "archetype": "transition",
+    "description": "warm colour flash and whip",
+    "text": "",
+    "motion": "flash + blur",
+    "camera": "none"
+   },
+   {
+    "t0": 10,
+    "t1": 26.7,
+    "archetype": "text",
+    "description": "handwritten line typed over giant gears; key phrase gets a yellow underline",
+    "text": "A company built on personal connection outperformed",
+    "motion": "typing + highlighter underline draw",
+    "camera": "slow push"
+   }
+  ],
+  "transitions": [
+   "warm flash whip"
+  ],
+  "pacing": {
+   "scene_seconds": "8",
+   "rhythm": "medium",
+   "notes": ""
+  },
+  "motion": "lines draw 0.6 s, icons pop with overshoot, camera pans to follow the chain",
+  "layout_rules": [
+   "icon above its caption, spacing equal along the line",
+   "one yellow highlight per scene"
+  ],
+  "professional_because": [
+   "numbers get big icons, easy to scan"
+  ],
+  "weaknesses": [],
+  "notes": " AUDIO (measured): music + voice (RMS -15.7 dB, 60 fps clip); hits at 2.4, 6.8, 8.9-9.4 (flash), 10.9, 12.8, 13.8, 14.2, 15.2 ... about one per sentence or per new stat.",
+  "aspect": "16:9",
+  "duration": 26.7,
+  "fps": 60,
+  "seed": true,
+  "id": "seed-86e8f6",
+  "date": "2026-11-10T10:06:43Z"
  }
 ]
