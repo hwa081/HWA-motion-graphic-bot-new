@@ -149,3 +149,4 @@ Filmora .wfp: media type (audio ke saath 8, bina audio 2), thumb.fsthumb, ID for
 
 ## update18
 - Built-in knowledge from 10 owner reference videos (knowledge/seed.json): 11 style cards, 12 techniques, an editing + sound guide. Loaded on top of memory, never overwrites it.
+- update18b: also learned from the two storyboard PDFs (8 more videos V1-V8, SFX cheat sheet, edit rhythm rules, style picker): 19 style cards, 31 techniques in total.
