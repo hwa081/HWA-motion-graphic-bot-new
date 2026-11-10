@@ -956,9 +956,855 @@
    "duration": 26.7,
    "fps": 60,
    "seed": true
+  },
+  {
+   "sha": "pdf-V1",
+   "source": "storyboard PDF V1",
+   "title": "Robin AI assistant launch: light-to-dark flip, hub and spoke",
+   "tags": [
+    "saas",
+    "ai",
+    "assistant",
+    "integrations",
+    "hub",
+    "mascot",
+    "dark",
+    "orange",
+    "launch"
+   ],
+   "palette": [
+    "#ffffff",
+    "#e8604c",
+    "#f28a2e",
+    "#000000"
+   ],
+   "backgrounds": "white with coral gradient (problem) -> hard flip to black with orange glow (solution); dust particles",
+   "typography": {
+    "headline": "clean grotesk, light weight for contrast words"
+   },
+   "scenes": [
+    {
+     "t0": 0,
+     "t1": 2,
+     "archetype": "text",
+     "description": "problem statement fades up, second phrase lighter",
+     "text": "there is something you're",
+     "motion": "blur-to-sharp",
+     "camera": "none"
+    },
+    {
+     "t0": 2,
+     "t1": 4,
+     "archetype": "icons",
+     "description": "big word swap, glass app icons (Gmail, Teams, Slack) fall with bounce and depth blur",
+     "text": "Forgetting",
+     "motion": "pop per icon",
+     "camera": "none"
+    },
+    {
+     "t0": 8,
+     "t1": 10,
+     "archetype": "hero",
+     "description": "hard cut to black, ring of orange pixel blocks bursts around a small round mascot",
+     "text": "Robin",
+     "motion": "scale out with glow, mascot overshoot",
+     "camera": "none"
+    },
+    {
+     "t0": 10,
+     "t1": 12,
+     "archetype": "text",
+     "description": "two-weight title under the mascot",
+     "text": "AI Chief of Staff",
+     "motion": "type/fade",
+     "camera": "none"
+    },
+    {
+     "t0": 12,
+     "t1": 17,
+     "archetype": "diagram",
+     "description": "mascot hub, curved red-orange circuit lines draw out to app icons that pop at each line end",
+     "text": "",
+     "motion": "trim path, icon pop with glow pulse, 4-6 frames stagger",
+     "camera": "none"
+    }
+   ],
+   "transitions": [],
+   "pacing": {
+    "rhythm": "fast"
+   },
+   "motion": "trim-path line draw, hard flip on the beat, depth blur on near icons",
+   "notes": "SFX: soft riser under text, pop per icon, big impact + reverse riser right before the flip, one pop per hub icon (~6 hits)",
+   "aspect": "16:9",
+   "duration": 17.5,
+   "seed": true
+  },
+  {
+   "sha": "pdf-V2",
+   "source": "storyboard PDF V2",
+   "title": "Claude-style dev tool intro: charcoal + orange glow, terminal and chat typing",
+   "tags": [
+    "ai",
+    "chatbot",
+    "dev tool",
+    "terminal",
+    "typing",
+    "charcoal",
+    "orange",
+    "logo hold",
+    "monospace"
+   ],
+   "palette": [
+    "#1b1b1b",
+    "#d9694a",
+    "#f5efe6"
+   ],
+   "backgrounds": "dark charcoal with dot-matrix texture and a blurred orange glow rising from the bottom",
+   "typography": {
+    "headline": "monospace (JetBrains Mono) for code, serif wordmark",
+    "body": "clean sans UI"
+   },
+   "scenes": [
+    {
+     "t0": 0,
+     "t1": 2,
+     "archetype": "text",
+     "description": "glitch terminal line, characters scramble before settling",
+     "text": "Comple? code+",
+     "motion": "type + glitch",
+     "camera": "none"
+    },
+    {
+     "t0": 2,
+     "t1": 4,
+     "archetype": "product",
+     "description": "logo and a small chat input, glow breathes upward",
+     "text": "Back at / How can I help you today?",
+     "motion": "fade from slight scale-down",
+     "camera": "none"
+    },
+    {
+     "t0": 4,
+     "t1": 8,
+     "archetype": "product",
+     "description": "camera pushes hard into the input; prompt types large; pixel-block dissolve; send button",
+     "text": "Build me a SaaS dashboard",
+     "motion": "fast zoom, typewriter + caret, blocks 0->100 % wipe",
+     "camera": "none"
+    },
+    {
+     "t0": 8,
+     "t1": 10,
+     "archetype": "diagram",
+     "description": "code file tree builds line by line",
+     "text": "Code Files / Frontend / Backend / Dashboard",
+     "motion": "3-frame stagger",
+     "camera": "none"
+    },
+    {
+     "t0": 10,
+     "t1": 12,
+     "archetype": "text",
+     "description": "slot-wheel feature list, centre item sharp, edges fade",
+     "text": "Voice Mode, MCP, Memory, Projects...",
+     "motion": "ease-out scroll, edge blur mask",
+     "camera": "none"
+    },
+    {
+     "t0": 12,
+     "t1": 16,
+     "archetype": "logo_reveal",
+     "description": "logo scales from 90 % with glow and holds 2-3 s",
+     "text": "Claude",
+     "motion": "scale in",
+     "camera": "none"
+    },
+    {
+     "t0": 16,
+     "t1": 17.5,
+     "archetype": "end",
+     "description": "glowing handle sign-off",
+     "text": "studio name",
+     "motion": "glow bloom",
+     "camera": "none"
+    }
+   ],
+   "transitions": [],
+   "pacing": {
+    "rhythm": "fast"
+   },
+   "motion": "camera push-in with expo ease, wheel scroll with mask",
+   "notes": "SFX: keyboard ticks + glitch blip, UI click tone, ticks per tree line, rolling tick that slows as the wheel settles, low sub boom on the logo then silence",
+   "aspect": "16:9",
+   "duration": 17.5,
+   "seed": true
+  },
+  {
+   "sha": "pdf-V3",
+   "source": "storyboard PDF V3",
+   "title": "Freelancer portfolio promo: dark with orange glow, floating mockups, CTA click",
+   "tags": [
+    "freelancer",
+    "portfolio",
+    "developer",
+    "promo",
+    "dark",
+    "orange",
+    "cta",
+    "mockup",
+    "personal brand"
+   ],
+   "palette": [
+    "#101216",
+    "#d97a2b",
+    "#ffffff",
+    "#22c55e"
+   ],
+   "backgrounds": "near-black with orange gradient glow from below, thin glowing outlines around mockups, grid with parallax",
+   "typography": {
+    "headline": "Inter / Geist, tight tracking, mono labels"
+   },
+   "scenes": [
+    {
+     "t0": 0,
+     "t1": 2,
+     "archetype": "text",
+     "description": "question hook, one orange word",
+     "text": "Looking for a developer",
+     "motion": "fade + rise",
+     "camera": "none"
+    },
+    {
+     "t0": 2,
+     "t1": 4,
+     "archetype": "text",
+     "description": "answer replaces it larger",
+     "text": "You found him",
+     "motion": "crossfade with 95->100 % pop",
+     "camera": "none"
+    },
+    {
+     "t0": 4,
+     "t1": 8,
+     "archetype": "product",
+     "description": "browser mockup of the portfolio in a glowing orange outline, phone + watch beside, camera pushes into hero, cursor hovers the button",
+     "text": "Aqib Javed. See the work",
+     "motion": "3D tilt scale-in, push-in, button highlight",
+     "camera": "none"
+    },
+    {
+     "t0": 8,
+     "t1": 12,
+     "archetype": "product",
+     "description": "phone in green glowing outline slides up, then a white phone with a light-streak wipe",
+     "text": "",
+     "motion": "slide + rotate, gradient wipe",
+     "camera": "none"
+    },
+    {
+     "t0": 12,
+     "t1": 14,
+     "archetype": "text",
+     "description": "one stat line",
+     "text": "5+ years shipping flutter",
+     "motion": "blur-in, upward drift",
+     "camera": "none"
+    },
+    {
+     "t0": 14,
+     "t1": 18,
+     "archetype": "pricing",
+     "description": "services card slides in from right with overshoot then dolly-out; orange price tags pop",
+     "text": "What I take on",
+     "motion": "tag pops",
+     "camera": "none"
+    },
+    {
+     "t0": 18,
+     "t1": 20,
+     "archetype": "cta",
+     "description": "orange button, cursor arrives, press and glow",
+     "text": "Start a conversation",
+     "motion": "click squeeze",
+     "camera": "none"
+    },
+    {
+     "t0": 20,
+     "t1": 23.4,
+     "archetype": "text",
+     "description": "closing line typed large then settles smaller",
+     "text": "You know who to contact.",
+     "motion": "typewriter + caret",
+     "camera": "none"
+    }
+   ],
+   "transitions": [],
+   "pacing": {
+    "rhythm": "fast"
+   },
+   "motion": "cursor click on CTA, push-in, 3D tilt",
+   "notes": "SFX: soft riser on the hook, impact tick on the answer, whoosh + soft hit on each mockup, mouse click on the CTA, typing ticks on the closing line",
+   "aspect": "16:9",
+   "duration": 23.4,
+   "seed": true
+  },
+  {
+   "sha": "pdf-V4",
+   "source": "storyboard PDF V4",
+   "title": "Loud neon kinetic-type explainer (AI motion tool)",
+   "tags": [
+    "kinetic typography",
+    "neon",
+    "hype",
+    "tool explainer",
+    "prompt",
+    "hud",
+    "purple",
+    "pink",
+    "counter"
+   ],
+   "palette": [
+    "#0a0b14",
+    "#7b5cff",
+    "#ff2e93",
+    "#ffffff"
+   ],
+   "backgrounds": "near-black navy dot grid, neon violet and pink, REC-style HUD corners and timecode",
+   "typography": {
+    "headline": "heavy italic display (Anton / Archivo Black), monospace HUD labels"
+   },
+   "scenes": [
+    {
+     "t0": 0,
+     "t1": 4,
+     "archetype": "text",
+     "description": "bold extruded letters with a violet light streak; key words coloured pink; glowing star on the censored letter",
+     "text": "YOU WILL NOT BELIEVE THIS",
+     "motion": "word-by-word slam with overshoot and glow flash",
+     "camera": "none"
+    },
+    {
+     "t0": 4,
+     "t1": 6,
+     "archetype": "hud",
+     "description": "frame draws from the corners, subtitle chip highlights the active word, doodle arrow",
+     "text": "What if I told you this entire video",
+     "motion": "trim path, highlight jumps word to word",
+     "camera": "none"
+    },
+    {
+     "t0": 8,
+     "t1": 10,
+     "archetype": "text",
+     "description": "negation slam, pink word melts and distorts",
+     "text": "AND NO.",
+     "motion": "hard cut, liquid distort shake",
+     "camera": "none"
+    },
+    {
+     "t0": 10,
+     "t1": 12,
+     "archetype": "diagram",
+     "description": "two outlined boxes joined by a line, spark runs along it",
+     "text": "CLAUDE -> MCP SERVER",
+     "motion": "line draw + travelling particle",
+     "camera": "none"
+    },
+    {
+     "t0": 14,
+     "t1": 20,
+     "archetype": "product",
+     "description": "prompt box types out, key words get violet highlight chips, enter key bounces",
+     "text": "a samurai in a long coat steps forward",
+     "motion": "line morphs into box, typewriter, chips pop",
+     "camera": "none"
+    },
+    {
+     "t0": 30,
+     "t1": 34,
+     "archetype": "text",
+     "description": "two opposing rows of giant text scroll behind a glowing silhouette",
+     "text": "THE CHARACTER, BEHIND THE CHARACTER",
+     "motion": "opposed horizontal scroll + push",
+     "camera": "none"
+    },
+    {
+     "t0": 34,
+     "t1": 38,
+     "archetype": "transition",
+     "description": "nested neon rectangles tunnel toward camera then collapse to a block icon",
+     "text": "",
+     "motion": "Z-axis fly-through loop",
+     "camera": "none"
+    },
+    {
+     "t0": 38,
+     "t1": 50,
+     "archetype": "counter",
+     "description": "cards stack from the bottom with task + hours; a pink counter climbs 7H -> 12H -> 16H",
+     "text": "MASKING +4H, LAYERING +3H ... TIME SPENT 16H",
+     "motion": "card push up, counter rolls",
+     "camera": "none"
+    },
+    {
+     "t0": 50,
+     "t1": 56,
+     "archetype": "text",
+     "description": "chip chain KATANA -> PROMPT -> GENERATE then huge phrase with one glitching word",
+     "text": "ONE PROMPT",
+     "motion": "wipe + slam",
+     "camera": "none"
+    }
+   ],
+   "transitions": [],
+   "pacing": {
+    "rhythm": "fast"
+   },
+   "motion": "overshoot slams, glitch distortion, HUD frames, tunnel zoom",
+   "notes": "SFX: cinematic hit on each slam, bigger hit on the key word, camera beep and a tick per highlighted word, heavy impact + distortion zap on the negation, warp whoosh then thud on the tunnel, pop per counter card",
+   "aspect": "16:9",
+   "duration": 60.0,
+   "seed": true
+  },
+  {
+   "sha": "pdf-V5",
+   "source": "storyboard PDF V5",
+   "title": "Video editor promo: purple gradient hook and CTA bookends",
+   "tags": [
+    "freelancer",
+    "promo",
+    "purple",
+    "gradient",
+    "hook",
+    "cta",
+    "short"
+   ],
+   "palette": [
+    "#3a0b52",
+    "#c21fd6",
+    "#ffffff",
+    "#d9b8ff"
+   ],
+   "backgrounds": "deep purple vertical gradient to black",
+   "typography": {
+    "headline": "Poppins bold + light mixing"
+   },
+   "scenes": [
+    {
+     "t0": 0,
+     "t1": 2,
+     "archetype": "text",
+     "description": "small white hook, lavender gradient on key words, hand-drawn underline swoosh",
+     "text": "Looking For VIDEO EDITOR?",
+     "motion": "fade in, swoosh underline trim path",
+     "camera": "none"
+    },
+    {
+     "t0": 17,
+     "t1": 24.9,
+     "archetype": "cta",
+     "description": "blur-wipe back to purple, glowing gradient second line",
+     "text": "Let's Build Your Content ORDER NOW",
+     "motion": "upward gradient mask wipe, slow glow pulse",
+     "camera": "none"
+    }
+   ],
+   "transitions": [],
+   "pacing": {
+    "rhythm": "fast"
+   },
+   "motion": "bookend structure: hook screen, content, CTA screen",
+   "notes": "SFX: soft riser + swoosh on the hook, whoosh on the wipe and sparkle on the CTA then quiet hold",
+   "aspect": "16:9",
+   "duration": 24.9,
+   "seed": true
+  },
+  {
+   "sha": "pdf-V6",
+   "source": "storyboard PDF V6",
+   "title": "Attention is expensive: white vertical brand explainer with green accent",
+   "tags": [
+    "brand",
+    "agency",
+    "explainer",
+    "vertical",
+    "white",
+    "green",
+    "pill chips",
+    "icons",
+    "minimal",
+    "reel"
+   ],
+   "palette": [
+    "#ffffff",
+    "#22d610",
+    "#e6f9e3",
+    "#000000"
+   ],
+   "backgrounds": "white with soft green radial glow, large pale green ring outlines, black corner brackets",
+   "typography": {
+    "headline": "neo-grotesk (Inter), regular weight statements, medium for pills"
+   },
+   "scenes": [
+    {
+     "t0": 0,
+     "t1": 2,
+     "archetype": "text",
+     "description": "one line, key word turns green, tiny dollar signs rise",
+     "text": "Attention is expensive",
+     "motion": "fade, colour turn",
+     "camera": "none"
+    },
+    {
+     "t0": 2,
+     "t1": 4,
+     "archetype": "icons",
+     "description": "green corner brackets around five person icons, centre one flips black",
+     "text": "Your audience spends seconds deciding",
+     "motion": "brackets draw, icons pop in order",
+     "camera": "none"
+    },
+    {
+     "t0": 4,
+     "t1": 6,
+     "archetype": "text",
+     "description": "faint question marks bounce behind the line",
+     "text": "Trying to understand",
+     "motion": "blur-in",
+     "camera": "none"
+    },
+    {
+     "t0": 6,
+     "t1": 10,
+     "archetype": "icons",
+     "description": "green hexagon badges with white icons (target, rocket, money bag), leader line to a label",
+     "text": "Losing prospects / momentum / opportunities",
+     "motion": "scale bounce, leader line draws",
+     "camera": "none"
+    },
+    {
+     "t0": 12,
+     "t1": 20,
+     "archetype": "chips",
+     "description": "rounded pill chips pop in one by one, filled green alternating with outlined, rows wrap and shift",
+     "text": "They're clear. Sharper. More intentional. They remove friction.",
+     "motion": "spring pop per chip",
+     "camera": "none"
+    },
+    {
+     "t0": 22,
+     "t1": 24,
+     "archetype": "text",
+     "description": "typed black line on white",
+     "text": "Because clarity isn't an advantage...",
+     "motion": "typewriter + cursor block",
+     "camera": "none"
+    },
+    {
+     "t0": 24,
+     "t1": 26.4,
+     "archetype": "end",
+     "description": "small agency mark",
+     "text": "",
+     "motion": "scale in, hold",
+     "camera": "none"
+    }
+   ],
+   "transitions": [],
+   "pacing": {
+    "rhythm": "fast"
+   },
+   "motion": "springy pops, bracket draws",
+   "notes": "SFX: pop on the word turn, focus blip, quiet wobble, pop per hexagon, bubble pop per chip (hits 0.7 s apart), typing ticks, single soft logo hit",
+   "aspect": "9:16",
+   "duration": 26.4,
+   "seed": true
+  },
+  {
+   "sha": "pdf-V7",
+   "source": "storyboard PDF V7",
+   "title": "Motion designer self-intro in native iOS UI styles",
+   "tags": [
+    "personal brand",
+    "ios",
+    "ui",
+    "square",
+    "reel",
+    "chat",
+    "calendar",
+    "kinetic",
+    "self intro"
+   ],
+   "palette": [
+    "#ffffff",
+    "#1a7cf0",
+    "#ffb000",
+    "#000000",
+    "#d6147a"
+   ],
+   "backgrounds": "every scene is a different native-feeling UI on white, blue mesh, amber blur or black",
+   "typography": {
+    "headline": "SF Pro / Inter, rounded bubbles, mixed weights"
+   },
+   "scenes": [
+    {
+     "t0": 0,
+     "t1": 2,
+     "archetype": "text",
+     "description": "sentence, last word in magenta highlighter, emoji pop in the corners",
+     "text": "Hey I'm a motion designer.",
+     "motion": "type, emoji bounce, marker wipe",
+     "camera": "none"
+    },
+    {
+     "t0": 2,
+     "t1": 4,
+     "archetype": "text",
+     "description": "soft blue mesh with sparkles",
+     "text": "my name is krish",
+     "motion": "scale fade, stars twinkle",
+     "camera": "none"
+    },
+    {
+     "t0": 4,
+     "t1": 6,
+     "archetype": "icons",
+     "description": "ring of iOS app icons orbits a black pill label",
+     "text": "challenging myself",
+     "motion": "circular orbit with bob",
+     "camera": "none"
+    },
+    {
+     "t0": 6,
+     "t1": 8,
+     "archetype": "product",
+     "description": "frosted stepper widget with range slider",
+     "text": "video editing -1000 $ +",
+     "motion": "count-down, slider moves, glow",
+     "camera": "none"
+    },
+    {
+     "t0": 10,
+     "t1": 14,
+     "archetype": "product",
+     "description": "dark AI chat input with autocomplete menu, third option replaces the text",
+     "text": "I've been doing what I enjoy most",
+     "motion": "type, dropdown, select",
+     "camera": "none"
+    },
+    {
+     "t0": 14,
+     "t1": 16,
+     "archetype": "product",
+     "description": "dark pill segmented control, selector slides",
+     "text": "No audience / No agency / behind me",
+     "motion": "slide between options",
+     "camera": "none"
+    },
+    {
+     "t0": 16,
+     "t1": 20,
+     "archetype": "product",
+     "description": "blue iMessage bubbles with read receipt, second pushes first up",
+     "text": "Just an obsession with creating better videos",
+     "motion": "iOS pop",
+     "camera": "none"
+    },
+    {
+     "t0": 20,
+     "t1": 22,
+     "archetype": "product",
+     "description": "carousel picker, cursor clicks next arrow, icon card swaps",
+     "text": "I'll be posting on",
+     "motion": "click + slide",
+     "camera": "none"
+    },
+    {
+     "t0": 22,
+     "t1": 24,
+     "archetype": "text",
+     "description": "letters change weight and shape like a variable font",
+     "text": "I'll keep",
+     "motion": "per-letter weight morph + blur",
+     "camera": "none"
+    },
+    {
+     "t0": 24,
+     "t1": 26,
+     "archetype": "text",
+     "description": "horizontal motion blur with red and blue colour fringing then snaps sharp",
+     "text": "posting and see what happens",
+     "motion": "chromatic aberration speed whoosh",
+     "camera": "none"
+    },
+    {
+     "t0": 28,
+     "t1": 30,
+     "archetype": "product",
+     "description": "blurred calendar scrolls, range highlight slides, question button pulses",
+     "text": "18 19 20 21 ?",
+     "motion": "scroll with blur",
+     "camera": "none"
+    },
+    {
+     "t0": 32,
+     "t1": 33.7,
+     "archetype": "end",
+     "description": "white glowing handle on black",
+     "text": "handle",
+     "motion": "glow bloom",
+     "camera": "none"
+    }
+   ],
+   "transitions": [],
+   "pacing": {
+    "rhythm": "fast"
+   },
+   "motion": "every beat = a new real UI control; variable-font morph; chromatic aberration whip",
+   "notes": "SFX: pop per emoji, sparkle chime, ticking loop on the orbit, rapid ticks on the stepper, typing ticks, menu pop + selection click, iMessage sent whoosh + tone, click + slide whoosh, flutter on the font morph, speed whoosh + tape stop",
+   "aspect": "1:1",
+   "duration": 33.7,
+   "seed": true
+  },
+  {
+   "sha": "pdf-V8",
+   "source": "storyboard PDF V8",
+   "title": "Product launch film: dark data flow to bright nature photography",
+   "tags": [
+    "product launch",
+    "film",
+    "premium",
+    "ai",
+    "photography",
+    "code window",
+    "nodes",
+    "blue",
+    "calm"
+   ],
+   "palette": [
+    "#000000",
+    "#0a7bff",
+    "#ffffff",
+    "#f3ecdd",
+    "#8fb9e6"
+   ],
+   "backgrounds": "black data-flow world -> bright misty forest / lake / blue-sky flower photography with polished UI on top",
+   "typography": {
+    "headline": "neo-grotesk (OpenAI Sans), monospace in code window"
+   },
+   "scenes": [
+    {
+     "t0": 0,
+     "t1": 2,
+     "archetype": "text",
+     "description": "thin crosshair lines, label in angle brackets, small slashes",
+     "text": "< too many signals >",
+     "motion": "lines slide in, brackets pulse and glitch",
+     "camera": "none"
+    },
+    {
+     "t0": 2,
+     "t1": 4,
+     "archetype": "diagram",
+     "description": "a single blue dot with a squiggly sine wave",
+     "text": "",
+     "motion": "trim-path line, amplitude eases",
+     "camera": "none"
+    },
+    {
+     "t0": 4,
+     "t1": 8,
+     "archetype": "diagram",
+     "description": "the line splits into many curves ending in notification nodes with icons",
+     "text": "12 new messages, research_final_v4, meeting at 5pm",
+     "motion": "roots-like growth, nodes pop at tips",
+     "camera": "none"
+    },
+    {
+     "t0": 8,
+     "t1": 10,
+     "archetype": "hero",
+     "description": "cut to white, concentric blue gradient rings expand around a grey disc",
+     "text": "connected.",
+     "motion": "rings scale out and fade",
+     "camera": "none"
+    },
+    {
+     "t0": 10,
+     "t1": 12,
+     "archetype": "logo_reveal",
+     "description": "wordmark on a pale sky background with corner brackets",
+     "text": "OpenAI",
+     "motion": "brackets draw, blur fade-in",
+     "camera": "none"
+    },
+    {
+     "t0": 12,
+     "t1": 14,
+     "archetype": "product",
+     "description": "macro close-up of a glassy chat input over a misty lake photo",
+     "text": "",
+     "motion": "camera slide, button glint",
+     "camera": "none"
+    },
+    {
+     "t0": 16,
+     "t1": 20,
+     "archetype": "product",
+     "description": "macOS-style code window floats over a forest photo; zoom into red tinted editor, lines get green checkmarks, one error line shakes then is fixed",
+     "text": "latency_target = SECONDS",
+     "motion": "zoom, line highlight, error shake",
+     "camera": "none"
+    },
+    {
+     "t0": 20,
+     "t1": 22,
+     "archetype": "hero",
+     "description": "purple-blue voxel cube grows beside the code",
+     "text": "",
+     "motion": "voxel build + rotate",
+     "camera": "none"
+    },
+    {
+     "t0": 22,
+     "t1": 26,
+     "archetype": "diagram",
+     "description": "many small data labels float on cream paper then grow into a hand-drawn tree with labels as leaves",
+     "text": "Monthly report",
+     "motion": "pop with random delays, trim-path branches",
+     "camera": "none"
+    },
+    {
+     "t0": 26,
+     "t1": 30,
+     "archetype": "text",
+     "description": "blue sky over flowers; words type and the last word gets a blue colour wipe",
+     "text": "One place to Imagine",
+     "motion": "type + colour wipe + slight push",
+     "camera": "none"
+    },
+    {
+     "t0": 30,
+     "t1": 31.1,
+     "archetype": "end",
+     "description": "white logo over the flowers",
+     "text": "OpenAI",
+     "motion": "fade in, hold",
+     "camera": "none"
+    }
+   ],
+   "transitions": [],
+   "pacing": {
+    "rhythm": "fast"
+   },
+   "motion": "abstract concept + real UI in every scene, slow camera, photographic backgrounds",
+   "notes": "SFX: fast digital ticks, low sine hum rising, pop per node, big soft impact + warm chord on the ripple, clean tone on the wordmark, check ping per line, error buzz then fix chime, digital build-up riser, rapid bubble pops, organic growth whoosh + chimes, final tone on the logo",
+   "aspect": "16:9",
+   "duration": 31.1,
+   "seed": true
   }
  ],
- "guide": "USER-TAUGHT EDITING + SOUND RULES (measured on 10 reference videos: SaaS promos, cinematic title sequences, history explainers):\nLOOK: one hero object per scene (60-70 % of the frame), rest supporting; one accent colour on a dark or soft-gradient background; tiny logo badge fixed in a corner; real-looking UI screenshots, never empty boxes; depth = blur on off-focus layers + scale difference; physical styles (paper, tape, polaroid, flat-lay) use shadows + slight rotation (-4..+4 deg).\nRHYTHM: something new every 0.2-0.4 s in a hook, a new object/card about every 2-5 s; cuts every 2.5-5 s (long videos ~5 s); story colour change = story beat (dark = problem, light = solution).\nMOTION: ease-out slides, overshoot 5-10 % on pops, cursor on a curved path with click squeeze, lines draw 0.6 s, camera glides/pushes slowly (never static for >3 s), whip-zoom blur or light-beam flash to change worlds, typewriter 0.16-0.33 s per character.\nSOUND: every visual event has a hit - pop/click on each card or icon (spacing 0.2-0.85 s), one tick per typed character, whoosh on every transition / whip / camera glide, soft paper or tape sound for physical items, riser into a big reveal. Mix: music bed + effects around -16 dB RMS, peaks near -1 dBFS, bass-led (200-700 Hz) with clear highs for ticks; voice-over on top. Silent clips (4 of 10 had no audio) are made to get music + effects added afterwards.\nTEXT: 1-2 lines, 2 sizes max, key word bold or coloured; handwriting font for a personal sentence with a yellow highlighter underline; numbers count up; strike-through old prices.",
+ "guide": "USER-TAUGHT EDITING + SOUND RULES (measured on 10 reference videos: SaaS promos, cinematic title sequences, history explainers):\nLOOK: one hero object per scene (60-70 % of the frame), rest supporting; one accent colour on a dark or soft-gradient background; tiny logo badge fixed in a corner; real-looking UI screenshots, never empty boxes; depth = blur on off-focus layers + scale difference; physical styles (paper, tape, polaroid, flat-lay) use shadows + slight rotation (-4..+4 deg).\nRHYTHM: something new every 0.2-0.4 s in a hook, a new object/card about every 2-5 s; cuts every 2.5-5 s (long videos ~5 s); story colour change = story beat (dark = problem, light = solution).\nMOTION: ease-out slides, overshoot 5-10 % on pops, cursor on a curved path with click squeeze, lines draw 0.6 s, camera glides/pushes slowly (never static for >3 s), whip-zoom blur or light-beam flash to change worlds, typewriter 0.16-0.33 s per character.\nSOUND: every visual event has a hit - pop/click on each card or icon (spacing 0.2-0.85 s), one tick per typed character, whoosh on every transition / whip / camera glide, soft paper or tape sound for physical items, riser into a big reveal. Mix: music bed + effects around -16 dB RMS, peaks near -1 dBFS, bass-led (200-700 Hz) with clear highs for ticks; voice-over on top. Silent clips (4 of 10 had no audio) are made to get music + effects added afterwards.\nTEXT: 1-2 lines, 2 sizes max, key word bold or coloured; handwriting font for a personal sentence with a yellow highlighter underline; numbers count up; strike-through old prices.\nSFX CHEAT SHEET (from the owner's storyboard PDFs - every visible change has a sound, the loudest lands on the cut or the logo): text/object slide or camera push = short whoosh 0.2-0.5 s (long slide = soft air swish); icon/chip/badge appears = pop or bubble pop, pitch a little higher on each chip; typing/code/list = fast key tick per character or line; cursor click = mouse click then a tiny blip when the next state opens; big title slam or hard cut = impact or short boom, often with a reverse riser 0.5 s before; logo reveal = clean tone hit (+ low sub boom, sparkle shimmer); glitch/pixel dissolve/data bars = digital glitch burst; messages/notifications = sent whoosh + received ding; check mark = short ping (error line = buzz, then a fix chime); counter rolling = tick roll that speeds up and lands with a thud (money = cash ka-ching); calm hold / end card = quiet pad or silence so the logo feels premium.\nEDIT RHYTHM: text scenes 1.5-3 s, UI mockup scenes 3-6 s, logo hold 1-3 s; elements enter ease-out with ~105 % overshoot then settle to 100 %; group items stagger 3-6 frames, never all at once; text blurs in ~0.3 s and key words get a colour or box; backgrounds stay simple (solid or one blurred glow); change visual or background colour every 2-3 s and flip light to dark on the biggest beat; ONE accent colour per video; max 12 words on screen per scene; cut on audio peaks (loudest peak = title, reveal or logo). Structure: hook 0-2 s, problem/question 2-5 s, UI mockup demo 5-14 s, proof/stat 14-20 s, CTA click 20-24 s, logo hold last 2 s.\nSTYLE PICKER: dark premium SaaS/AI = glow + glass UI + typing; loud neon hype = kinetic slams + HUD; clean white corporate = pills, hexagon badges, green/blue accent; personal brand = native UI controls (chat, calendar, iMessage) ; product UI story = cursor clicks; integrations = hub and spoke with line draws; pricing/ROI = calculator, strike-through, highlight slide; data story = tree/connector with stats and handwriting underline.",
  "techniques": [
   {
    "name": "Glass pill and cursor click",
@@ -1019,6 +1865,101 @@
    "name": "Tilted 3D card grid with tabs",
    "when": "feature list",
    "how": "cards on a perspective plane, tab pills highlight in orange one by one, camera glides along the plane"
+  },
+  {
+   "name": "Hub and spoke integrations",
+   "when": "integrations, ecosystem",
+   "how": "mascot or logo in the centre, curved lines draw out (trim path) and an app icon pops with a glow pulse at each line end, 4-6 frames stagger; soft whoosh as lines draw, pop per icon"
+  },
+  {
+   "name": "Hard colour flip on the key word",
+   "when": "problem to solution, big number, the word AI",
+   "how": "whole screen inverts light to dark exactly on the beat with whoosh + short impact; use once per video on the biggest beat"
+  },
+  {
+   "name": "Slot-wheel feature list",
+   "when": "list of features",
+   "how": "vertical list scrolls like a slot picker, centre item white and scaled up, others dim and blur at top and bottom, orange glow on the edges; rolling tick that slows as it settles"
+  },
+  {
+   "name": "Prompt box typing with highlight chips",
+   "when": "AI tool demos",
+   "how": "large glass prompt box, text types with caret, important words get coloured highlight boxes that pop behind them, enter-key icon bounces; typing ticks + click per highlight"
+  },
+  {
+   "name": "Pill chips pile",
+   "when": "list of benefits",
+   "how": "rounded pill labels pop in one after another with a spring, alternating filled and outlined, rows wrap and shift as new ones arrive; bubble pop per chip, pitch rising"
+  },
+  {
+   "name": "Hexagon badge with leader line",
+   "when": "three problems or benefits",
+   "how": "icon in a hexagon with bracket corners pops with a scale bounce, thin leader line draws to a label that fades in; pop per badge"
+  },
+  {
+   "name": "Calculator counter payoff",
+   "when": "ROI, earnings, pricing",
+   "how": "calculator card with sliders, a huge number rolls up with motion blur, then money rains with rotation and blur; tick roll then cash register ding"
+  },
+  {
+   "name": "Notification stack",
+   "when": "proof of sales or results",
+   "how": "phone notification pills drop in one by one with spring bounce and stack down, each with an app icon, a line and a green amount; phone ding per card"
+  },
+  {
+   "name": "Pricing card highlight slide",
+   "when": "offers",
+   "how": "plans in a row, a highlight pill slides to the best plan, button changes, old price strikes out and the new price pops; click + ding"
+  },
+  {
+   "name": "Camera dive through a button",
+   "when": "product teaser",
+   "how": "glass pill button, camera zooms through it and frosted dashboard cards burst outward in 3D with parallax and blur; big whoosh + UI blips"
+  },
+  {
+   "name": "Blur wipe transition",
+   "when": "scene change in glass or gradient styles",
+   "how": "soft blurred gradient wipes across the frame (sky blue, purple) while the next element rises from the bottom edge; airy whoosh"
+  },
+  {
+   "name": "Chromatic aberration speed text",
+   "when": "fast kinetic line",
+   "how": "text stretched horizontally with motion blur and red/blue colour fringing slides in fast then snaps sharp; speed whoosh + tape stop"
+  },
+  {
+   "name": "Variable-font morph",
+   "when": "playful kinetic text",
+   "how": "letters change weight and shape per letter with a little blur like a variable font; short flutter sound"
+  },
+  {
+   "name": "Native UI controls scenes",
+   "when": "personal brand reels",
+   "how": "each scene is a real-feeling control: iMessage bubbles, segmented control sliding, stepper counting, carousel with arrows and a cursor click, calendar scroll; matching click or pop for each"
+  },
+  {
+   "name": "Glitch terminal text",
+   "when": "dev tool hook",
+   "how": "monospace line types and characters scramble before settling, dot-matrix background; rapid key ticks + digital glitch blip"
+  },
+  {
+   "name": "Debug pass with checkmarks",
+   "when": "code or quality demos",
+   "how": "zoom into a code window, lines get green checks one by one, one red error line shakes then is fixed; check ping per line, error buzz, fix chime"
+  },
+  {
+   "name": "Branching tree growth",
+   "when": "data labels, many items becoming one idea",
+   "how": "one line splits into many curves with nodes at the tips (trim path), or labels grow into a hand-drawn tree; growth whoosh + soft chimes"
+  },
+  {
+   "name": "Glossy 3D end phrase",
+   "when": "closing line",
+   "how": "giant chrome or glass text scales from heavy blur to sharp with a light sweep across it; big cinematic hit + shimmer tail"
+  },
+  {
+   "name": "Bookend hook and CTA",
+   "when": "short promo",
+   "how": "first screen: short hook with a hand-drawn underline swoosh; last screen: two lines with a glowing gradient second line (ORDER NOW) with a slow pulse; whoosh on the wipe, sparkle on the CTA"
   }
  ]
 }
