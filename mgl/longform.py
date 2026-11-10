@@ -23,6 +23,7 @@ def outline_prompt(brief, total, n, size_key):
     return ('Split this video into %d parts. Total length %s seconds, canvas %s.\nBrief: "%s"\n\n'
             'Return ONE JSON object: {"title": "short video title", "parts": [{"title": "part title", "brief": "2-3 sentences: what the viewer sees and learns in this part, '
             'the key text ideas, how it connects to the previous part", "seconds": number}]}\n'
+            'The brief may be in Hindi / Urdu: understand it, but write part titles and briefs in English.\n'
             'Rules: exactly %d parts, a clear story arc (hook, development, ending), every part %d-%d seconds, seconds add up to %s, no part repeats another.'
             % (n, total, size_key, brief.strip()[:700], n, MIN_PART, MAX_PART, total))
 
@@ -77,6 +78,7 @@ def part_prompt(brief, idx, n, part, total, anchor, prev_title):
     if idx < n - 1: t += 'Do NOT end the video: no "thanks for watching" or closing logo (more parts follow); end with a clean frame that flows into the next part.\n'
     else: t += 'This is the LAST part: finish with a clear ending.\n'
     if anchor: t += anchor + '\n'
+    t += 'All on-screen text must be in English (understand a Hindi / Urdu script, but write the screen text in English).\n'
     return t
 
 
@@ -141,19 +143,74 @@ def run_long(prompt, total, out_dir, ask, size='16:9', images=None, mem=None, ro
     parts = state['parts']
     N = len(parts)
     anchor = style_anchor(parts[0]['spec']) if parts[0].get('spec') else ''
-    for i, p in enumerate(parts):
-        if p.get('spec'): continue
+    speed_qa = 0 if os.environ.get('SPEED', '').strip().lower() == 'fast' else 1
+
+    def design(i, askx, who=''):
+        p = parts[i]
+        if who: log('[ai-work] part %d/%d -> %s' % (i + 1, N, who))
         log('[part %d/%d] %s' % (i + 1, N, p['title']))
         sub = VO.sub_info(vinfo, p['t0'], p['t1']) if vinfo else None
-        sp = agent_mod.run_agent(part_prompt(prompt, i, N, p, int(total), anchor, parts[i - 1]['title'] if i else ''), p['seconds'], os.path.join(out_dir, 'part_%02d' % (i + 1)), ask,
-                                 review=False, max_qa=(0 if os.environ.get('SPEED', '').strip().lower() == 'fast' else 1), size=size_key, images=images if i == 0 else None, mem=mem, root=root, log=lambda *a: None, render_final=False, update_memory=False, plan=False,
+        sp = agent_mod.run_agent(part_prompt(prompt, i, N, p, int(total), anchor, parts[i - 1]['title'] if i else ''), p['seconds'], os.path.join(out_dir, 'part_%02d' % (i + 1)), askx,
+                                 review=False, max_qa=speed_qa, size=size_key, images=images if i == 0 else None, mem=mem, root=root, log=lambda *a: None, render_final=False,
                                  **({'extra_brief': VO.timeline_text(sub)} if sub else {}))
         if sub:
             sp['duration'] = round(float(p['seconds']), 2); VO.snap_spec(sp, sub)
-        p['spec'] = sp
-        wk.save(state)                               # saved right away: a stop after this line loses nothing
+        with lock:
+            p['spec'] = sp
+            wk.save(state)                           # saved right away: a stop after this line loses nothing
         log('   part %d/%d designed and saved (%d requests so far)' % (i + 1, N, getattr(ask, 'calls', 0)))
-        if i == 0: anchor = style_anchor(sp)
+        if who: log('[ai-done] part %d/%d by %s' % (i + 1, N, who))
+        return sp
+
+    import threading
+    lock = threading.RLock()
+    todo = [i for i, p in enumerate(parts) if not p.get('spec')]
+    if todo and todo[0] == 0:                        # part 1 first, alone: it sets the look that the other parts keep
+        design(0, ask); todo.pop(0)
+        anchor = style_anchor(parts[0]['spec'])
+    elif not anchor and parts[0].get('spec'): anchor = style_anchor(parts[0]['spec'])
+    workers = []
+    if len(todo) >= 2 and hasattr(ask, 'pinned') and os.environ.get('PARALLEL', 'on').strip().lower() not in ('off', 'false', '0', 'no'):
+        try: workers = list(ask.workers())
+        except Exception: workers = []
+    if len(workers) >= 2 and len(todo) >= 2:
+        workers = workers[:min(len(workers), len(todo), int(os.environ.get('MAX_WORKERS', '6') or 6))]
+        log('[team] %d AIs share %d parts: %s' % (len(workers), len(todo), ', '.join('%s / %s' % (w.name, w.model.split(',')[0]) for w in workers)))
+        queue = list(todo); tried = {i: set() for i in todo}; errors = {}; gone = set()
+
+        def take(pid):
+            with lock:
+                for i in queue:
+                    if pid not in tried[i]: queue.remove(i); return i
+            return None
+
+        def work(w):
+            askw = ask.pinned(w.id); who = '%s / %s' % (w.name, w.model.split(',')[0])
+            while not (stop and stop.is_set()):
+                i = take(w.id)
+                if i is None: return                  # nothing left that this AI has not tried
+                try:
+                    design(i, askw, who)
+                except Exception as ex:
+                    if 'budget' in str(ex).lower():
+                        with lock: errors[i] = ex; queue.append(i)
+                        return
+                    with lock:
+                        tried[i].add(w.id); errors[i] = ex; queue.append(i); gone.add(w.id)
+                    log('   [ai-fail] %s could not do part %d/%d (%s) - another AI takes it over' % (who, i + 1, N, str(ex).splitlines()[0][:120]))
+                    return                            # this AI is out; the others finish its part
+
+        stop = threading.Event()
+        ths = [threading.Thread(target=work, args=(w,), daemon=True) for w in workers]
+        for t in ths: t.start()
+        for t in ths: t.join()
+        left = [i for i in range(N) if not parts[i].get('spec')]
+        if left:                                      # every worker is gone: last try with the normal chain, one by one
+            log('[team] %d part(s) left after the team work - finishing them with the normal AI chain' % len(left))
+    for i in range(N):
+        if parts[i].get('spec'): continue
+        design(i, ask)
+        if i == 0: anchor = style_anchor(parts[0]['spec'])
     name = _slug(prompt)
     # ---- render every part, then join
     vids, wavs, bounds, t_acc = [], [], [], 0.0

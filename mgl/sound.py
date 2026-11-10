@@ -659,14 +659,29 @@ PACK_WORDS = [                                   # (kind, filename words) - firs
 _PACK = {}
 
 
+PACK_FOLDERS = ('sfx_pack', 'sfx', 'sfx pack', 'sound_effects', 'sound effects', 'soundeffects', 'sounds', 'sound', 'audio')   # any of these folder names (any capital letters)
+
+
 def _pack_dirs():
     d = [os.environ.get('SFX_PACK')] if os.environ.get('SFX_PACK') else []
     here = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    if d: return [d[0]] if os.path.isdir(d[0]) else []                  # SFX_PACK replaces the default folder
+    if d: return [d[0]] if os.path.isdir(d[0]) else []                  # SFX_PACK replaces the default folders
     out = []
-    for x in [os.path.join(here, 'sfx_pack'), os.path.join(os.getcwd(), 'sfx_pack')]:
-        if x and os.path.isdir(x) and os.path.realpath(x) not in [os.path.realpath(o) for o in out]: out.append(x)
+    for base in (here, os.getcwd()):
+        try: names = sorted(os.listdir(base))
+        except OSError: continue
+        for n in names:
+            x = os.path.join(base, n)
+            if n.lower() in PACK_FOLDERS and os.path.isdir(x) and os.path.realpath(x) not in [os.path.realpath(o) for o in out]: out.append(x)
     return out
+
+
+def _pack_files(d):
+    """every audio file of a pack folder, sub-folders included (the folder name can also name the kind: sfx/whoosh/a.wav)"""
+    for root, _dirs, files in os.walk(d):
+        for fn in sorted(files):
+            if fn.lower().endswith(('.wav', '.mp3', '.ogg', '.m4a', '.flac', '.aac')):
+                yield os.path.join(root, fn), os.path.relpath(os.path.join(root, fn), d)
 
 
 def _load_audio(path):
@@ -680,22 +695,38 @@ def _load_audio(path):
     return x
 
 
+PACK_REPORT = {'used': [], 'guessed': [], 'ignored': []}
+
+
 def load_pack():
-    """-> {kind: [arrays]} from the sfx_pack folders ({} when there is none). Cached per folder content."""
-    dirs = _pack_dirs(); sig = tuple((d, tuple(sorted(os.listdir(d)))) for d in dirs)
+    """-> {kind: [arrays]} from the pack folders ({} when there is none). A file whose name says nothing is still used (short = pop, long = whoosh). Cached per folder content."""
+    dirs = _pack_dirs(); sig = tuple((d, sum(len(f) for _r, _d, f in os.walk(d))) for d in dirs) + tuple(tuple(sorted(r for _p, r in _pack_files(d))) for d in dirs)
     if sig in _PACK: return _PACK[sig]
-    out = {}
+    out = {}; rep = {'used': [], 'guessed': [], 'ignored': []}
     for d in dirs:
-        for fn in sorted(os.listdir(d)):
-            if not fn.lower().endswith(('.wav', '.mp3', '.ogg', '.m4a', '.flac', '.aac')): continue
-            name = os.path.splitext(fn)[0].lower().replace('_', ' ').replace('-', ' ')
+        for path, rel in _pack_files(d):
+            name = os.path.splitext(rel)[0].lower().replace('_', ' ').replace('-', ' ').replace('/', ' ').replace('\\', ' ')
             kind = next((k for k, ws in PACK_WORDS if any(w in name for w in ws)), None)
-            if not kind: continue
-            try: x = _load_audio(os.path.join(d, fn))
+            try: x = _load_audio(path)
             except Exception: x = None
-            if x is not None: out.setdefault(kind, []).append(x)
+            if x is None: rep['ignored'].append(rel + ' (cannot be read)'); continue
+            if not kind:
+                kind = 'pop' if len(x) / SR < 0.45 else 'whoosh'; rep['guessed'].append('%s -> %s' % (rel, kind))
+            else: rep['used'].append('%s -> %s' % (rel, kind))
+            out.setdefault(kind, []).append(x)
+    PACK_REPORT.update(rep)
     _PACK[sig] = out
+    if dirs:
+        print('[sound] ' + pack_summary())
+        for l in (rep['used'] + ['%s (name says nothing: guessed)' % g for g in rep['guessed']])[:12]: print('   ' + l)
     return out
+
+
+def pack_summary():
+    r = PACK_REPORT
+    if not (r['used'] or r['guessed'] or r['ignored']): return 'no sound-effect folder found (use a folder named sfx or sfx_pack with your sounds)'
+    t = 'your sounds: %d used by file name, %d by guess, %d ignored' % (len(r['used']), len(r['guessed']), len(r['ignored']))
+    return t + (' | ignored: ' + ', '.join(r['ignored'][:4]) if r['ignored'] else '')
 
 
 # ---- typing sound: the exact key hits of YOUR typing clip drive both the sound and the text timing
@@ -832,12 +863,20 @@ def compose(spec, out_wav, style='uplift', music_level=0.55, sfx_level=0.9, with
     D = _num(spec.get('duration'), 10); seed = _seed(spec, style); rng = np.random.default_rng(seed)
     mus = music(spec, style, seed) if with_music else np.zeros((int(D * SR), 2))
     sx = Track(D)
-    pack = load_pack() if (prem or viral) else {}
+    pack = load_pack() if with_sfx else {}
     ev = ([e for e in kinetic_events(spec)] if kinetic else ui_events(spec) if ui else viral_events(spec) if viral else premium_events(spec) if prem else [(t, k, v, None) for t, k, v in events(spec)]) if with_sfx else []
     kinds = {}; kcount = [0]
     for t, k, v, pan0 in ev:
         kinds[k] = kinds.get(k, 0) + 1
         pan = float(np.clip(rng.uniform(-0.35, 0.35), -1, 1)) if pan0 is None else pan0
+        pk = k if pack.get(k) else {'click': 'tap', 'toggle': 'tap', 'notify': 'chime', 'swipe': 'slide', 'success': 'chime', 'fill': 'swell', 'air': 'whoosh', 'burst': 'shutter'}.get(k)
+        if pk and pack.get(pk) and not (k == 'key' and prem and typing_clip()):
+            smp = pack[pk][int(rng.integers(len(pack[pk])))]; gk = {'thud': 0.7, 'drop': 0.6, 'gravel': 0.8, 'bloom': 0.5, 'swell': 0.3, 'nriser': 0.3}.get(pk, 0.45)
+            if pk in ('nriser', 'swell'):
+                st = t + 1.0 - len(smp) / SR
+                if st < 0: smp = smp[int(-st * SR):]; st = 0.0
+                t = st
+            sx.add(t, smp, gk * v, pan); continue
         if k == 'click': sx.add(t, (ui_click(rng, rng.uniform(0.95, 1.1)) if ui else sfx_click(rng, rng.uniform(0.92, 1.12))), 0.5 * v, pan); continue
         if k == 'toggle': sx.add(t, ui_toggle(rng, True), 0.5 * v, pan); continue
         if k == 'notify': sx.add(t, ui_notify(rng), 0.42 * v, pan); continue

@@ -231,7 +231,20 @@ def make_multi_ask(providers, budget, log=print, budget_error=None):
     spread = os.environ.get('AI_SPREAD', 'true').strip().lower() not in ('false', '0', 'no', 'off')
     rr = [abs(hash(os.environ.get('JOB', '') or str(os.getpid()))) % 997]      # every run / lane starts on another key
 
+    import threading
+    _lock = threading.RLock()
+    _tl = threading.local()                    # per thread: the one AI this worker is pinned to (parallel work on one video)
+
     def candidates():
+        pin = getattr(_tl, 'pin', None)
+        if pin:
+            with _lock:
+                if pin in dead: raise GeminiError('%s is not usable in this run' % pin)
+            return [p for p in chain if p.id == pin]
+        with _lock:
+            return _candidates()
+
+    def _candidates():
         """same kind as the first AI are used in turn (their quotas add up, one dead key is skipped); other kinds only follow as a fallback"""
         now = time.time()
         alive = [p for p in chain if p.id not in dead]
@@ -246,9 +259,11 @@ def make_multi_ask(providers, budget, log=print, budget_error=None):
         return same + other
 
     def ask(system, contents, json_mode=True):
-        if ask.calls >= ask.budget:
+        with _lock:
+            over = ask.calls >= ask.budget
+            if not over: ask.calls += 1
+        if over:
             raise BudgetError('request budget of %d reached for this run (protects the free quota; raise it with the MAX_REQUESTS variable)' % ask.budget)
-        ask.calls += 1
         problems = []
         _t_req = time.time()
         for p in candidates():
@@ -293,6 +308,18 @@ def make_multi_ask(providers, budget, log=print, budget_error=None):
         raise GeminiError('every AI failed:\n  ' + '\n  '.join(problems[-6:]))
     ask.used, ask.calls, ask.budget = used, 0, budget
     ask.providers = chain
+
+    def pinned(pid):
+        """an ask() that only uses provider `pid` (no fallback): one worker of a parallel video"""
+        def ask_p(system, contents, json_mode=True):
+            _tl.pin = pid
+            try: return ask(system, contents, json_mode)
+            finally: _tl.pin = None
+        ask_p.pid = pid
+        return ask_p
+    ask.pinned = pinned
+    ask.workers = lambda: [p for p in chain if p.id not in dead and p.kind != 'ollama']
+    ask.is_dead = lambda pid: pid in dead
     return ask
 
 
