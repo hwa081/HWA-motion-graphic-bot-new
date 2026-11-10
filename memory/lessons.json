@@ -4,20 +4,20 @@
   "kind": "dont",
   "text": "Text was hard to read on its background. Use light text on dark backgrounds and near-black text on light backgrounds.",
   "weight": 2,
-  "count": 3,
+  "count": 4,
   "source": "qa",
   "created": "2026-11-08T19:03:15Z",
-  "last": "2026-11-08T19:03:15Z"
+  "last": "2026-11-10T10:58:00Z"
  },
  {
   "id": "l585",
   "kind": "dont",
   "text": "Stacked text layers overlapped. Keep at least 1.2 x the font size between the y positions of two lines, and time them apart.",
   "weight": 1,
-  "count": 1,
+  "count": 2,
   "source": "qa",
   "created": "2026-11-08T21:23:03Z",
-  "last": "2026-11-08T21:23:03Z"
+  "last": "2026-11-10T10:58:00Z"
  },
  {
   "id": "l560",
@@ -44,9 +44,9 @@
   "kind": "dont",
   "text": "Consecutive scenes looked alike. Give every scene a different layout archetype.",
   "weight": 1,
-  "count": 1,
+  "count": 2,
   "source": "qa",
   "created": "2026-11-09T11:55:13Z",
-  "last": "2026-11-09T11:55:13Z"
+  "last": "2026-11-10T10:58:00Z"
  }
 ]

@@ -1,5 +1,36 @@
 [
  {
+  "id": "jmwaib48e9yd",
+  "job": "jmwaib48e9yd",
+  "kind": "video",
+  "title": "The future of technology is not just about building faster machines or smarter software; i",
+  "prompt": "The future of technology is not just about building faster machines or smarter software; it is about creating meaningful experiences that simplify our lives. Imagine a world where ideas transform into reality within seconds, where creativity has no boundaries, and where intelligent systems work seamlessly alongside humans. Every innovation begins with a simple question, but its impact can reshape ",
+  "mode": "ai",
+  "size": "16:9",
+  "dur": "30",
+  "ai": "auto",
+  "date": "2026-11-10T11:03:00Z",
+  "ok": true,
+  "trashed": false,
+  "project": "default",
+  "quality": "final",
+  "formats": "none",
+  "video": "outputs/jmwaib48e9yd/video.mp4",
+  "video_name": "Meaningful_Experiences_with_sound.mp4",
+  "poster": "outputs/jmwaib48e9yd/poster.jpg",
+  "spec": "outputs/jmwaib48e9yd/spec.json",
+  "report": "outputs/jmwaib48e9yd/report.md",
+  "design_id": "d-20261110-1058-ded7",
+  "timing": {
+   "total_s": 4190.7,
+   "ai_requests": 9,
+   "ai_request_s": 3862.4,
+   "ai_wait_s": 0,
+   "render_s": 293.7,
+   "files_s": 3.6
+  }
+ },
+ {
   "id": "jmwaivdtnd3n",
   "job": "jmwaivdtnd3n",
   "kind": "report",
