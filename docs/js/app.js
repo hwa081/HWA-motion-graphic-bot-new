@@ -89,6 +89,13 @@
   const STAGE_HELP = { Start: 'Starting the cloud computer', Plan: 'Planning the video', Design: 'The AI designs every scene', Check: 'Checking quality', Render: 'Rendering the frames', Files: 'Making the files and sound', Save: 'Saving the result' };
   const clockOf = ms => { const t = Math.max(0, Math.round(ms / 1000)), h = Math.floor(t / 3600), m = Math.floor(t % 3600 / 60), x = t % 60; return (h ? h + ':' + String(m).padStart(2, '0') : String(m)) + ':' + String(x).padStart(2, '0'); };
   const stepsHtml = (stages, cur) => `<div class="steps" aria-hidden="true">${stages.map((s, i) => `<i class="${i < cur ? 'd' : i === cur ? 'c' : ''}" title="${esc(s)}"></i>`).join('')}</div>`;
+  const teamHtml = pr => {
+    const t = pr && pr.team ? Object.entries(pr.team) : [];
+    if (!t.length && !pr.ai) return '';
+    if (!t.length) return `<div class="aiw"><span>Model</span><b>${esc(pr.ai)}</b></div>`;
+    const lab = { working: 'working', free: 'finished its part', failed: 'failed - others take over' };
+    return `<div class="aiteam">${t.map(([n, v]) => `<div class="aiw ${esc(v[1])}"><span>Part ${v[0]}</span><b>${esc(n)}</b><em>${lab[v[1]] || ''}</em></div>`).join('')}</div>`;
+  };
   const partsHtml = part => {
     if (!part || !part[1] || part[1] < 2 || part[1] > 48) return '';
     const [k, n, what] = part, done = what === 'saved' ? k : k - 1;
@@ -114,6 +121,7 @@
         <div class="sth">${esc(STAGE_HELP[name] || '')}</div>
         <div class="st">${esc(pr.detail || m.detail || '')}${esc(frames)}</div>
         ${partsHtml(pr.part)}
+        ${teamHtml(pr)}
         ${pr.note ? `<div class="note">${esc(pr.note)}</div>` : ''}
         ${eta ? `<div class="eta">${esc(eta)}</div>` : ''}${tries}${stopBtn}`;
     }
