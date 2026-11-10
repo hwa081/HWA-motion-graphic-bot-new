@@ -1,0 +1,235 @@
+{
+ "title": "Mastering Control",
+ "duration": 20.0,
+ "size": "16:9",
+ "fps": 30,
+ "background": [
+  {
+   "t": 0,
+   "style": "dark_aurora"
+  },
+  {
+   "t": 15.0,
+   "style": "neon_night",
+   "fade": 1.0
+  }
+ ],
+ "camera": [
+  {
+   "t": 0,
+   "zoom": 1.0,
+   "x": 960,
+   "y": 540
+  },
+  {
+   "t": 20.0,
+   "zoom": 1.1,
+   "x": 960,
+   "y": 540
+  }
+ ],
+ "layers": [
+  {
+   "type": "grid",
+   "kind": "lines",
+   "spacing": 90,
+   "color": [
+    0.1,
+    0.2,
+    0.3
+   ],
+   "fill_opacity": 0.1,
+   "scroll": {
+    "x": 5,
+    "y": 5
+   },
+   "vignette": 0.8,
+   "start": 0,
+   "end": 20.0
+  },
+  {
+   "type": "blob",
+   "x": 960,
+   "y": 540,
+   "r": 600,
+   "color": [
+    0.2,
+    0.1,
+    0.4
+   ],
+   "color2": [
+    0.5,
+    0.0,
+    0.8
+   ],
+   "fill_opacity": 0.3,
+   "softness": 0.85,
+   "start": 0,
+   "end": 20.0
+  },
+  {
+   "type": "text",
+   "text": "BEYOND THE CATCH",
+   "font": "bold_italic",
+   "size": 150,
+   "x": 960,
+   "y": 300,
+   "color": [
+    1,
+    1,
+    1
+   ],
+   "start": 0.5,
+   "fixed": true,
+   "in": {
+    "anim": "wipe_right",
+    "dur": 0.7
+   },
+   "end": 4.5
+  },
+  {
+   "type": "text",
+   "text": "The Future of Spaceflight",
+   "font": "medium",
+   "size": 70,
+   "x": 960,
+   "y": 400,
+   "color": [
+    0.6,
+    0.9,
+    1
+   ],
+   "start": 1.5,
+   "fixed": true,
+   "in": {
+    "anim": "slide_up",
+    "dur": 0.5
+   },
+   "end": 8.0
+  },
+  {
+   "type": "image",
+   "w": 1200,
+   "h": 800,
+   "r": 60,
+   "start": 3.0,
+   "end": 15.0,
+   "shadow": 0.6,
+   "shadow_blur": 40,
+   "fit": "cover",
+   "keys": {
+    "zoom": [
+     [
+      0,
+      1.0
+     ],
+     [
+      6.0,
+      1.3,
+      "inout"
+     ]
+    ],
+    "pan_x": [
+     [
+      0,
+      -0.2
+     ],
+     [
+      6.0,
+      0.2,
+      "inout"
+     ]
+    ]
+   },
+   "in": {
+    "anim": "zoom",
+    "dur": 0.8
+   },
+   "path": "assets/library/illustration_spacecraft-catching-_4828098.jpg"
+  },
+  {
+   "type": "chip",
+   "emoji": "🚀",
+   "label": "Unlocking Exploration",
+   "scale": 1.1,
+   "rot": -8,
+   "start": 5.0,
+   "end": 10.0,
+   "in": {
+    "anim": "bounce",
+    "dur": 0.4
+   },
+   "y": 450
+  },
+  {
+   "type": "chip",
+   "emoji": "🛰️",
+   "label": "Next Generation Travel",
+   "scale": 1.05,
+   "rot": 2,
+   "start": 6.5,
+   "end": 11.5,
+   "in": {
+    "anim": "rise",
+    "dur": 0.4
+   },
+   "y": 530
+  },
+  {
+   "type": "chip",
+   "emoji": "🌌",
+   "label": "Cosmic Horizon",
+   "scale": 1.0,
+   "rot": 0,
+   "start": 8.0,
+   "end": 13.0,
+   "in": {
+    "anim": "slide_left",
+    "dur": 0.5
+   },
+   "y": 610,
+   "color": [
+    0.1,
+    0.1,
+    0.1
+   ]
+  }
+ ],
+ "type": "card",
+ "kind": "note",
+ "subtitle": "The Leap Forward",
+ "emoji": "💡",
+ "header": [
+  0.3,
+  0.86,
+  1
+ ],
+ "body": [
+  0.1,
+  0.1,
+  0.2
+ ],
+ "body2": [
+  0.3,
+  0.3,
+  0.4
+ ],
+ "yaw": -10,
+ "roll": 0,
+ "start": 10.0,
+ "end": 17.0,
+ "in": {
+  "anim": "tilt",
+  "dur": 0.6
+ },
+ "y": 550,
+ "width": 800,
+ "height": 600,
+ "x": 960,
+ "shadow": 0.4,
+ "shadow_color": [
+  0.3,
+  0.86,
+  1
+ ]
+}

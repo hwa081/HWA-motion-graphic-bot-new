@@ -1,0 +1,225 @@
+{
+ "title": "The Big Question: How to Catch It?",
+ "duration": 25.0,
+ "size": "16:9",
+ "fps": 30,
+ "background": [
+  {
+   "t": 0,
+   "style": "neon_night"
+  },
+  {
+   "t": 15.0,
+   "style": "dark_aurora",
+   "fade": 0.5
+  }
+ ],
+ "camera": [
+  {
+   "t": 0,
+   "zoom": 1.0,
+   "x": 960,
+   "y": 540
+  },
+  {
+   "t": 10.0,
+   "zoom": 1.15,
+   "x": 960,
+   "y": 540
+  },
+  {
+   "t": 22.0,
+   "zoom": 1.3,
+   "x": 960,
+   "y": 540
+  }
+ ],
+ "layers": [
+  {
+   "type": "grid",
+   "kind": "dots",
+   "spacing": 96,
+   "color": [
+    0.1,
+    0.1,
+    0.2
+   ],
+   "fill_opacity": 0.1,
+   "scroll": {
+    "x": 5,
+    "y": -3
+   },
+   "vignette": 0.9,
+   "start": 0,
+   "end": 25.0
+  },
+  {
+   "type": "blob",
+   "x": 960,
+   "y": 540,
+   "r": 550,
+   "color": [
+    0.1,
+    0.0,
+    0.3
+   ],
+   "color2": [
+    0.4,
+    0.0,
+    0.7
+   ],
+   "fill_opacity": 0.3,
+   "softness": 0.8,
+   "start": 0,
+   "end": 25.0
+  },
+  {
+   "type": "image",
+   "w": 1600,
+   "h": 1000,
+   "r": 50,
+   "start": 0.5,
+   "shadow": 0.6,
+   "shadow_color": [
+    0.8,
+    0.0,
+    0.8
+   ],
+   "in": {
+    "anim": "zoom",
+    "dur": 1.0
+   },
+   "end": 25.0,
+   "keys": {
+    "zoom": [
+     [
+      0.5,
+      1.0
+     ],
+     [
+      15.0,
+      1.4,
+      "in"
+     ]
+    ],
+    "pan_x": [
+     [
+      0.5,
+      -0.2
+     ],
+     [
+      15.0,
+      0.2,
+      "in"
+     ]
+    ],
+    "tilt_y": [
+     [
+      0.5,
+      -5
+     ],
+     [
+      25.0,
+      10,
+      "in"
+     ]
+    ]
+   },
+   "path": "assets/library/illustration_spacecraft-industria_3334826.jpg"
+  },
+  {
+   "type": "text",
+   "text": "THE BIG QUESTION",
+   "x": 960,
+   "y": 250,
+   "size": 180,
+   "font": "bold_italic",
+   "color": [
+    1,
+    1,
+    1
+   ],
+   "start": 1.0,
+   "fixed": true,
+   "in": {
+    "anim": "wipe_up",
+    "dur": 0.8
+   },
+   "end": 25.0
+  },
+  {
+   "type": "text",
+   "text": "HOW TO CATCH IT?",
+   "x": 960,
+   "y": 350,
+   "size": 140,
+   "font": "bold_italic",
+   "color": [
+    0.2,
+    0.8,
+    1
+   ],
+   "start": 2.5,
+   "fixed": true,
+   "in": {
+    "anim": "pop",
+    "dur": 0.6
+   },
+   "end": 25.0
+  },
+  {
+   "type": "rrect",
+   "x": 960,
+   "y": 850,
+   "w": 1400,
+   "h": 100,
+   "r": 30,
+   "fill": [
+    0,
+    0,
+    0
+   ],
+   "fill_opacity": 0.4,
+   "border": [
+    0.2,
+    0.8,
+    1
+   ],
+   "border_opacity": 0.6,
+   "border_w": 3,
+   "shadow": 0.5,
+   "shadow_color": [
+    0.2,
+    0.8,
+    1
+   ],
+   "start": 4.0,
+   "fixed": true,
+   "in": {
+    "anim": "slide_up",
+    "dur": 0.7
+   },
+   "end": 25.0
+  },
+  {
+   "type": "text",
+   "text": "Intercepting something of immense scale requires unprecedented precision.",
+   "x": 960,
+   "y": 910,
+   "size": 48,
+   "font": "medium",
+   "color": [
+    1,
+    1,
+    1
+   ],
+   "start": 5.0,
+   "fixed": true,
+   "in": {
+    "anim": "fade",
+    "dur": 0.8
+   },
+   "end": 25.0
+  }
+ ]
+}

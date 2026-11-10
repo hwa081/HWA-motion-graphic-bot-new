@@ -88,6 +88,56 @@ What was wrong at first: Text cut off: at 6.8s layer 6 "REUSABILITY: THE NEXT FR
 Fixed by the bot: Text cut off: at 6.8s layer 6 "REUSABILITY: THE NEXT FRONTIER" extends beyond th; Text overlap: at 8.2s "Unprecedented Savings" (layer 8) and "95%" (layer 14) cov; Text overlap: at 18.8s "Future Travel" (layer 10) and "Space Infrastructure" (la; Text overlap: at 18.8s "Future Travel" (layer 10) and "Planetary Reach" (layer 1; Text overlap: at 18.8s "Space Infrastructure" (layer 11) and "Planetary Reach" (; Text overlap: at 20.2s "Future Travel" (layer 10) and "95%" (layer 14) cover eac
 Still open: nothing
 
-## 2026-11-10T19:02:25Z - feedback on d-20261110-1501-5810
-Rating: 1/5. Note: filmora file is not working
-Lessons stored: Avoid relying on proprietary or complex file formats (like specific Filmora versions) for final delivery; ensure compatibility.; Do not use a high density of complex elements (e.g., over 20 layers or excessive custom/icon usage) if the core message delivery is failing.
+## d-20261110-1908-314d - 16:9 (part_01)
+Brief: LONG VIDEO "Paragraph 1
+
+You must have seen a spectacular catch in cricket, where a fielder jumps into the air and catches the ball just before it crosses the b
+Design: backgrounds dark_aurora, neon_night; entrances slide_up, fade, zoom, wipe_right; transitions flash; camera yes
+What was wrong at first: Variety: the scenes starting at 0.0s and 14.8s are built from the same kinds of layers (image, rrect, text). G
+Fixed by the bot: -
+Still open: Variety: the scenes starting at 0.0s and 14.8s are built from the same kinds of layers (image, rrect, text). G
+
+## d-20261110-1925-60cc - 16:9 (part_02)
+Brief: LONG VIDEO "Paragraph 1
+
+You must have seen a spectacular catch in cricket, where a fielder jumps into the air and catches the ball just before it crosses the b
+Design: backgrounds neon_night, dark_aurora; entrances zoom, wipe_up, slide_up, fade, pop; transitions glitch, iris; camera yes
+What was wrong at first: Low contrast: layer 5 "Target Date: November 13th" at 4.4s is hard to read (contrast 1.5:1 against the backgro; Low contrast: layer 7 "Booster Recovery: Achieved" at 13.1s is hard to read (contrast 2.0:1 against the backgr; Low contrast: layer 9 "Main Ship Module" at 23.6s is hard to read (contrast 2.5:1 against the background). Use; Variety: the scenes starting at 0.0s and 10.8s are built from the same kinds of layers (image, rrect, text). G
+Fixed by the bot: Low contrast: layer 5 "Target Date: November 13th" at 4.4s is hard to read (cont; Low contrast: layer 7 "Booster Recovery: Achieved" at 13.1s is hard to read (con
+Still open: Low contrast: layer 5 "Target Date: November 13th" at 16.6s is hard to read (contrast 2.4:1 against the backgr; Low contrast: layer 9 "Main Ship Module" at 23.6s is hard to read (contrast 2.5:1 against the background). Use; Variety: the scenes starting at 0.0s and 10.8s are built from the same kinds of layers (image, rrect, text). G
+
+## d-20261110-1938-bdc0 - 16:9 (part_03)
+Brief: LONG VIDEO "Paragraph 1
+
+You must have seen a spectacular catch in cricket, where a fielder jumps into the air and catches the ball just before it crosses the b
+Design: backgrounds neon_night, dark_aurora; entrances zoom, wipe_up, pop, slide_up, fade; transitions none; camera yes
+What was wrong at first: Text overlap: at 3.1s "THE BIG QUESTION" (layer 3) and "HOW TO CATCH IT?" (layer 4) cover each other. Move one; Pacing: no new layer starts after 5.0s of a 25s video, so the second half has nothing new. Add later scenes.; Variety: the scenes starting at 0.0s and 15.2s are built from the same kinds of layers (image, rrect, text). G
+Fixed by the bot: -
+Still open: Text overlap: at 3.1s "THE BIG QUESTION" (layer 3) and "HOW TO CATCH IT?" (layer 4) cover each other. Move one; Pacing: no new layer starts after 5.0s of a 25s video, so the second half has nothing new. Add later scenes.; Variety: the scenes starting at 0.0s and 15.2s are built from the same kinds of layers (image, rrect, text). G
+
+## d-20261110-1959-6ea6 - 16:9 (part_04)
+Brief: LONG VIDEO "Paragraph 1
+
+You must have seen a spectacular catch in cricket, where a fielder jumps into the air and catches the ball just before it crosses the b
+Design: backgrounds mono_dark, ocean, neon_night; entrances slide_up, zoom, wipe_down, pop, rise; transitions flash, iris, stripes; camera yes
+What was wrong at first: Text overlap: at 29.0s "F=ma" (layer 11) and "Newton's Second Law i..." (layer 12) cover each other. Move one ; Variety: the scenes starting at 15.5s and 24.8s are built from the same kinds of layers (circle, image, rrect,
+Fixed by the bot: Text overlap: at 29.0s "F=ma" (layer 11) and "Newton's Second Law i..." (layer 1; Variety: the scenes starting at 15.5s and 24.8s are built from the same kinds of
+Still open: Text overlap: at 29.0s "F=ma" (layer 11) and "Newton's Second Law i..." (layer 12) cover each other. Move one ; Variety: the scenes starting at 0.0s and 15.5s are built from the same kinds of layers (image, rrect, text). G
+
+## d-20261110-2016-3744 - 16:9 (part_05)
+Brief: LONG VIDEO "Paragraph 1
+
+You must have seen a spectacular catch in cricket, where a fielder jumps into the air and catches the ball just before it crosses the b
+Design: backgrounds neon_night, ocean; entrances wipe_left, zoom, slide_up, fade, bounce; transitions none; camera yes
+What was wrong at first: Text cut off: at 2.2s layer 3 "THE ENGINEERING MARVEL" extends beyond the 1920x1080 canvas (text is 1954px wid; Text cut off: at 5.2s layer 6 "Precision Actuators" extends beyond the 1920x1080 canvas (text is 707px wide at; Low contrast: layer 3 "THE ENGINEERING MARVEL" at 2.2s is hard to read (contrast 1.6:1 against the background); Low contrast: layer 6 "Precision Actuators" at 5.2s is hard to read (contrast 1.1:1 against the background). U; Low contrast: layer 7 "Load Bearing Integrity" at 6.8s is hard to read (contrast 1.2:1 against the background)
+Fixed by the bot: Text cut off: at 2.2s layer 3 "THE ENGINEERING MARVEL" extends beyond the 1920x1; Text cut off: at 5.2s layer 6 "Precision Actuators" extends beyond the 1920x1080; Low contrast: layer 3 "THE ENGINEERING MARVEL" at 2.2s is hard to read (contrast; Low contrast: layer 6 "Precision Actuators" at 5.2s is hard to read (contrast 1.; Low contrast: layer 7 "Load Bearing Integrity" at 6.8s is hard to read (contrast
+Still open: Text overlap: at 6.8s "Precision Actuators" (layer 6) and "Load Bearing Integrity" (layer 7) cover each other.; Text cut off: at 9.8s layer 6 "Precision Actuators" extends beyond the 1920x1080 canvas (text is 757px wide at; Low contrast: layer 6 "Precision Actuators" at 5.2s is hard to read (contrast 1.3:1 against the background). U; Low contrast: layer 7 "Load Bearing Integrity" at 6.8s is hard to read (contrast 1.1:1 against the background)
+
+## d-20261110-2030-85af - 16:9 (part_06)
+Brief: LONG VIDEO "Paragraph 1
+
+You must have seen a spectacular catch in cricket, where a fielder jumps into the air and catches the ball just before it crosses the b
+Design: backgrounds dark_aurora, neon_night; entrances wipe_right, slide_up, zoom, bounce, rise; transitions none; camera yes
+What was wrong at first: Text overlap: at 7.5s "Unlocking Exploration" (layer 5) and "Next Generation Travel" (layer 6) cover each othe; Text overlap: at 8.5s "Unlocking Exploration" (layer 5) and "The Cosmic Horizon" (layer 7) cover each other. M; Text overlap: at 8.5s "Next Generation Travel" (layer 6) and "The Cosmic Horizon" (layer 7) cover each other. ; Low contrast: layer 7 "The Cosmic Horizon" at 8.5s is hard to read (contrast 2.2:1 against the background). Us
+Fixed by the bot: Text overlap: at 7.5s "Unlocking Exploration" (layer 5) and "Next Generation Tra; Text overlap: at 8.5s "Unlocking Exploration" (layer 5) and "The Cosmic Horizon"; Text overlap: at 8.5s "Next Generation Travel" (layer 6) and "The Cosmic Horizon; Low contrast: layer 7 "The Cosmic Horizon" at 8.5s is hard to read (contrast 2.2
+Still open: Pacing: no new layer starts after 8.0s of a 20s video, so the second half has nothing new. Add later scenes.

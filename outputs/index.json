@@ -1,5 +1,36 @@
 [
  {
+  "id": "jmwb0y6hrw6g",
+  "job": "jmwb0y6hrw6g",
+  "kind": "video",
+  "title": "Paragraph 1\n\nYou must have seen a spectacular catch in cricket, where a fielder jumps into",
+  "prompt": "Paragraph 1\n\nYou must have seen a spectacular catch in cricket, where a fielder jumps into the air and catches the ball just before it crosses the boundary. Now imagine replacing that ball with a spacecraft, and the catching hands with two giant steel arms. SpaceX is aiming to do exactly that on November 13, although this is still a target date, not a confirmed launch date. The mission is called S",
+  "mode": "ai",
+  "size": "16:9",
+  "dur": "180",
+  "ai": "auto",
+  "date": "2026-11-10T21:03:56Z",
+  "ok": true,
+  "trashed": false,
+  "project": "default",
+  "quality": "final",
+  "long": true,
+  "formats": "none",
+  "video": "outputs/jmwb0y6hrw6g/video.mp4",
+  "video_name": "Paragraph_1_You_must_have_seen_a_spectac_with_sound.mp4",
+  "poster": "outputs/jmwb0y6hrw6g/poster.jpg",
+  "report": "outputs/jmwb0y6hrw6g/report.md",
+  "design_id": "d-20261110-2030-85af",
+  "timing": {
+   "total_s": 9089.1,
+   "ai_requests": 21,
+   "ai_request_s": 6927.6,
+   "ai_wait_s": 42.0,
+   "render_s": 0,
+   "files_s": 0
+  }
+ },
+ {
   "id": "jmwb1mflonhr",
   "job": "jmwb1mflonhr",
   "kind": "report",

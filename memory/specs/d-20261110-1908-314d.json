@@ -1,0 +1,275 @@
+{
+ "title": "Cricket to Cosmos: The Catch",
+ "duration": 30.0,
+ "size": "16:9",
+ "fps": 30,
+ "background": [
+  {
+   "t": 0,
+   "style": "dark_aurora"
+  },
+  {
+   "t": 15.0,
+   "style": "neon_night",
+   "fade": 0.5
+  }
+ ],
+ "camera": [
+  {
+   "t": 0,
+   "zoom": 1.0,
+   "x": 960,
+   "y": 540
+  },
+  {
+   "t": 15.0,
+   "zoom": 1.05,
+   "x": 960,
+   "y": 540
+  },
+  {
+   "t": 30.0,
+   "zoom": 1.1,
+   "x": 960,
+   "y": 540
+  }
+ ],
+ "layers": [
+  {
+   "type": "grid",
+   "kind": "lines",
+   "spacing": 80,
+   "color": [
+    0.1,
+    0.5,
+    0.8
+   ],
+   "fill_opacity": 0.05,
+   "scroll": {
+    "x": 5,
+    "y": 3
+   },
+   "vignette": 0.8,
+   "start": 0,
+   "end": 30.0
+  },
+  {
+   "type": "blob",
+   "x": 960,
+   "y": 540,
+   "r": 600,
+   "color": [
+    0.1,
+    0.3,
+    0.5
+   ],
+   "color2": [
+    0.0,
+    0.1,
+    0.2
+   ],
+   "fill_opacity": 0.3,
+   "softness": 0.8,
+   "start": 0,
+   "end": 30.0
+  },
+  {
+   "type": "image",
+   "x": 600,
+   "y": 550,
+   "w": 1120,
+   "h": 750,
+   "r": 20,
+   "start": 0.0,
+   "shadow": 0.5,
+   "shadow_blur": 40,
+   "fit": "cover",
+   "keys": {
+    "zoom": [
+     [
+      0.0,
+      1.0
+     ],
+     [
+      5.0,
+      1.25,
+      "inout"
+     ]
+    ],
+    "pan_x": [
+     [
+      0.0,
+      -0.3
+     ],
+     [
+      25.0,
+      0.3,
+      "inout"
+     ]
+    ]
+   },
+   "in": {
+    "anim": "zoom",
+    "dur": 0.8
+   },
+   "end": 30.0,
+   "path": "assets/library/photo_cricket-fielder-catc_7874036.jpg"
+  },
+  {
+   "type": "rrect",
+   "x": 960,
+   "y": 900,
+   "w": 1200,
+   "h": 80,
+   "r": 30,
+   "fill": [
+    0.05,
+    0.05,
+    0.1
+   ],
+   "fill_opacity": 0.8,
+   "border": [
+    0.1,
+    0.5,
+    0.8
+   ],
+   "border_opacity": 0.7,
+   "border_w": 3,
+   "start": 0.0,
+   "end": 30.0,
+   "in": {
+    "anim": "slide_up",
+    "dur": 0.6
+   }
+  },
+  {
+   "type": "text",
+   "text": "A spectacular catch in cricket",
+   "x": 960,
+   "y": 860,
+   "size": 65,
+   "font": "bold_italic",
+   "color": [
+    1,
+    1,
+    1
+   ],
+   "start": 0.5,
+   "fixed": true,
+   "in": {
+    "anim": "fade",
+    "dur": 0.5
+   },
+   "end": 15.0
+  },
+  {
+   "type": "transition",
+   "style": "flash",
+   "direction": "right",
+   "color": [
+    0.8,
+    0.2,
+    0.2
+   ],
+   "start": 14.0,
+   "end": 15.5
+  },
+  {
+   "type": "image",
+   "x": 960,
+   "y": 540,
+   "w": 1920,
+   "h": 1080,
+   "r": 0,
+   "start": 15.5,
+   "shadow": 0.1,
+   "fit": "cover",
+   "keys": {
+    "zoom": [
+     [
+      0.0,
+      1.0
+     ],
+     [
+      20.0,
+      1.15,
+      "out"
+     ]
+    ]
+   },
+   "in": {
+    "anim": "wipe_right",
+    "dur": 1.0
+   },
+   "end": 30.0,
+   "path": "assets/library/illustration_spacecraft-giant-arm_5550216.jpg"
+  },
+  {
+   "type": "rrect",
+   "x": 960,
+   "y": 900,
+   "w": 1200,
+   "h": 80,
+   "r": 30,
+   "fill": [
+    0.02,
+    0.02,
+    0.05
+   ],
+   "fill_opacity": 0.9,
+   "border": [
+    0.5,
+    0.8,
+    1
+   ],
+   "border_opacity": 0.9,
+   "border_w": 2,
+   "start": 16.0,
+   "end": 30.0,
+   "in": {
+    "anim": "slide_up",
+    "dur": 0.7
+   }
+  },
+  {
+   "type": "text",
+   "text": "Catching a spacecraft mid-flight",
+   "x": 960,
+   "y": 860,
+   "size": 55,
+   "font": "bold",
+   "color": [
+    1,
+    1,
+    1
+   ],
+   "start": 17.5,
+   "fixed": true,
+   "in": {
+    "anim": "fade",
+    "dur": 0.5
+   },
+   "end": 30.0
+  },
+  {
+   "type": "text",
+   "text": "SpaceX aiming to do exactly that on Nov",
+   "x": 960,
+   "y": 930,
+   "size": 38,
+   "font": "medium",
+   "color": [
+    0.9,
+    0.9,
+    1
+   ],
+   "start": 22.0,
+   "fixed": true,
+   "in": {
+    "anim": "slide_up",
+    "dur": 0.5
+   },
+   "end": 30.0
+  }
+ ]
+}

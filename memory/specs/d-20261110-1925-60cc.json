@@ -1,0 +1,262 @@
+{
+ "title": "Starship Flight 15: Recovery Challenge",
+ "duration": 35.0,
+ "size": "16:9",
+ "fps": 30,
+ "background": [
+  {
+   "t": 0,
+   "style": "neon_night"
+  },
+  {
+   "t": 15.0,
+   "style": "dark_aurora",
+   "fade": 0.7
+  }
+ ],
+ "camera": [
+  {
+   "t": 0,
+   "zoom": 0.9,
+   "x": 960,
+   "y": 540
+  },
+  {
+   "t": 35.0,
+   "zoom": 1.0,
+   "x": 960,
+   "y": 540
+  }
+ ],
+ "layers": [
+  {
+   "type": "particles",
+   "count": 80,
+   "color": [
+    0.1,
+    0.8,
+    1.0
+   ],
+   "size": 2,
+   "speed": 1.5,
+   "seed": 12,
+   "start": 0,
+   "end": 35.0
+  },
+  {
+   "type": "grid",
+   "kind": "lines",
+   "spacing": 80,
+   "color": [
+    0.1,
+    0.1,
+    0.3
+   ],
+   "fill_opacity": 0.1,
+   "scroll": {
+    "x": 1,
+    "y": 0.5
+   },
+   "vignette": 0.85,
+   "start": 0,
+   "end": 35.0
+  },
+  {
+   "type": "image",
+   "w": 1600,
+   "h": 1000,
+   "r": 100,
+   "start": 0,
+   "shadow": 0.6,
+   "shadow_color": [
+    0.3,
+    0.1,
+    1.0
+   ],
+   "shadow_blur": 50,
+   "fit": "cover",
+   "keys": {
+    "zoom": [
+     [
+      0,
+      0.9
+     ],
+     [
+      10.0,
+      1.2,
+      "inout"
+     ]
+    ],
+    "pan_x": [
+     [
+      0,
+      -0.2
+     ],
+     [
+      10.0,
+      0.2,
+      "inout"
+     ]
+    ]
+   },
+   "in": {
+    "anim": "zoom",
+    "dur": 1.0
+   },
+   "end": 35.0,
+   "path": "assets/library/vector_spacecraft-recovery-_7036144.png"
+  },
+  {
+   "type": "rrect",
+   "x": 960,
+   "y": 900,
+   "w": 1000,
+   "h": 100,
+   "r": 50,
+   "fill": [
+    0.1,
+    0.1,
+    0.4
+   ],
+   "fill_opacity": 0.4,
+   "border": [
+    0.5,
+    0.5,
+    1.0
+   ],
+   "border_opacity": 0.6,
+   "border_w": 3,
+   "shadow": 0.5,
+   "start": 0,
+   "in": {
+    "anim": "wipe_up",
+    "dur": 0.8
+   },
+   "end": 35.0
+  },
+  {
+   "type": "text",
+   "text": "STARSHIP FLIGHT 15",
+   "x": 960,
+   "y": 840,
+   "size": 90,
+   "font": "bold_italic",
+   "color": [
+    1,
+    1,
+    1
+   ],
+   "start": 1.5,
+   "fixed": true,
+   "in": {
+    "anim": "slide_up",
+    "dur": 0.6
+   },
+   "end": 35.0
+  },
+  {
+   "type": "text",
+   "text": "Target Date: November 13th",
+   "x": 960,
+   "y": 930,
+   "size": 45,
+   "font": "medium",
+   "color": [
+    0.2,
+    0.2,
+    0.5
+   ],
+   "start": 2.5,
+   "fixed": true,
+   "in": {
+    "anim": "fade",
+    "dur": 0.5
+   },
+   "end": 35.0
+  },
+  {
+   "type": "transition",
+   "style": "iris",
+   "direction": "left",
+   "color": [
+    0.1,
+    0.8,
+    1.0
+   ],
+   "start": 10.0,
+   "end": 11.5
+  },
+  {
+   "type": "text",
+   "text": "Booster Recovery: Achieved",
+   "x": 960,
+   "y": 450,
+   "size": 65,
+   "font": "bold",
+   "color": [
+    1,
+    1,
+    1
+   ],
+   "start": 12.0,
+   "fixed": true,
+   "in": {
+    "anim": "pop",
+    "dur": 0.7
+   },
+   "end": 20.0
+  },
+  {
+   "type": "transition",
+   "style": "glitch",
+   "direction": "up",
+   "color": [
+    0.8,
+    0.1,
+    0.8
+   ],
+   "start": 20.5,
+   "end": 21.5
+  },
+  {
+   "type": "text",
+   "text": "Main Ship Module",
+   "x": 960,
+   "y": 400,
+   "size": 80,
+   "font": "bold_italic",
+   "color": [
+    1,
+    1,
+    1
+   ],
+   "start": 22.0,
+   "fixed": true,
+   "in": {
+    "anim": "rise",
+    "dur": 0.6
+   },
+   "end": 35.0
+  },
+  {
+   "type": "text",
+   "text": "New Territory for Recovery",
+   "x": 960,
+   "y": 500,
+   "size": 50,
+   "font": "medium",
+   "color": [
+    0.9,
+    0.9,
+    1
+   ],
+   "start": 23.5,
+   "fixed": true,
+   "in": {
+    "anim": "slide_down",
+    "dur": 0.5
+   },
+   "end": 35.0
+  }
+ ]
+}

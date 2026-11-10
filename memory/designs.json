@@ -816,5 +816,407 @@
    "nearest": "d-20261110-1501-5810",
    "similarity": 0.669
   }
+ },
+ {
+  "id": "d-20261110-1908-314d",
+  "date": "2026-11-10T19:08:47Z",
+  "prompt": "LONG VIDEO \"Paragraph 1\n\nYou must have seen a spectacular catch in cricket, where a fielder jumps into the air and catches the ball just before it crosses the boundary. Now imagine replacing that ball with a spacecraft, and the catching hands with two giant steel arms. SpaceX is aiming to do exactly that on Nov\" (180s in total, 6 parts). You make PART 1 of 6 (30 seconds): The Cricket Metaphor.\nWha",
+  "summary": {
+   "backgrounds": [
+    "dark_aurora",
+    "neon_night"
+   ],
+   "entrance_anims": {
+    "slide_up": 3,
+    "fade": 2,
+    "zoom": 1,
+    "wipe_right": 1
+   },
+   "layer_types": {
+    "text": 3,
+    "image": 2,
+    "rrect": 2,
+    "grid": 1,
+    "blob": 1,
+    "transition": 1
+   },
+   "kinds": [],
+   "transitions": [
+    "flash"
+   ],
+   "camera": true,
+   "headlines": [
+    "A spectacular catch in cricket",
+    "Catching a spacecraft mid-flight",
+    "SpaceX aiming to do exactly that on Nov"
+   ],
+   "layers": 10,
+   "duration": 30.0,
+   "size": "16:9"
+  },
+  "review_score": null,
+  "qa_errors": 0,
+  "qa_warnings": 1,
+  "rating": null,
+  "notes": [],
+  "size": "16:9",
+  "assets": 2,
+  "remix": {
+   "sources": [
+    "doc-07-archival-photo",
+    "doc-16-big-stat",
+    "doc-62-glitch-transition"
+   ],
+   "backgrounds": [
+    "light_pastel",
+    "dark_aurora"
+   ],
+   "transitions": [
+    "glitch",
+    "flash"
+   ]
+  },
+  "originality": {
+   "nearest": "doc-61-glitch-transition",
+   "similarity": 0.708
+  }
+ },
+ {
+  "id": "d-20261110-1925-60cc",
+  "date": "2026-11-10T19:25:51Z",
+  "prompt": "LONG VIDEO \"Paragraph 1\n\nYou must have seen a spectacular catch in cricket, where a fielder jumps into the air and catches the ball just before it crosses the boundary. Now imagine replacing that ball with a spacecraft, and the catching hands with two giant steel arms. SpaceX is aiming to do exactly that on Nov\" (180s in total, 6 parts). You make PART 2 of 6 (35 seconds): Starship Flight 15 Goal.\n",
+  "summary": {
+   "backgrounds": [
+    "neon_night",
+    "dark_aurora"
+   ],
+   "entrance_anims": {
+    "zoom": 1,
+    "wipe_up": 1,
+    "slide_up": 1,
+    "fade": 1,
+    "pop": 1,
+    "rise": 1,
+    "slide_down": 1
+   },
+   "layer_types": {
+    "text": 5,
+    "transition": 2,
+    "particles": 1,
+    "grid": 1,
+    "image": 1,
+    "rrect": 1
+   },
+   "kinds": [],
+   "transitions": [
+    "glitch",
+    "iris"
+   ],
+   "camera": true,
+   "headlines": [
+    "STARSHIP FLIGHT 15",
+    "Main Ship Module",
+    "Booster Recovery: Achieved",
+    "New Territory for Recovery"
+   ],
+   "layers": 11,
+   "duration": 35.0,
+   "size": "16:9"
+  },
+  "review_score": null,
+  "qa_errors": 0,
+  "qa_warnings": 3,
+  "rating": null,
+  "notes": [],
+  "size": "16:9",
+  "assets": 1,
+  "remix": {
+   "sources": [
+    "doc-06-archival-photo",
+    "doc-63-glitch-transition",
+    "doc-65-outro-logo"
+   ],
+   "backgrounds": [
+    "mono_light",
+    "ocean"
+   ],
+   "transitions": [
+    "iris",
+    "glitch"
+   ]
+  },
+  "originality": {
+   "nearest": "d-20261110-1908-314d",
+   "similarity": 0.734
+  }
+ },
+ {
+  "id": "d-20261110-1938-bdc0",
+  "date": "2026-11-10T19:38:37Z",
+  "prompt": "LONG VIDEO \"Paragraph 1\n\nYou must have seen a spectacular catch in cricket, where a fielder jumps into the air and catches the ball just before it crosses the boundary. Now imagine replacing that ball with a spacecraft, and the catching hands with two giant steel arms. SpaceX is aiming to do exactly that on Nov\" (180s in total, 6 parts). You make PART 3 of 6 (25 seconds): The Big Question: How to ",
+  "summary": {
+   "backgrounds": [
+    "neon_night",
+    "dark_aurora"
+   ],
+   "entrance_anims": {
+    "zoom": 1,
+    "wipe_up": 1,
+    "pop": 1,
+    "slide_up": 1,
+    "fade": 1
+   },
+   "layer_types": {
+    "text": 3,
+    "grid": 1,
+    "blob": 1,
+    "image": 1,
+    "rrect": 1
+   },
+   "kinds": [],
+   "transitions": [],
+   "camera": true,
+   "headlines": [
+    "THE BIG QUESTION",
+    "HOW TO CATCH IT?",
+    "Intercepting something of immense scale requires unprecedented precision."
+   ],
+   "layers": 7,
+   "duration": 25.0,
+   "size": "16:9"
+  },
+  "review_score": null,
+  "qa_errors": 1,
+  "qa_warnings": 2,
+  "rating": null,
+  "notes": [],
+  "size": "16:9",
+  "assets": 1,
+  "remix": {
+   "sources": [
+    "doc-06-archival-photo",
+    "doc-14-big-stat",
+    "doc-63-glitch-transition"
+   ],
+   "backgrounds": [
+    "ocean",
+    "light_pastel"
+   ],
+   "transitions": [
+    "stripes",
+    "flash"
+   ]
+  },
+  "originality": {
+   "nearest": "d-20261110-1908-314d",
+   "similarity": 0.802
+  }
+ },
+ {
+  "id": "d-20261110-1959-6ea6",
+  "date": "2026-11-10T19:59:54Z",
+  "prompt": "LONG VIDEO \"Paragraph 1\n\nYou must have seen a spectacular catch in cricket, where a fielder jumps into the air and catches the ball just before it crosses the boundary. Now imagine replacing that ball with a spacecraft, and the catching hands with two giant steel arms. SpaceX is aiming to do exactly that on Nov\" (180s in total, 6 parts). You make PART 4 of 6 (40 seconds): Understanding the Recover",
+  "summary": {
+   "backgrounds": [
+    "mono_dark",
+    "ocean",
+    "neon_night"
+   ],
+   "entrance_anims": {
+    "slide_up": 2,
+    "zoom": 1,
+    "wipe_down": 1,
+    "pop": 1,
+    "rise": 1,
+    "bounce": 1,
+    "fade": 1
+   },
+   "layer_types": {
+    "text": 4,
+    "transition": 3,
+    "particles": 1,
+    "grid": 1,
+    "image": 1,
+    "rrect": 1,
+    "blob": 1,
+    "card": 1,
+    "progress": 1
+   },
+   "kinds": [
+    "custom",
+    "ring"
+   ],
+   "transitions": [
+    "flash",
+    "iris",
+    "stripes"
+   ],
+   "camera": true,
+   "headlines": [
+    "IMPULSE & MOMENTUM",
+    "UNDERSTANDING THE RECOVERY DYNAMICS",
+    "Conservation of Linear Momentum",
+    "Newton's Second Law in Action"
+   ],
+   "layers": 14,
+   "duration": 40.0,
+   "size": "16:9"
+  },
+  "review_score": null,
+  "qa_errors": 1,
+  "qa_warnings": 1,
+  "rating": null,
+  "notes": [],
+  "size": "16:9",
+  "assets": 1,
+  "remix": {
+   "sources": [
+    "doc-06-archival-photo",
+    "doc-14-big-stat",
+    "doc-63-glitch-transition"
+   ],
+   "backgrounds": [
+    "light_pastel",
+    "ocean"
+   ],
+   "transitions": [
+    "wipe",
+    "stripes"
+   ]
+  },
+  "originality": {
+   "nearest": "d-20261110-1724-0602",
+   "similarity": 0.777
+  }
+ },
+ {
+  "id": "d-20261110-2016-3744",
+  "date": "2026-11-10T20:16:52Z",
+  "prompt": "LONG VIDEO \"Paragraph 1\n\nYou must have seen a spectacular catch in cricket, where a fielder jumps into the air and catches the ball just before it crosses the boundary. Now imagine replacing that ball with a spacecraft, and the catching hands with two giant steel arms. SpaceX is aiming to do exactly that on Nov\" (180s in total, 6 parts). You make PART 5 of 6 (30 seconds): The Engineering Marvel.\nW",
+  "summary": {
+   "backgrounds": [
+    "neon_night",
+    "ocean"
+   ],
+   "entrance_anims": {
+    "wipe_left": 1,
+    "zoom": 1,
+    "slide_up": 1,
+    "fade": 1,
+    "bounce": 1,
+    "pop": 1,
+    "slide_down": 1
+   },
+   "layer_types": {
+    "text": 3,
+    "chip": 2,
+    "grid": 1,
+    "blob": 1,
+    "image": 1,
+    "rrect": 1,
+    "progress": 1
+   },
+   "kinds": [
+    "ring"
+   ],
+   "transitions": [],
+   "camera": true,
+   "headlines": [
+    "ENGINEERING MARVEL",
+    "Control Systems & Structure",
+    "Structural Requirements Meet Challenge"
+   ],
+   "layers": 10,
+   "duration": 30.0,
+   "size": "16:9"
+  },
+  "review_score": null,
+  "qa_errors": 2,
+  "qa_warnings": 2,
+  "rating": null,
+  "notes": [],
+  "size": "16:9",
+  "assets": 1,
+  "remix": {
+   "sources": [
+    "doc-06-archival-photo",
+    "doc-16-big-stat",
+    "doc-63-glitch-transition"
+   ],
+   "backgrounds": [
+    "mono_light",
+    "sunset"
+   ],
+   "transitions": [
+    "wipe",
+    "iris"
+   ]
+  },
+  "originality": {
+   "nearest": "d-20261110-1658-3cb0",
+   "similarity": 0.736
+  }
+ },
+ {
+  "id": "d-20261110-2030-85af",
+  "date": "2026-11-10T20:30:30Z",
+  "prompt": "LONG VIDEO \"Paragraph 1\n\nYou must have seen a spectacular catch in cricket, where a fielder jumps into the air and catches the ball just before it crosses the boundary. Now imagine replacing that ball with a spacecraft, and the catching hands with two giant steel arms. SpaceX is aiming to do exactly that on Nov\" (180s in total, 6 parts). You make PART 6 of 6 (20 seconds): Beyond the Catch: The Fut",
+  "summary": {
+   "backgrounds": [
+    "dark_aurora",
+    "neon_night"
+   ],
+   "entrance_anims": {
+    "wipe_right": 1,
+    "slide_up": 1,
+    "zoom": 1,
+    "bounce": 1,
+    "rise": 1,
+    "slide_left": 1
+   },
+   "layer_types": {
+    "chip": 3,
+    "text": 2,
+    "grid": 1,
+    "blob": 1,
+    "image": 1
+   },
+   "kinds": [],
+   "transitions": [],
+   "camera": true,
+   "headlines": [
+    "BEYOND THE CATCH",
+    "The Future of Spaceflight"
+   ],
+   "layers": 8,
+   "duration": 20.0,
+   "size": "16:9"
+  },
+  "review_score": null,
+  "qa_errors": 0,
+  "qa_warnings": 1,
+  "rating": null,
+  "notes": [],
+  "size": "16:9",
+  "assets": 1,
+  "remix": {
+   "sources": [
+    "doc-05-archival-photo",
+    "doc-48-chapter-opener",
+    "doc-61-glitch-transition"
+   ],
+   "backgrounds": [
+    "sunset",
+    "mono_light"
+   ],
+   "transitions": [
+    "wipe",
+    "glitch"
+   ]
+  },
+  "originality": {
+   "nearest": "d-20261110-1938-bdc0",
+   "similarity": 0.74
+  }
  }
 ]
