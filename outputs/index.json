@@ -1,5 +1,43 @@
 [
  {
+  "id": "jmwaq6u3lnqm",
+  "job": "jmwaq6u3lnqm",
+  "kind": "video",
+  "title": "The future of technology is not just about building faster machines or smarter software; i",
+  "prompt": "The future of technology is not just about building faster machines or smarter software; it is about creating meaningful experiences that simplify our lives. Imagine a world where ideas transform into reality within seconds, where creativity has no boundaries, and where intelligent systems work seamlessly alongside humans. Every innovation begins with a simple question, but its impact can reshape ",
+  "mode": "ai",
+  "size": "16:9",
+  "dur": "30",
+  "ai": "auto",
+  "date": "2026-11-10T15:03:37Z",
+  "ok": true,
+  "trashed": false,
+  "project": "default",
+  "quality": "final",
+  "formats": "wfp,nomp4",
+  "no_mp4": true,
+  "files": [
+   {
+    "name": "The_Future_of_Experience_Technology.wfp",
+    "path": "outputs/jmwaq6u3lnqm/files/The_Future_of_Experience_Technology.wfp",
+    "size": 36761
+   }
+  ],
+  "video_name": "The_Future_of_Experience_Technology_with_sound.mp4",
+  "poster": "outputs/jmwaq6u3lnqm/poster.jpg",
+  "spec": "outputs/jmwaq6u3lnqm/spec.json",
+  "report": "outputs/jmwaq6u3lnqm/report.md",
+  "design_id": "d-20261110-1501-5810",
+  "timing": {
+   "total_s": 5021.5,
+   "ai_requests": 9,
+   "ai_request_s": 4878.1,
+   "ai_wait_s": 78.0,
+   "render_s": 115.1,
+   "files_s": 4.1
+  }
+ },
+ {
   "id": "jmwaib48e9yd",
   "job": "jmwaib48e9yd",
   "kind": "video",

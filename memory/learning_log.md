@@ -26,3 +26,10 @@ Design: backgrounds mono_dark, dark_aurora, neon_night, ocean, light_pastel; ent
 What was wrong at first: Text overlap: at 2.2s "Beyond the Machine." (layer 1) and "It's about meaningful..." (layer 2) cover each othe; Low contrast: layer 13 "The only limit is how far we dare..." at 26.2s is hard to read (contrast 1.2:1 against; Variety: the scenes starting at 10.2s and 16.2s are built from the same kinds of layers (chip, circle, device:
 Fixed by the bot: Text overlap: at 2.2s "Beyond the Machine." (layer 1) and "It's about meaningful; Low contrast: layer 13 "The only limit is how far we dare..." at 26.2s is hard t
 Still open: Variety: the scenes starting at 10.2s and 16.2s are built from the same kinds of layers (chip, circle, device:
+
+## d-20261110-1501-5810 - 16:9 (out)
+Brief: The future of technology is not just about building faster machines or smarter software; it is about creating meaningful experiences that simplify our lives. Im
+Design: backgrounds dark_aurora, neon_night, sunset, light_pastel, mono_dark; entrances fade, rise, pop, zoom, bounce; transitions flash, glitch, iris, stripes, wipe; camera yes
+What was wrong at first: Text cut off: at 27.8s layer 21 "The limit is how far we dare to i..." extends beyond the 1920x1080 canvas (te
+Fixed by the bot: Text cut off: at 27.8s layer 21 "The limit is how far we dare to i..." extends b
+Still open: Low contrast: layer 17 "The Future is Now." at 17.2s is hard to read (contrast 1.5:1 against the background).

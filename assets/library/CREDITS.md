@@ -15,3 +15,4 @@
 - vector_spaceship-sleek_156418.png: rocket, space, satellite, orbit, space exploration, retro, rocket, rocket, satel (pixabay, Pixabay Content License) https://pixabay.com/vectors/rocket-space-satellite-orbit-156418/
 - illustration_futuristic-city-land_9680301.jpg: ai generated, scifi, city, futuristic, cityscape, building, skyline, landscape (pixabay, Pixabay Content License) https://pixabay.com/illustrations/ai-generated-scifi-city-futuristic-9680301/
 - illustration_abstract-future-tech_10509632.jpg: artificial intelligence, neurons, brain, technology, neural network, science, da (pixabay, Pixabay Content License) https://pixabay.com/illustrations/artificial-intelligence-neurons-10509632/
+- illustration_abstract-future-conc_3885331.jpg: evolution, artificial intelligence, brain, ghost, progress, smoke, digitization, (pixabay, Pixabay Content License) https://pixabay.com/illustrations/evolution-artificial-intelligence-3885331/
