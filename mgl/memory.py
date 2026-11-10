@@ -84,6 +84,8 @@ class Memory:
         if not isinstance(self.lessons, list): self.lessons = []
         if not isinstance(self.styles, list): self.styles = []
         if not isinstance(self.assets, dict): self.assets = {}
+        self._seed_guide = ''
+        self._load_seed()
 
     # ---------------------------------------------------------------- io
     def _path(self, name): return os.path.join(self.dir, name)
@@ -244,12 +246,29 @@ class Memory:
             return (len(pw & tags), (s.get('rating') or 0), s.get('date', ''))
         return sorted(self.styles, key=score, reverse=True)[:n]
 
+    def _load_seed(self):
+        """built-in knowledge taught by the owner (knowledge/seed.json): style cards, techniques and a short guide. Never overwrites anything; each card is added once."""
+        try:
+            p = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'knowledge', 'seed.json')
+            if not os.path.exists(p): return
+            seed = json.load(open(p, encoding='utf-8'))
+            have = {s.get('sha') for s in self.styles}
+            for c in seed.get('styles', []):
+                if isinstance(c, dict) and c.get('sha') not in have:
+                    c = dict(c); c.setdefault('id', 'seed-' + str(c.get('sha', ''))[:6]); c.setdefault('date', now_iso()); self.styles.append(c)
+            for t in seed.get('techniques', []):
+                if self.add_technique(t, source='owner reference videos'):
+                    self.notebook['techniques'][-1]['weight'] = 3
+            self._seed_guide = str(seed.get('guide') or '')
+        except Exception:
+            pass
+
     def style_guide(self):
-        p = self._path('style_guide.md')
+        p = self._path('style_guide.md'); own = ''
         if os.path.exists(p):
-            try: return open(p, encoding='utf-8').read()
-            except Exception: return ''
-        return ''
+            try: own = open(p, encoding='utf-8').read()
+            except Exception: own = ''
+        return (self._seed_guide + ('\n\n' + own if own else '')).strip()
 
     def write_style_guide(self, text):
         with open(self._path('style_guide.md'), 'w', encoding='utf-8') as f: f.write(text.strip() + '\n')
@@ -313,7 +332,7 @@ class Memory:
         sty = self.relevant_styles(prompt, 2)
         if sty:
             parts.append('REFERENCE STYLE CARDS (borrow structure and motion ideas, never copy content):\n' + '\n'.join(json.dumps({k: v for k, v in s.items() if k in ('title', 'palette', 'typography', 'motion', 'transitions', 'pacing', 'scenes', 'notes')}, ensure_ascii=False)[:900] for s in sty))
-        liked = [d for d in self.designs if (d.get('rating') or 0) >= 4][-2:]
+        liked =[d for d in self.designs if (d.get('rating') or 0) >= 4][-2:]
         if liked:
             parts.append('DESIGNS THE USER LIKED (what worked):\n' + '\n'.join(json.dumps({'prompt': d['prompt'][:120], **{k: d['summary'].get(k) for k in ('mode', 'notes', 'backgrounds', 'entrance_anims', 'transitions', 'kinds', 'camera') if d['summary'].get(k) is not None}}, ensure_ascii=False) for d in liked))
         disliked = [d for d in self.designs if d.get('rating') and d['rating'] <= 2][-2:]
