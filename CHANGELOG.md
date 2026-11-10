@@ -146,3 +146,6 @@ Filmora .wfp: media type (audio ke saath 8, bina audio 2), thumb.fsthumb, ID for
 - The video card shows which AI works on which part.
 - A Hindi / Urdu script is understood and all on-screen text is written in English.
 - Sound: your own sounds are found in a folder named sfx, sfx_pack, sounds or audio (any capitals, sub-folders too), used in EVERY sound style, files with an unclear name are still used (short = pop, long = whoosh), and the log lists which files were used.
+
+## update18
+- Built-in knowledge from 10 owner reference videos (knowledge/seed.json): 11 style cards, 12 techniques, an editing + sound guide. Loaded on top of memory, never overwrites it.
