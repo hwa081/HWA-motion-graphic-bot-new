@@ -1,5 +1,30 @@
 [
  {
+  "id": "jmwafus0fgdm",
+  "job": "jmwafus0fgdm",
+  "kind": "report",
+  "title": "learn",
+  "prompt": "",
+  "mode": "learn",
+  "size": "16:9",
+  "dur": "10",
+  "ai": "gemini",
+  "date": "2026-11-10T08:58:13Z",
+  "ok": false,
+  "trashed": false,
+  "formats": "none",
+  "note": "The run stopped before the video was ready",
+  "report": "outputs/jmwafus0fgdm/report.md",
+  "timing": {
+   "total_s": 988.6,
+   "ai_requests": 1,
+   "ai_request_s": 988.1,
+   "ai_wait_s": 524.0,
+   "render_s": 0,
+   "files_s": 0
+  }
+ },
+ {
   "id": "jmwaeey5g7en",
   "job": "jmwaeey5g7en",
   "kind": "report",
