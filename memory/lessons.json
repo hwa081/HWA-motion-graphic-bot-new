@@ -88,5 +88,35 @@
   "source": "feedback",
   "created": "2026-11-10T19:02:25Z",
   "last": "2026-11-10T19:02:25Z"
+ },
+ {
+  "id": "l931",
+  "kind": "do",
+  "text": "Introduce a new visual beat, cut, or secondary motion element every 3 to 4 seconds to keep pacing dynamic and avoid static holds.",
+  "weight": 3,
+  "count": 1,
+  "source": "feedback",
+  "created": "2026-11-11T06:09:24Z",
+  "last": "2026-11-11T06:09:24Z"
+ },
+ {
+  "id": "l806",
+  "kind": "dont",
+  "text": "Do not overlay text layers directly onto busy background visuals or background assets with baked-in text without a solid backing card or contrasting scrim.",
+  "weight": 3,
+  "count": 1,
+  "source": "feedback",
+  "created": "2026-11-11T06:09:24Z",
+  "last": "2026-11-11T06:09:24Z"
+ },
+ {
+  "id": "l86",
+  "kind": "do",
+  "text": "Align visual themes and imagery strictly to the concrete subject matter of the script rather than relying on generic abstract presets like aurora or neon blobs.",
+  "weight": 2,
+  "count": 1,
+  "source": "feedback",
+  "created": "2026-11-11T06:09:24Z",
+  "last": "2026-11-11T06:09:24Z"
  }
 ]

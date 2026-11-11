@@ -1195,8 +1195,13 @@
   "review_score": null,
   "qa_errors": 0,
   "qa_warnings": 1,
-  "rating": null,
-  "notes": [],
+  "rating": 1,
+  "notes": [
+   {
+    "date": "2026-11-11T06:09:15Z",
+    "note": "so bad we need new scene or motion graphic in every 3 sec and in this video text is overlap with tha background og text and also visuals not match with the video script properly"
+   }
+  ],
   "size": "16:9",
   "assets": 1,
   "remix": {

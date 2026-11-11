@@ -1,5 +1,29 @@
 [
  {
+  "id": "jmwbpvbgq5l5",
+  "job": "jmwbpvbgq5l5",
+  "kind": "report",
+  "title": "so bad we need new scene or motion graphic in every 3 sec and in this video text is overla",
+  "prompt": "so bad we need new scene or motion graphic in every 3 sec and in this video text is overlap with tha background og text and also visuals not match with the video script properly",
+  "mode": "feedback",
+  "size": "16:9",
+  "dur": "10",
+  "ai": "gemini",
+  "date": "2026-11-11T06:09:24Z",
+  "ok": true,
+  "trashed": false,
+  "formats": "none",
+  "report": "outputs/jmwbpvbgq5l5/report.md",
+  "timing": {
+   "total_s": 8.6,
+   "ai_requests": 1,
+   "ai_request_s": 8.2,
+   "ai_wait_s": 0,
+   "render_s": 0,
+   "files_s": 0
+  }
+ },
+ {
   "id": "jmwb0y6hrw6g",
   "job": "jmwb0y6hrw6g",
   "kind": "video",
